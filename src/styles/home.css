@@ -1,0 +1,268 @@
+.home-all {
+    display: flex;
+    position: relative;
+    background-color: var(--mather-color);
+    width: 100%;
+    height: 4000px;
+}
+
+.home-presentation {
+  width: 100%;
+  height: 800px;
+  position: relative;
+  background-color: var(--mather-color);
+}
+
+.presentation-img1 {
+    position: absolute;
+    background-image: url("/static/images/child2.png");
+    object-fit: fill;
+    width: 40%;
+    height: 590px;
+    background-size: cover;
+    background-position: center;
+}
+
+.presentation-title {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left:40%;
+    top: 15%;
+    color: var(--title-color);
+}
+
+.presentation-title h1 {
+    font-size: 60px;
+    letter-spacing: 8px;
+}
+
+.presentation-title p {
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 4px;
+    margin-top: -1rem;
+}
+
+.presentation-img2 {
+    position: absolute;
+    right: 5%;
+    top: 30%;
+    background-image: url("/static/images/child3.png");
+    object-fit: fill;
+    width: 400px;
+    height: 470px;
+    background-size: cover;
+    background-position: center;
+}
+
+.presentation-aprops {
+    position: absolute;
+    width:70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 15%;
+    top: 70%;
+    color: var(--aprops-color);
+}
+
+.presentation-aprops h1 {
+    font-size: 30px;
+    letter-spacing: 6px;
+}
+
+.presentation-aprops p {
+    font-size: 18px;
+    text-align: center;
+    margin-top: -0.5rem;
+}
+
+
+@media screen and (max-width: 1350px) {
+    .presentation-img1 {
+      width: 500px;
+      height: 530px;
+    }
+    .presentation-img2 {
+      width: 400px;
+      height: 470px;
+      right: 0%;
+    }
+    .presentation-title  {
+        left: 40%;
+        top: 5%;
+      }
+    .presentation-title h1 {
+      font-size: 50px;
+    }
+    .presentation-title p {
+      font-size: 30px;
+    }
+    .presentation-aprops {
+       
+        top:65%;
+      
+    }
+    
+    .presentation-aprops h1 {
+        font-size:25px;
+        letter-spacing: 6px;
+    }
+    
+    .presentation-aprops p {
+        font-size: 16px;
+        text-align: center;
+        margin-top: -0.5rem;
+    }
+  }
+  
+  @media screen and (max-width: 900px)  {
+    .presentation-img1 {
+      width: 420px;
+      height: 442.5px;
+    }
+    .presentation-img2 {
+      width: 300px;
+      height: 352.5px;
+    }
+    .presentation-title  {
+        left: 40%;
+        top: 5%;
+      
+      }
+    .presentation-title h1 {
+      font-size: 40px;
+    }
+    .presentation-title p {
+      font-size: 20px;
+    }
+    .presentation-aprops {
+      
+        top:55%;
+      
+    }
+    .presentation-aprops h1 {
+      font-size:20px;
+    
+  }
+  
+  .presentation-aprops p {
+      font-size: 14px;
+   
+  }
+  }
+  @media screen and (max-width: 790px)  {
+    .presentation-img1 {
+      width: 320px;
+      height: 342.5px;
+    }
+    .presentation-img2 {
+      width: 200px;
+      height: 252.5px;
+    }
+    .presentation-title  {
+        left: 40%;
+        top: 5%;
+      }
+    .presentation-title h1 {
+      font-size: 20px;
+    }
+    .presentation-title p {
+      font-size: 16px;
+    }
+    .presentation-aprops {
+       
+        top:45%;
+      
+    }
+  }
+  @media screen and (max-width: 550px) {
+    .home-all {
+      display: flex;
+      flex-direction: column;
+      height: 4000px;
+  }
+  
+  .home-presentation {
+    width: 100%;
+    height: 700px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--mather-color);
+  }
+
+  
+  .presentation-img1 {
+      position: static;
+ 
+      object-fit: cover;
+      width: 80%;
+      align-items: center;
+      justify-content: center;
+
+      background-size: cover;
+      background-position: center;
+  }
+  
+  .presentation-title {
+      position:static;
+      left: 0%;
+      top: 0%;
+      width: 100%;
+      height: 70px;
+    
+  }
+  
+  .presentation-title h1 {
+      font-size: 25px;
+      letter-spacing: 6px;
+  }
+  
+  .presentation-title p {
+      font-size: 16px;
+      text-align: center;
+      letter-spacing: 2px;
+      margin-top: -1rem;
+  }
+  
+ 
+  /* Apply the animation to the images */
+ 
+  .presentation-img2 {
+      position: static;
+    
+      background-image: url("/static/images/child3.png");
+      object-fit: fill;
+      width: 0px;
+      height: 0px;
+      background-size: cover;
+      background-position: center;
+      visibility: hidden;
+    
+  }
+  
+  .presentation-aprops {
+      position: static;
+      width:95%;
+     
+  }
+  
+  .presentation-aprops h1 {
+      font-size: 25px;
+      letter-spacing: 6px;
+  }
+  
+  .presentation-aprops p {
+      font-size: 14px;
+    
+  }
+  
+  }
+  

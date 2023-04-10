@@ -1,0 +1,10 @@
+:root {
+  
+ margin: auto; 
+ --navbar_color:#424223;
+ --navbar_mobile_color:#424223;
+ --navbar_mobile_click:#4F6C31;
+ --mather-color:#A8D692;
+ --title-color:#B64D07;
+ --aprops-color:#050900 ;
+}
