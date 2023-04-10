@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 
 const images = [ "/static/images/child2.png", "/static/images/child4.png"];
 
-const homePage = () => {
+export default function Home()  {
 
     const [currentImage, setCurrentImage] = useState(0);
     
@@ -80,4 +80,4 @@ const homePage = () => {
     )
 };
 
-export default homePage;
+
