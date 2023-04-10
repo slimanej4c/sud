@@ -4,6 +4,7 @@ import type { AppProps } from 'next/app'
 import '../styles/Layout.css'
 import '../styles/globals.css'
 import '../styles/home.css'
+import '../styles/home-part2.css'
 
  const App =({ Component, pageProps }: AppProps)=> {
 

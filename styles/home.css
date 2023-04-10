@@ -11,6 +11,8 @@
   height: 800px;
   position: relative;
   background-color: var(--mather-color);
+  overflow: hidden;
+
 }
 
 .presentation-img1 {
@@ -21,6 +23,7 @@
     height: 590px;
     background-size: cover;
     background-position: center;
+    overflow: hidden;
 }
 
 .presentation-title {
@@ -198,17 +201,30 @@
     background-color: var(--mather-color);
   }
 
+  .presentation-img {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    background-color: rgb(112, 109, 2);
+     overflow: hidden;
   
+    
+}
   .presentation-img1 {
-      position: static;
- 
-      object-fit: cover;
-      width: 80%;
-      align-items: center;
-      justify-content: center;
-
-      background-size: cover;
-      background-position: center;
+    
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
   
   .presentation-title {
@@ -221,12 +237,12 @@
   }
   
   .presentation-title h1 {
-      font-size: 25px;
+      font-size:30px;
       letter-spacing: 6px;
   }
   
   .presentation-title p {
-      font-size: 16px;
+      font-size: 18px;
       text-align: center;
       letter-spacing: 2px;
       margin-top: -1rem;
@@ -235,18 +251,7 @@
  
   /* Apply the animation to the images */
  
-  .presentation-img2 {
-      position: static;
-    
-      background-image: url("/static/images/child3.png");
-      object-fit: fill;
-      width: 0px;
-      height: 0px;
-      background-size: cover;
-      background-position: center;
-      visibility: hidden;
-    
-  }
+  
   
   .presentation-aprops {
       position: static;
