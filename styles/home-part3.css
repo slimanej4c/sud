@@ -1,0 +1,279 @@
+.home-part3 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  justify-content: center;
+  align-items: center;
+
+}
+.home-part3-1 {
+    position: relative;
+    display: flex;
+   
+    width: 100%;
+    justify-content: center;
+
+}
+.home-part3-1 h1 {}
+.home-part3-2 {
+    position: relative;
+    display: flex;
+    object-fit: cover;
+    width: 80%;
+    height: 500px;
+    background-color: chocolate;
+    justify-content: center;
+   align-items: center;
+   overflow: hidden;
+}
+
+ 
+
+.home-part3-2-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    position: absolute;
+    width: 50%;
+    height: 500px;
+    background-color: rgb(199, 179, 129);
+    top: 0;
+    left: 0;
+}
+.home-part3-2-text {
+    display: flex;
+    flex-direction: column;
+    background-size: contain;
+    background-position: center center;
+    display: flex;
+    position: absolute;
+    width: 50%;
+    height: 500px;
+    background-color: rgb(199, 179, 129);
+    top: 0;
+    right: 0;
+}
+.home-part3-2-text-div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+
+}
+.home-part3-2-text h1 {
+    text-align: center;
+
+}
+.home-part3-2-text p {
+    text-align: center;
+   
+}
+.home-part3-3 {
+    
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+   
+}
+.home-part3-3-index{
+ 
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 20px;
+    justify-content:center;
+    margin-top: -80px;
+    align-items: center;
+    
+}
+.home-part3-3-index-div{
+    width: 15px;
+    height: 15px;
+    background-color: #d4b800;
+    border-radius: 20px;
+    margin: 5px;
+  
+}
+.home-part3-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    
+}
+.home-part3-button {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    padding-top: 2px;
+    border-radius: 50px;
+  }
+  .prev {
+    background-color: var(--navbar_color);
+    color: var(--mession-color);
+    font-size: 2em;
+    font-weight: bold;
+  }
+ .next {
+    background-color: var(--navbar_color);
+    color: var(--mession-color);
+    font-size: 2em;
+  }
+  @media screen and (max-width: 1100px) {
+  
+
+    .home-part3-2-text h1 {
+        font-size: 20px;
+        
+    }
+    .home-part3-2-text p {
+       font-size: 14px;
+       
+    }
+ 
+   
+  }
+
+  @media screen and (max-width: 750px) {
+    .home-part3 {
+       
+        position: relative;
+        height: 100%;
+        
+       
+    }
+   
+  
+    .home-part3-2 {
+      
+        flex-direction: column;
+        width: 95%;
+        
+        height: 600px;
+    
+       
+    }
+   
+    .home-part3-2-image {
+      
+        width: 100%;
+        height: 250px;
+       
+    }
+    .home-part3-2-text {
+       
+       
+        width: 100%;
+        height:350px;
+        
+        top: 250px;
+        background-color: #5e5b45;
+    
+    }
+    .home-part3-2-text-div {
+        position: absolute;
+        top: 0%;
+        height: auto;
+    }
+    .home-part3-2-text h1 {
+        height:auto;
+        
+    }
+    .home-part3-2-text h1 {
+        font-size: 20px;
+        
+    }
+    .home-part3-2-text p {
+       font-size: 14px;
+       
+    }
+  
+    .prev {
+       
+        font-size: 1em;
+        left: 5%;
+        top:35%;
+      }
+     .next {
+       
+        font-size: 1em;
+        right: 5%;
+        top:35%;
+      }
+      .home-part3-button {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+       
+      }.home-part3-3-index{
+      position: absolute;
+      top:45%;
+    }
+
+  }
+
+  @media screen and (max-width: 450px) {
+   
+  
+    .home-part3-2 {
+      
+        height: 650px;
+    
+       
+    }
+   
+    .home-part3-2-image {
+      
+        width: 100%;
+        height: 250px;
+       
+    }
+    .home-part3-2-text {
+       
+       
+      
+        height:400px;
+       
+    
+    }
+    
+  
+    .home-part3-2-text h1 {
+        font-size: 18px;
+        
+    }
+    .home-part3-2-text p {
+       font-size: 12px;
+       
+    }
+    .prev {
+       
+        font-size: 1em;
+        left: 5%;
+        top:25%;
+      }
+     .next {
+       
+        font-size: 1em;
+        right: 5%;
+        top:25%;
+      }
+      .home-part3-button {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+       
+      }.home-part3-3-index{
+      position: absolute;
+      top:35%;
+    }
+   
+
+  }
