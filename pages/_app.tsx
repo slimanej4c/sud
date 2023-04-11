@@ -11,7 +11,7 @@ import '../styles/home-part2.css'
   return(
    <>
     <Head>
-      <title>SOLIDARITE</title>
+      <title>SOLIDARITE SUD</title>
       <meta name='viewport' content='width=device-width, inital-scale=1' />
       
     </Head>
