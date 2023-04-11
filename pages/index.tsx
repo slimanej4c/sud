@@ -47,40 +47,46 @@ export default function Home()  {
         content='Home page for this auth tutorial on httpOnly cookies with json web tokens'
     >
         <div className='home-all'>
-          <div className='home-part1'>
-                <div className='home-presentation'>
-                <div className='presentation-title'>
-                        <h1>SOLIDARITE SUD</h1>
-                        <p >
-                        Ensemble, nous avons le<br/>
-                              pouvoir de changer des vie
-                            </p>
-                    </div>
-                  <div   className="presentation-img">
-                          <AnimatePresence>
-                          <motion.div
-                        className="presentation-img1"
-                        style={{backgroundImage: `url(${images[currentImage]})`}}
-                        variants={imageVariants}
-                        initial="initial"
-                        animate="animate"
-                        exit="exit"
-                        key={currentImage}
-                      /> 
-                      </AnimatePresence>
-                </div>
-                    <div className='presentation-aprops'>
-                            <h1>APROPS</h1>
+          <div className='home-all-part'>
+                <div className='home-part1'>
+                  <div className='home-part1-1'>
+
+                  
+                        <div className='presentation-title'>
+                                <h1>SOLIDARITE SUD</h1>
                                 <p >
-                                Soladirité est une association à but non lucratif qui travaille pour améliorer la vie des enfants en difficulté.
-                                Notre objectif est d'aider les enfants à travers divers programmes tels que l'aide alimentaire, l'accès à l'eau potable,
-                                  l'éducation et la santé. Nous travaillons avec des partenaires locaux pour nous assurer que nos projets ont un impact positif 
-                                  et durable sur les communautés que nous aidons. Nous croyons que chaque enfant mérite une chance de réussir, et nous sommes déterminés à faire notre part pour y parvenir. 
-                                Rejoignez-nous dans notre mission pour faire une différence dans la vie des enfants du monde entier
+                                Ensemble, nous avons le<br/>
+                                      pouvoir de changer des vie
                                     </p>
-                        
-                    </div>
-                    </div>
+                            </div>
+                          <div   className="presentation-img">
+                                  <AnimatePresence>
+                                  <motion.div
+                                className="presentation-sous-img"
+                                style={{backgroundImage: `url(${images[currentImage]})`}}
+                                variants={imageVariants}
+                                initial="initial"
+                                animate="animate"
+                                exit="exit"
+                                key={currentImage}
+                              /> 
+                              </AnimatePresence>
+                        </div>
+                  </div>
+                  <div className='home-part1-2'>
+                        <div className='presentation-aprops'>
+                                <h1>APROPS</h1>
+                                    <p >
+                                    Soladirité est une association à but non lucratif qui travaille pour améliorer la vie des enfants en difficulté.
+                                    Notre objectif est d'aider les enfants à travers divers programmes tels que l'aide alimentaire, l'accès à l'eau potable,
+                                      l'éducation et la santé. Nous travaillons avec des partenaires locaux pour nous assurer que nos projets ont un impact positif 
+                                      et durable sur les communautés que nous aidons. Nous croyons que chaque enfant mérite une chance de réussir, et nous sommes déterminés à faire notre part pour y parvenir. 
+                                    Rejoignez-nous dans notre mission pour faire une différence dans la vie des enfants du monde entier
+                                        </p>
+                            
+                        </div>
+                  </div>
+               </div>
                <div className='home-part2'>
 
                           

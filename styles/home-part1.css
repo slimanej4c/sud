@@ -1,0 +1,229 @@
+/* Styles for the 'home-all' container */
+.home-all {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+  }
+  
+  /* Styles for the 'home-all-part' container */
+  .home-all-part {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+  }
+  
+  /* Styles for the 'home-part1' container */
+  .home-part1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+  
+  }
+  
+  /* Styles for the 'home-part1-1' container */
+  .home-part1-1 {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 600px;
+    
+  }
+  
+  /* Styles for the 'presentation-title' container */
+  .presentation-title {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    width: 50%;
+   
+  }
+  
+  .presentation-title h1 {
+    font-size: 4rem;
+    
+  }
+  
+  .presentation-title p {
+    font-size: 2rem;
+    margin-top: -1rem;
+  
+  }
+  
+  /* Styles for the 'presentation-img' container */
+  .presentation-img {
+   
+     position: relative;
+    display: flex;
+    flex-direction: row;
+    object-fit: cover;
+    width:70%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+   
+  }
+  
+  .presentation-sous-img {
+
+   
+     background-size: contain;
+     background-position: center center;
+     width: 100%;
+     height: 100%;
+     position: absolute;
+     top: 0;
+     left: 0;
+     background-repeat: no-repeat;
+     object-fit: cover;
+  
+  }
+  
+  /* Styles for the 'home-part1-2' container */
+  .home-part1-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+  }
+  
+  /* Styles for the 'presentation-aprops' container */
+  .presentation-aprops {
+    text-align: center;
+  }
+  
+  .presentation-aprops h1 {
+    font-size: 2.5rem;
+   
+  }
+  
+  .presentation-aprops p {
+    font-size: 1.5rem;
+    margin-top: -1rem;
+
+  }
+
+  @media screen and (max-width: 1100px) {
+    .home-part1-1 {
+       
+        height: 500px;
+        
+      }
+      .presentation-title h1 {
+        font-size: 3rem;
+        
+      }
+      
+      .presentation-title p {
+        font-size: 1.5rem;
+        margin-top: -1rem;
+      
+      }
+      .presentation-aprops h1 {
+        font-size: 2rem;
+       
+      }
+      
+      .presentation-aprops p {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+
+  }
+
+  @media screen and (max-width:750px) {
+    .home-part1-1 {
+     
+        flex-direction: column;
+      
+        height: 800px;
+        
+      }
+      
+      /* Styles for the 'presentation-title' container */
+      .presentation-title {
+      
+        width: 100%;
+        height: 20%;
+       
+      }
+      
+      .presentation-title h1 {
+        font-size: 2.5rem;
+        
+      }
+      
+      .presentation-title p {
+        font-size: 1.5rem;
+        margin-top: -1rem;
+      
+      }
+      
+      /* Styles for the 'presentation-img' container */
+      .presentation-img {
+       
+        height: 80%;
+        width: 100%;
+     
+      }
+      
+      .presentation-sous-img {
+    
+       
+      
+      
+      }
+  }
+  
+  
+  @media screen and (max-width:750px) {
+    .home-part1-1 { 
+        height: 400px;
+        
+      }
+      
+      /* Styles for the 'presentation-title' container */
+      .presentation-title {
+      
+      }
+      
+      .presentation-title h1 {
+        font-size: 2rem;
+        
+      }
+      
+      .presentation-title p {
+        font-size: 1rem;
+        margin-top: -1rem;
+      
+      }
+      
+      /* Styles for the 'presentation-img' container */
+      .presentation-img {
+       
+        height: 80%;
+        width: 100%;
+     
+      }
+      
+      .presentation-sous-img {
+    
+       
+      
+      
+      }
+  }
