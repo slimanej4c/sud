@@ -257,13 +257,13 @@
        
         font-size: 1em;
         left: 5%;
-        top:25%;
+        top:30%;
       }
      .next {
        
         font-size: 1em;
         right: 5%;
-        top:25%;
+        top:30%;
       }
       .home-part3-button {
         position: absolute;
@@ -272,7 +272,7 @@
        
       }.home-part3-3-index{
       position: absolute;
-      top:35%;
+      top:40%;
     }
    
 
