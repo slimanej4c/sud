@@ -146,9 +146,9 @@ image:"/static/images/child2.png"}
         y: 0,
         transition: {
           duration: 0.75,
-          ease: [0.6, 0.01, -0.05, 0.9], // utiliser un tableau de nombres
+          //ease: [0.6, 0.01, -0.05, 0.9], // utiliser un tableau de nombres
           // ou
-        
+          ease: (t) => t * t, // utiliser une fonction
         },
       },
     };
