@@ -1,12 +1,12 @@
 :root {
   
  margin: auto; 
- --navbar_color:#424223;
+ --navbar_color:#1b1200;
  --navbar_mobile_color:#424223;
- --navbar_mobile_click:#deffe2;
- --mather-color:#20DF86;
+ --navbar_mobile_click:#cbe200;
+ --mather-color:#5a6f43;
  --title-color:#FF6B09;
- --aprops-color:#050900 ;
+ --aprops-color:#e6e6e6 ;
  --mession-color:rgb(231, 113, 35,0.5) ;
 }
 @font-face {
