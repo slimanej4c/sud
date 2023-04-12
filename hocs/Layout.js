@@ -46,9 +46,15 @@ const itemVariants = {
   },
 };
 const logoVariants = {
-  hover: {
-    rotate: [0, 180, -180, 0],
-    transition: { duration: 2 },
+  rotate: {
+    transform: "rotate(360deg)",
+    transition: {
+      duration: 1,
+      repeat: Infinity,
+      repeatDelay: 15,
+      ease: "linear",
+    
+    },
   },
 };
 const clicked =()=>{
@@ -117,7 +123,7 @@ const Nav=()=>{
            
      {Nav()}
 
-     <motion.div className="nav-logo" variants={logoVariants} animate="hover">
+     <motion.div className="nav-logo" animate="rotate" variants={logoVariants}>
         <Image src={"/static/images/Logo.png"} alt="logo_nav" width={60} height={60} />
       </motion.div>
             <div className="layout-nav-mobile">

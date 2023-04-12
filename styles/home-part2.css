@@ -25,8 +25,8 @@
 }
 .messions-title h1{
     font-size:70px;
-
-  
+    font-family:inika_bold;
+    text-decoration: underline;
 }
 .messions-type{
 
@@ -48,21 +48,23 @@
     background-color: var(--mession-color);
     width: 30%;
     height: 200px;
-  
+    object-fit: contain;
+    background-size: cover;
+    background-position: center center;
     border-radius: 20px;
-    box-shadow: 2px 2px 2px 0px rgb(186, 235, 142);
+    box-shadow: 2px 6px 8px 0px rgb(22, 31, 13);
 
  
 }
 .mession h1{
     text-align: center;
-  
+    font-family:inika_bold;
  
 }
 .mession p{
    text-align: center;
    margin-top: -1rem;
-
+   font-family:inika_reg;
  
 }
 

@@ -6,8 +6,8 @@ import { useState, useEffect } from "react";
 const images = [{'image': '/static/images/children_home1.jpg', 'color': '#14162F', 'id': 1 ,'fcolor':"#E0A200"},
  {'image': '/static/images/child4.png', 'color': 'black', 'id': 2,'fcolor':"#FF6B09"},
   {'image': '/static/images/hands-home.png', 'color': '#B36330', 'id': 3,'fcolor':"#00FFD6"}]
-const titles = [  {"title": "SOLIDARITE SUD", "text": "Ensemble, nous avons le pouvoir de changer des vies"},  {"title": "AGIR ENSEMBLE", "text": "Ensemble, nous sommes plus forts pour relever les défis"},  {"title": "CONSTRUIRE L'AVENIR", "text": "Ensemble, nous pouvons bâtir un monde meilleur"}]
-
+const titles = [ {fr: [{"title": "SOLIDARITE SUD", "text": "Ensemble, nous avons le pouvoir de changer des vies"},  {"title": "AGIR ENSEMBLE", "text": "Ensemble, nous sommes plus forts pour relever les défis"},  {"title": "CONSTRUIRE L'AVENIR", "text": "Ensemble, nous pouvons bâtir un monde meilleur"}]}]
+const aprops=[{fr:{"title":"APROPS","text":"  Soladirité est une association à but non lucratif qui travaille pour améliorer la vie des enfants en difficulté.Notre objectif est d'aider les enfants à travers divers programmes tels que l'aide alimentaire, l'accès à l'eau potable,l'éducation et la santé. Nous travaillons avec des partenaires locaux pour nous assurer que nos projets ont un impact positif et durable sur les communautés que nous aidons. Nous croyons que chaque enfant mérite une chance de réussir, et nous sommes déterminés à faire notre part pour y parvenir. Rejoignez-nous dans notre mission pour faire une différence dans la vie des enfants du monde entier"}}]
 
 export default function Home()  {
 
@@ -19,35 +19,35 @@ export default function Home()  {
     const [y_exit_image, sety_exit_image] = useState('0%');
     const [stop_auto, setstop_auto] = useState(true);
     
-    const messions=[{id:1,title:'Aide alimentaire',text:"Nous fournissons des repas nutritifs aux enfants en situation demalnutrition dans les communautéslocales, afin de leur assurer une alimentation adéquatepour leur développement"},
-    {id:2,title:"Accès à l'eau potable",text:"Nous travaillons pour améliorer l'accès à l'eau potable dans les régions où l'eau est rare ou contaminée, en installant des puits, des systèmes de filtration ou en formant des personnes pour gérer les ressources en eau"},
-    {id:3,title:'Santé',text:"Nous travaillons pour améliorer l'accès aux soins de santé, en offrant des soins médicaux gratuits ou à faible coût, en organisant des campagnes de sensibilisation à la santé et en formant des professionnels de la santé locaux"}
-]
-const events=[{id:1,title:'soirée caritative pour collecter des fonds',text:"L'association de solidarité JKL organise une soirée caritative pour collecter des fonds en faveur de leur programme d'aide alimentaire pour les personnes les plus vulnérables de notre communauté.L'événement aura lieu le samedi 10 juillet au centre-ville. La soirée débutera par un cocktail de bienvenue suivi d'un dîner préparé par des chefs locaux renommés. Les participants pourront également profiter de la musique live, de divertissements et de jeux pour gagner des prix tout au long de la soirée.Des bénévoles de l'association seront présents pour expliquer les détails du programme d'aide alimentaire et comment les fonds collectés lors de la soirée seront utilisés pour aider les personnes dans le besoin.Les billets pour l'événement sont en vente dès maintenant et toutes les recettes iront directement à l'association JKL pour financer leur programme d'aide alimentaire. C'est une excellente occasion de profiter d'une soirée agréable tout en faisant une différence dans la vie des personnes les plus vulnérables de notre communauté.",
+    const messions=[{fr:[{id:1,title:'Aide alimentaire',text:"Nous fournissons des repas nutritifs aux enfants en situation demalnutrition dans les communautéslocales, afin de leur assurer une alimentation adéquatepour leur développement",image:'/static/images/children_home1.jpg'},
+    {id:2,title:"Accès à l'eau potable",text:"Nous travaillons pour améliorer l'accès à l'eau potable dans les régions où l'eau est rare ou contaminée, en installant des puits, des systèmes de filtration ou en formant des personnes pour gérer les ressources en eau",image:'/static/images/children_home1.jpg'},
+    {id:3,title:'Santé',text:"Nous travaillons pour améliorer l'accès aux soins de santé, en offrant des soins médicaux gratuits ou à faible coût, en organisant des campagnes de sensibilisation à la santé et en formant des professionnels de la santé locaux",image:'/static/images/children_home1.jpg'}
+    ]}]
+const events=[{fr:[{id:1,title:'soirée caritative pour collecter des fonds',text:"L'association de solidarité JKL organise une soirée caritative pour collecter des fonds en faveur de leur programme d'aide alimentaire pour les personnes les plus vulnérables de notre communauté.L'événement aura lieu le samedi 10 juillet au centre-ville. La soirée débutera par un cocktail de bienvenue suivi d'un dîner préparé par des chefs locaux renommés. Les participants pourront également profiter de la musique live, de divertissements et de jeux pour gagner des prix tout au long de la soirée.Des bénévoles de l'association seront présents pour expliquer les détails du programme d'aide alimentaire et comment les fonds collectés lors de la soirée seront utilisés pour aider les personnes dans le besoin.Les billets pour l'événement sont en vente dès maintenant et toutes les recettes iront directement à l'association JKL pour financer leur programme d'aide alimentaire. C'est une excellente occasion de profiter d'une soirée agréable tout en faisant une différence dans la vie des personnes les plus vulnérables de notre communauté.",
 image:"/static/images/event1.png"},
 {id:2,title:"Accès à l'eau potable",text:"Nous travaillons pour améliorer l'accès à l'eau potable dans les régions où l'eau est rare ou contaminée, en installant des puits, des systèmes de filtration ou en formant des personnes pour gérer les ressources en eau",
 image:"/static/images/child2.png"},
 {id:3,title:'Santé',text:"Nous travaillons pour améliorer l'accès aux soins de santé, en offrant des soins médicaux gratuits ou à faible coût, en organisant des campagnes de sensibilisation à la santé et en formant des professionnels de la santé locaux",
 image:"/static/images/child2.png"}
-]
+]}]
   
   const change_event = (myParam) => {
     setstop_auto(false)
      if (myParam==="next"){
-      { currentEvent===events.length-1 ? setcurrentEvent(0)   :  setcurrentEvent(currentEvent+1)}
+      { currentEvent===events[0]['fr'].length-1 ? setcurrentEvent(0)   :  setcurrentEvent(currentEvent+1)}
       sety_init('100%')
       sety_init_image('-100%')
     
      }
      else{
-      { currentEvent===0 ?  setcurrentEvent(events.length-1)  : setcurrentEvent(currentEvent-1)}
+      { currentEvent===0 ?  setcurrentEvent(events[0]['fr'].length-1)  : setcurrentEvent(currentEvent-1)}
    
       sety_init('-100%')
       sety_init_image('100%')
     
      }
   
-     console.log(currentEvent,myParam)
+     console.log(currentEvent,myParam,'hi')
   };
     useEffect(() => {
       const interval = setInterval(() => {
@@ -60,7 +60,7 @@ image:"/static/images/child2.png"}
       const interval = setInterval(() => {
      
       if (stop_auto){
-        { currentEvent===events.length-1 ? setcurrentEvent(0)   :  setcurrentEvent(currentEvent+1)}
+        { currentEvent===events[0]['fr'].length-1 ? setcurrentEvent(0)   :  setcurrentEvent(currentEvent+1)}
         sety_init('100%')
       sety_init_image('-100%')
       }
@@ -138,6 +138,15 @@ image:"/static/images/child2.png"}
         },
       },
     };
+    const titleVariants2 = {
+      hidden: { opacity: 0 },
+      visible: {
+        opacity: 0.9,
+        transition: {
+          staggerChildren: 0.009,
+        },
+      },
+    };
   
     const letterVariants = {
       hidden: { opacity: 0, y: 50 },
@@ -145,10 +154,48 @@ image:"/static/images/child2.png"}
         opacity: 1,
         y: 0,
         transition: {
-          duration: 0.75,
+          duration: 0.5,
           //ease: [0.6, 0.01, -0.05, 0.9], // utiliser un tableau de nombres
           // ou
           ease: (t) => t * t, // utiliser une fonction
+        },
+      },
+    };
+  
+    const messionVariants = {
+      hidden: {  opacity:0 },
+      visible: {
+        
+        opacity:1 ,
+        transition: {
+          
+          duration: 0,
+          type: "spring",
+          stiffness: 100,
+         
+          mass: 0.5,
+          damping: 10,
+          staggerChildren: 0.1,
+          delayChildren: 0.5,
+        },
+      },
+    };
+    
+    const mession_itemVariants = {
+      hidden: { x: "-200%", opacity: 0.5 },
+      visible: {
+        x: 0,
+        opacity: 1,
+        transition: {
+         
+          duration: 3,
+          
+          type: "spring",
+          stiffness: 100,
+          mass: 0.5,
+          damping: 10,
+          staggerChildren: 0.1,
+          delayChildren: 0.5,
         },
       },
     };
@@ -167,13 +214,13 @@ image:"/static/images/child2.png"}
                   <div className="presentation-title"  >
                   <AnimatePresence  key={currentImage}>
                             <motion.h1 variants={titleVariants} initial="hidden" animate="visible" >
-                              {Array.from(titles[currentImage].title).map((letter) => (
+                              {Array.from(titles[0]["fr"][currentImage].title).map((letter) => (
                                 <motion.span variants={letterVariants}>{letter}</motion.span>
                               ))}
                             </motion.h1>
                             <motion.p variants={titleVariants} initial="hidden" animate="visible" >
                               
-                              {Array.from(titles[currentImage].text).map((letter) => (
+                              {Array.from(titles[0]["fr"][currentImage].text).map((letter) => (
                                 <motion.span variants={letterVariants}>{letter}</motion.span>
                               ))}
                             </motion.p>
@@ -195,14 +242,17 @@ image:"/static/images/child2.png"}
                   </div>
                   <div className='home-part1-2'>
                         <div className='presentation-aprops'>
-                                <h1>APROPS</h1>
-                                    <p >
-                                    Soladirité est une association à but non lucratif qui travaille pour améliorer la vie des enfants en difficulté.
-                                    Notre objectif est d'aider les enfants à travers divers programmes tels que l'aide alimentaire, l'accès à l'eau potable,
-                                      l'éducation et la santé. Nous travaillons avec des partenaires locaux pour nous assurer que nos projets ont un impact positif 
-                                      et durable sur les communautés que nous aidons. Nous croyons que chaque enfant mérite une chance de réussir, et nous sommes déterminés à faire notre part pour y parvenir. 
-                                    Rejoignez-nous dans notre mission pour faire une différence dans la vie des enfants du monde entier
-                                        </p>
+                             
+                                <motion.h1 variants={titleVariants} initial="hidden" animate="visible" >
+                              {Array.from(aprops[0].fr.title).map((letter) => (
+                                <motion.span variants={letterVariants}>{letter}</motion.span>
+                              ))}
+                            </motion.h1>
+                            <motion.p variants={titleVariants2} initial="hidden" animate="visible" >
+                              {Array.from(aprops[0].fr.text).map((letter) => (
+                                <motion.span variants={letterVariants}>{letter}</motion.span>
+                              ))}
+                            </motion.p>
                             
                         </div>
                   </div>
@@ -215,19 +265,26 @@ image:"/static/images/child2.png"}
                               <h1>Messions</h1>
                       </div>
                       
-                      <div className='messions-type'>
+                      <motion.div className='messions-type' 
+                      variants={messionVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      >
                         {
-                          messions.map((items=>{
+                          messions[0]['fr'].map((items=>{
                             return(
-                              <div className='mession' key={items.id}>
+                              <motion.div className='mession' key={items.id}
+                               variants={mession_itemVariants}
+                              // style={{backgroundImage: `url(${items.image})` }}
+                      >
                                 <h1>{items.title}</h1>
                                 <p>{items.text}</p>
-                              </div>
+                              </motion.div>
                             )
                           }))
                         }
 
-                      </div>
+                      </motion.div>
 
                     </div>
               </div>
@@ -242,7 +299,7 @@ image:"/static/images/child2.png"}
                   <div className='home-part3-2'>
                           <AnimatePresence key={currentEvent}>
                               <motion.div className='home-part3-2-image'
-                                style={{backgroundImage: `url(${events[currentEvent].image})`}}
+                                style={{backgroundImage: `url(${events[0]["fr"][currentEvent].image})`}}
                                 variants={image_eventVariants}
                                 initial="initial"
                                 animate="animate"
@@ -266,16 +323,16 @@ image:"/static/images/child2.png"}
                                   <div className='home-part3-2-text-div'>
                                   
                                         <h1>
-                                        {events[currentEvent].title}
+                                        {events[0]['fr'][currentEvent].title}
                                         </h1>
                                         <p>
-                                          {events[currentEvent].text}
+                                          {events[0]['fr'][currentEvent].text}
                                         </p>
                                         </div>
                                  
                                 </motion.div>
                           </AnimatePresence>
-                          <div className='home-part3-help1'   style={{backgroundImage: `url(${events[currentEvent].image})`}}>
+                          <div className='home-part3-help1'   style={{backgroundImage: `url(${events[0]['fr'][currentEvent].image})`}}>
                              
 
                           </div>
@@ -283,17 +340,17 @@ image:"/static/images/child2.png"}
                           <div className='home-part3-help2'>
                                   
                                   <h1>
-                                  {events[currentEvent].title}
+                                  {events[0]['fr'][currentEvent].title}
                                   </h1>
                                   <p>
-                                    {events[currentEvent].text}
+                                    {events[0]['fr'][currentEvent].text}
                                   </p>
                           </div>
 
                   </div>
                   <div className='home-part3-3'>
                     <div className='home-part3-3-index'>
-                    {events.map((index)=>{
+                    {events[0]['fr'].map((index)=>{
                                 let backgroundColor = 'green';
                                 if (index.id ===currentEvent+1) {
                                   backgroundColor = '#B64D07';

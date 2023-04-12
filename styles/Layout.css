@@ -209,12 +209,12 @@ body {
       height: 100px;
     }
     @keyframes nav_mobile_opened{
-      from {width: 0%;height: 0px;}
-      to {width: 100%;height: 700px;}
+      from {width: 0%;height: 0px}
+      to {width: 100%;height: 700px}
     }
     @keyframes nav_mobile_closed{
-      from {width: 70%;height: 400px;}
-      to { width: 0%;height: 0px;}
+      from {width: 70%;height: 400px}
+      to { width: 0%;height: 0px}
     }
   
     @media screen and (max-width: 980px) {
@@ -227,7 +227,7 @@ body {
      }
   
   
-    @media screen and (max-width: 750px) {
+    @media screen and (max-width: 550px) {
     
       .menu-icon{
           position: fixed;
@@ -243,20 +243,21 @@ body {
       }
      .nav_opened{
      
-     
+      display: flex;
       position: fixed;
       width: 100%;
       height:700px;
       margin-top:0%;
       left: 0%;
-      background-color:  var(--navbar_color);
+      background-color:  var(--navbar_mobile_ul);
       animation-name: nav_mobile_opened;
       animation-duration: 0.5s;
       visibility: visible;
-      display: flex;
- 
+      overflow: hidden;
+      
       z-index: 10;
       justify-content: center;
+      align-items: center;
   
      }
      .nav_closed{
@@ -265,7 +266,7 @@ body {
       height:0%;
       margin-top:0%;
       left: 0%;
-      background-color:  var(--navbar_color);
+      background-color:  var(--navbar_mobile_ul);
       animation-name: nav_mobile_closed;
       animation-duration: 0.5s;
       visibility: visible;
@@ -276,10 +277,11 @@ body {
      .layout-nav-mobile{
       position: fixed;
       top: 0%;
-      background-color: rgb(255, 107, 9,0.1);
+      background-color:  var(--mather-color);
       height: 60px;
       width: 100%;
      z-index: 30;
+     overflow: hidden;
     }
     
      .nav-logo{
@@ -293,18 +295,19 @@ body {
       z-index: 35;
     }
     .nav-ul{
-      display: flex;
+ 
       flex-direction: column;
-      position: absolute;
-      justify-content: center;
-   
+       position: absolute;
+      padding-top: 0;
+      top: 0%;
+      left: 8%;
       width: 50%;
-      top: 15%;
-      right: 20%;
-      left: 20%;
+      height: 60%;
+      border-radius: 100px;
+      
     }
     .nav-item{
-     
+      
      
   
     }
