@@ -4,12 +4,53 @@ import React, { Component ,useState,useEffect} from 'react'
 import Link from 'next/link'
 import Footer from "../components/Footer"
 import Image from 'next/image';
+import { motion } from "framer-motion";
 const Layout =(props) =>{
 const[show_nav,setshow_nav]=useState(false)
 const [open, setOpen] = useState(false);
 const [nav_closed, setnav_closed] = useState("layout-nav");
 const [nav_opened, setnav_opened] = useState("layout-nav");
 
+const navbarVariants = {
+  hidden: { y: "-100%" },
+  visible: {
+    y: 0,
+    transition: {
+     
+      duration: 0.75,
+      type: "spring",
+      stiffness: 100,
+      mass: 0.5,
+      damping: 10,
+      staggerChildren: 0.1,
+      delayChildren: 0.5,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { y: "-200%", opacity: 0.5 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+     
+      duration: 0.75,
+      type: "spring",
+      stiffness: 100,
+      mass: 0.5,
+      damping: 10,
+      staggerChildren: 0.1,
+      delayChildren: 0.5,
+    },
+  },
+};
+const logoVariants = {
+  hover: {
+    rotate: [0, 180, -180, 0],
+    transition: { duration: 2 },
+  },
+};
 const clicked =()=>{
   {setOpen(!open)}
   setshow_nav(!show_nav)
@@ -22,9 +63,9 @@ const MenuIcon = () => {
 
   return (
     <div className={`menu-icon ${open ? "open" : ""}`} onClick={() =>clicked()}>
-      <div className="bar"></div>
+      <div className="bar line1"></div>
       <div className="bar line2"></div>
-      <div className="bar"></div>
+      <div className="bar line3"></div>
     </div>
   );
 };
@@ -37,25 +78,24 @@ const Nav=()=>{
   return(
     <nav className={show_nav ? nav_opened :nav_closed}>
             
-            <div className='nav-ul'>
-              {
-                link_array.map((items)=>{
-               
-                    return(
-                      <div className={items.title==="Nous contacter" ? contact_div :other_div }>
-                          <li className='nav-item'  onClick={null}>
-                          <Link className="nav-link" href={items.to} onClick={()=> clicked()}>{items.title}</Link>
-                        
-                          </li>
-                      </div>
-                  )
-
-                 
-                  
-                })
-              }
-            
-            </div>
+            <motion.ul
+      className="nav-ul"
+      variants={navbarVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      {link_array.map((item) => (
+        <motion.li
+          key={item.title}
+          variants={itemVariants}
+          className={item.title === "Nous contacter" ? contact_div : other_div}
+        >
+          <Link className="nav-link" href={item.to} onClick={() => clicked()}>
+            {item.title}
+          </Link>
+        </motion.li>
+      ))}
+    </motion.ul>
       
       </nav>
   )
@@ -77,10 +117,9 @@ const Nav=()=>{
            
      {Nav()}
 
-          <div className='nav-logo' >
-                          
-                                <Image src={"/static/images/Logo.png"} alt="logo_nav" width={60} height={60} />
-            </div>
+     <motion.div className="nav-logo" variants={logoVariants} animate="hover">
+        <Image src={"/static/images/Logo.png"} alt="logo_nav" width={60} height={60} />
+      </motion.div>
             <div className="layout-nav-mobile">
                 
                       {MenuIcon()}

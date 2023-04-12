@@ -20,6 +20,14 @@ body {
     visibility: hidden;
   }
   
+  @keyframes nav_mobile_expand{
+    from {width: 0%;}
+    to {width: 100%}
+  }
+  @keyframes nav_mobile_expand2{
+    from {width: 0%;}
+    to {width: 60%}
+  }
   .bar {
   
     width: 100%;
@@ -27,10 +35,21 @@ body {
     background-color: var(--navbar_mobile_click);
     transition: transform 0.3s ease-in-out;
     border-radius: 20px;
+    
+  }
+  .line1 {
+    animation-name: nav_mobile_expand;
+    animation-duration: 1s;
+  }
+  .line3{
+    animation-name: nav_mobile_expand;
+    animation-duration: 1s;
   }
   .line2{
     float: left;
     width: 60%;
+    animation-name: nav_mobile_expand2;
+    animation-duration: 1s;
   }
   .menu-icon.open {
     justify-content: center;
@@ -101,8 +120,9 @@ body {
     }
     .nav-ul{
       display: flex;
-   
-      
+      justify-content: center;
+      align-items: center;
+      height: 100%;
     }
     .nav-item{
       list-style: none;

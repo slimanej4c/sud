@@ -132,7 +132,7 @@ image:"/static/images/child2.png"}
     const titleVariants = {
       hidden: { opacity: 0 },
       visible: {
-        opacity: 1,
+        opacity: 0.9,
         transition: {
           staggerChildren: 0.05,
         },
@@ -164,7 +164,7 @@ image:"/static/images/child2.png"}
                   <div className='home-part1-1'    style={{ backgroundColor:`${images[currentImage].color}`,color:`${images[currentImage].fcolor}` , transition: 'background-color 3s ease'}}>
 
                   
-                  <div className="presentation-title" style={{opacity:1}} >
+                  <div className="presentation-title"  >
                   <AnimatePresence  key={currentImage}>
                             <motion.h1 variants={titleVariants} initial="hidden" animate="visible" >
                               {Array.from(titles[currentImage].title).map((letter) => (
