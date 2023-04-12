@@ -3,7 +3,11 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from "framer-motion"
 import { useState, useEffect } from "react";
 
-const images = [ "/static/images/child2.png", "/static/images/child4.png"];
+const images = [{'image': '/static/images/children_home1.jpg', 'color': '#14162F', 'id': 1 ,'fcolor':"#E0A200"},
+ {'image': '/static/images/child4.png', 'color': 'black', 'id': 2,'fcolor':"#FF6B09"},
+  {'image': '/static/images/hands-home.png', 'color': '#B36330', 'id': 3,'fcolor':"#00FFD6"}]
+const titles = [  {"title": "SOLIDARITE SUD", "text": "Ensemble, nous avons le pouvoir de changer des vies"},  {"title": "AGIR ENSEMBLE", "text": "Ensemble, nous sommes plus forts pour relever les défis"},  {"title": "CONSTRUIRE L'AVENIR", "text": "Ensemble, nous pouvons bâtir un monde meilleur"}]
+
 
 export default function Home()  {
 
@@ -51,7 +55,7 @@ image:"/static/images/child2.png"}
        
       }, 8000);
       return () => clearInterval(interval);
-    }, []);
+    }, [currentImage ]);
     useEffect(() => {
       const interval = setInterval(() => {
      
@@ -125,6 +129,30 @@ image:"/static/images/child2.png"}
         },
       },
     };
+    const titleVariants = {
+      hidden: { opacity: 0 },
+      visible: {
+        opacity: 1,
+        transition: {
+          staggerChildren: 0.05,
+        },
+      },
+    };
+  
+    const letterVariants = {
+      hidden: { opacity: 0, y: 50 },
+      visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+          duration: 0.75,
+          ease: [0.6, 0.01, -0.05, 0.9], // utiliser un tableau de nombres
+          // ou
+          ease: (t) => t * t, // utiliser une fonction
+        },
+      },
+    };
+    
     return(
     <Layout
         title='httpOnly Auth | Home'
@@ -133,21 +161,29 @@ image:"/static/images/child2.png"}
         <div className='home-all'>
           <div className='home-all-part'>
                 <div className='home-part1'>
-                  <div className='home-part1-1'>
+                  <div className='home-part1-1'    style={{ backgroundColor:`${images[currentImage].color}`,color:`${images[currentImage].fcolor}` , transition: 'background-color 3s ease'}}>
 
                   
-                        <div className='presentation-title'>
-                                <h1>SOLIDARITE SUD</h1>
-                                <p >
-                                Ensemble, nous avons le<br/>
-                                      pouvoir de changer des vie
-                                    </p>
-                            </div>
+                  <div className="presentation-title" style={{opacity:1}} >
+                  <AnimatePresence  key={currentImage}>
+                            <motion.h1 variants={titleVariants} initial="hidden" animate="visible" >
+                              {Array.from(titles[currentImage].title).map((letter) => (
+                                <motion.span variants={letterVariants}>{letter}</motion.span>
+                              ))}
+                            </motion.h1>
+                            <motion.p variants={titleVariants} initial="hidden" animate="visible" >
+                              
+                              {Array.from(titles[currentImage].text).map((letter) => (
+                                <motion.span variants={letterVariants}>{letter}</motion.span>
+                              ))}
+                            </motion.p>
+                  </AnimatePresence>
+    </div>
                           <div   className="presentation-img">
                                   <AnimatePresence>
                                   <motion.div
                                 className="presentation-sous-img"
-                                style={{backgroundImage: `url(${images[currentImage]})`}}
+                                style={{backgroundImage: `url(${images[currentImage].image})` }}
                                 variants={imageVariants}
                                 initial="initial"
                                 animate="animate"

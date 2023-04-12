@@ -9,3 +9,11 @@
  --aprops-color:#050900 ;
  --mession-color:rgb(231, 113, 35,0.5) ;
 }
+@font-face {
+    font-family: inika_bold;
+    src: url('../public/static/fonts/Inika-Bold.ttf');
+      }
+@font-face {
+font-family: inika_reg;
+src: url('../public/static/fonts/Inika-Regular.ttf');
+    }

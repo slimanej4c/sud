@@ -26,6 +26,7 @@
     align-items: center;
     width: 100%;
     overflow: hidden;
+   
   
   }
   
@@ -36,11 +37,13 @@
     flex-direction: row;
     width: 100%;
     height: 600px;
+   
     
   }
   
   /* Styles for the 'presentation-title' container */
   .presentation-title {
+   position: absolute;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -48,17 +51,21 @@
     align-items: center;
     justify-items: center;
     width: 50%;
+    z-index: 2;
+    top:15%;
    
   }
   
   .presentation-title h1 {
     font-size: 4rem;
+    font-family:inika_bold;
     
   }
   
   .presentation-title p {
     font-size: 2rem;
     margin-top: -1rem;
+    font-family:inika_reg;
   
   }
   
@@ -68,11 +75,12 @@
      position: relative;
     display: flex;
     flex-direction: row;
-    object-fit: cover;
-    width:70%;
+    object-fit: contain;
+    width:100%;
     height: 100%;
     justify-content: center;
     align-items: center;
+    opacity: 0.5;
 
    
   }
@@ -80,7 +88,7 @@
   .presentation-sous-img {
 
    
-     background-size: contain;
+     background-size: cover;
      background-position: center center;
      width: 100%;
      height: 100%;
@@ -109,12 +117,13 @@
   
   .presentation-aprops h1 {
     font-size: 2.5rem;
-   
+    font-family:inika_bold;
   }
   
   .presentation-aprops p {
     font-size: 1.5rem;
     margin-top: -1rem;
+    font-family:inika_reg;
 
   }
 
@@ -177,7 +186,7 @@
       /* Styles for the 'presentation-img' container */
       .presentation-img {
         overflow-y: visible;
-        height: 80%;
+        height: 100%;
         width: 100%;
      
       }
@@ -217,7 +226,7 @@
       /* Styles for the 'presentation-img' container */
       .presentation-img {
        
-        height: 80%;
+        height: 100%;
         width: 100%;
      
       }
