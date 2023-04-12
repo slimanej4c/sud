@@ -228,15 +228,31 @@ image:"/static/images/child2.png"}
                                 }}
                                 >
                                   <div className='home-part3-2-text-div'>
+                                  
                                         <h1>
                                         {events[currentEvent].title}
                                         </h1>
                                         <p>
                                           {events[currentEvent].text}
                                         </p>
-                                  </div>
+                                        </div>
+                                 
                                 </motion.div>
                           </AnimatePresence>
+                          <div className='home-part3-help1'   style={{backgroundImage: `url(${events[currentEvent].image})`}}>
+                             
+
+                          </div>
+                          
+                          <div className='home-part3-help2'>
+                                  
+                                  <h1>
+                                  {events[currentEvent].title}
+                                  </h1>
+                                  <p>
+                                    {events[currentEvent].text}
+                                  </p>
+                          </div>
 
                   </div>
                   <div className='home-part3-3'>
@@ -261,6 +277,15 @@ image:"/static/images/child2.png"}
                         
 
                   </div>
+
+              </div>
+
+              <div className='home-part4'>
+                <div>
+                  <h1>
+                    sdfhskj dfhskjdfh skdfh skjdfhskdfh ssdfbsjhdfbshjfd
+                  </h1>
+                </div>
 
               </div>
                 
