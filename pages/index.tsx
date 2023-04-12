@@ -148,7 +148,7 @@ image:"/static/images/child2.png"}
           duration: 0.75,
           ease: [0.6, 0.01, -0.05, 0.9], // utiliser un tableau de nombres
           // ou
-          ease: (t) => t * t, // utiliser une fonction
+        
         },
       },
     };
