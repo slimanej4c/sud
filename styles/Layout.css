@@ -83,8 +83,49 @@ body {
   
   
     }
+    .radio-input .label input {
+      display: none;
+      position:relative;
+    }
     
-  
+    .radio-input {
+      position: fixed;
+      display: flex;
+      gap: 20px;
+      z-index: 40;
+      position: absolute;
+      right: 20px;
+      top: 10px;
+    }
+    
+    .radio-input .label {
+      display: flex;
+    }
+    
+    .radio-input .label .check {
+      color:rgb(78, 72, 72);
+      font-size: 12px;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: 0.3s;
+      border: 3px solid transparent;
+      box-shadow: 3px 3px 6px rgba(168, 72, 72, 0.5),
+       -1px -1px 4px rgba(255, 255, 255, 0.5);
+    }
+    
+    .radio-input .label input:checked + .check {
+      color:rgb(254, 254, 254);
+      box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5),
+       -1px -1px 4px rgba(255, 255, 255, 0.5),
+       inset 3px 3px 6px rgba(0, 0, 0, 0.5),
+       inset -1px -1px 4px rgba(255, 255, 255, 0.5);
+      transform: scale(1.1);
+    }
     .layout-nav {
      
       position: fixed;
@@ -217,17 +258,34 @@ body {
       to { width: 0%;height: 0px}
     }
   
-    @media screen and (max-width: 980px) {
-      .nav-link{margin:15px;font-size: 13px;letter-spacing:3px;}
+    @media screen and (max-width: 1040px) {
+      .nav-link{margin:10px;font-size: 12px;letter-spacing:2px;}
+      .radio-input {
+        right: 10px;
+        top: 15px;
+      }
+      .radio-input .label .check {
+        font-size: 10px;
+        width: 25px;
+        height: 25px;
+      }
      
      }
      @media screen and (max-width: 790px) {
       .nav-link{margin:8px;font-size: 11px;letter-spacing:2px;}
-  
+      .radio-input {
+        right: 4px;
+        top: 20px;
+      }
+      .radio-input .label .check {
+        font-size: 8px;
+        width: 20px;
+        height: 20px;
+      }
      }
   
   
-    @media screen and (max-width: 550px) {
+    @media screen and (max-width: 700px) {
     
       .menu-icon{
           position: fixed;
@@ -241,6 +299,16 @@ body {
           visibility: hidden;
           
       }
+      .radio-input {
+      
+        position: static;
+        padding-top: 0;
+        
+        width: 50%;
+        margin-top: -190%;
+        
+      }
+    
      .nav_opened{
      
       display: flex;
@@ -256,8 +324,7 @@ body {
       overflow: hidden;
       
       z-index: 10;
-      justify-content: center;
-      align-items: center;
+    
   
      }
      .nav_closed{

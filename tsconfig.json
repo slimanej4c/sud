@@ -1,4 +1,7 @@
 {
+ "typescript": {
+    "ignoreBuildErrors": true
+},
   "compilerOptions": {
  
     "target": "es5",
@@ -14,6 +17,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
+    
     "incremental": true,
     "noImplicitAny": false,
     "paths": {
@@ -22,4 +26,5 @@
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
+  
 }

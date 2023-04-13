@@ -2,11 +2,11 @@ import Layout from '../hocs/Layout'
 import Image from 'next/image';
 import { motion, AnimatePresence } from "framer-motion"
 import { useState, useEffect } from "react";
-
+import Cookies from "js-cookie";
 const images = [{'image': '/static/images/children_home1.jpg', 'color': '#14162F', 'id': 1 ,'fcolor':"#E0A200"},
  {'image': '/static/images/child4.png', 'color': 'black', 'id': 2,'fcolor':"#FF6B09"},
   {'image': '/static/images/hands-home.png', 'color': '#B36330', 'id': 3,'fcolor':"#00FFD6"}]
-const titles = [ {fr: [{"title": "SOLIDARITE SUD", "text": "Ensemble, nous avons le pouvoir de changer des vies"},  {"title": "AGIR ENSEMBLE", "text": "Ensemble, nous sommes plus forts pour relever les défis"},  {"title": "CONSTRUIRE L'AVENIR", "text": "Ensemble, nous pouvons bâtir un monde meilleur"}]}]
+const titles = [ {"FR": [{"title": "SOLIDARITE SUD", "text": "Ensemble, nous avons le pouvoir de changer des vies"},  {"title": "AGIR ENSEMBLE", "text": "Ensemble, nous sommes plus forts pour relever les défis"},  {"title": "CONSTRUIRE L'AVENIR", "text": "Ensemble, nous pouvons bâtir un monde meilleur"}]}]
 const aprops=[{fr:{"title":"APROPS","text":"  Soladirité est une association à but non lucratif qui travaille pour améliorer la vie des enfants en difficulté.Notre objectif est d'aider les enfants à travers divers programmes tels que l'aide alimentaire, l'accès à l'eau potable,l'éducation et la santé. Nous travaillons avec des partenaires locaux pour nous assurer que nos projets ont un impact positif et durable sur les communautés que nous aidons. Nous croyons que chaque enfant mérite une chance de réussir, et nous sommes déterminés à faire notre part pour y parvenir. Rejoignez-nous dans notre mission pour faire une différence dans la vie des enfants du monde entier"}}]
 
 export default function Home()  {
@@ -18,7 +18,10 @@ export default function Home()  {
     const [y_init_image, sety_init_image] = useState('100%');
     const [y_exit_image, sety_exit_image] = useState('0%');
     const [stop_auto, setstop_auto] = useState(true);
-    
+    const [lang, setlang] = useState<string>("FR");
+    const [titles_array, settitles_array] = useState(titles[lang]);
+    const languageCookie = Cookies.get("language");
+    console.log('cokies lang',languageCookie)
     const messions=[{fr:[{id:1,title:'Aide alimentaire',text:"Nous fournissons des repas nutritifs aux enfants en situation demalnutrition dans les communautéslocales, afin de leur assurer une alimentation adéquatepour leur développement",image:'/static/images/children_home1.jpg'},
     {id:2,title:"Accès à l'eau potable",text:"Nous travaillons pour améliorer l'accès à l'eau potable dans les régions où l'eau est rare ou contaminée, en installant des puits, des systèmes de filtration ou en formant des personnes pour gérer les ressources en eau",image:'/static/images/children_home1.jpg'},
     {id:3,title:'Santé',text:"Nous travaillons pour améliorer l'accès aux soins de santé, en offrant des soins médicaux gratuits ou à faible coût, en organisant des campagnes de sensibilisation à la santé et en formant des professionnels de la santé locaux",image:'/static/images/children_home1.jpg'}
@@ -214,13 +217,13 @@ image:"/static/images/child2.png"}
                   <div className="presentation-title"  >
                   <AnimatePresence  key={currentImage}>
                             <motion.h1 variants={titleVariants} initial="hidden" animate="visible" >
-                              {Array.from(titles[0]["fr"][currentImage].title).map((letter) => (
+                              {Array.from(titles[0][lang][currentImage].title).map((letter) => (
                                 <motion.span variants={letterVariants}>{letter}</motion.span>
                               ))}
                             </motion.h1>
                             <motion.p variants={titleVariants} initial="hidden" animate="visible" >
                               
-                              {Array.from(titles[0]["fr"][currentImage].text).map((letter) => (
+                              {Array.from(titles[0]['FR'][currentImage].text).map((letter) => (
                                 <motion.span variants={letterVariants}>{letter}</motion.span>
                               ))}
                             </motion.p>

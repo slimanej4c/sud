@@ -5,11 +5,28 @@ import Link from 'next/link'
 import Footer from "../components/Footer"
 import Image from 'next/image';
 import { motion } from "framer-motion";
+import Cookies from "js-cookie";
 const Layout =(props) =>{
 const[show_nav,setshow_nav]=useState(false)
 const [open, setOpen] = useState(false);
 const [nav_closed, setnav_closed] = useState("layout-nav");
 const [nav_opened, setnav_opened] = useState("layout-nav");
+
+
+const [selectedLanguage, setSelectedLanguage] = useState("FR");
+
+  const handleLanguageChange = (event) => {
+    const selectedLanguage = event.target.value;
+    setSelectedLanguage(selectedLanguage);
+    Cookies.set('language', selectedLanguage, { expires: 365 });
+  };
+
+  useEffect(() => {
+    const languageCookie = Cookies.get("language");
+    if (languageCookie) {
+      setSelectedLanguage(languageCookie);
+    }
+  }, []);
 
 const navbarVariants = {
   hidden: { y: "-100%" },
@@ -83,24 +100,56 @@ const Nav=()=>{
   const other_div="item-div"
   return(
     <nav className={show_nav ? nav_opened :nav_closed}>
-            
+
+<div className="radio-input">
+      <label className="label">
+        <input
+          type="radio"
+          name="radio"
+          value="FR"
+          checked={selectedLanguage === "FR"}
+          onChange={handleLanguageChange}
+        />
+        <span className="check">FR</span>
+      </label>
+      <label className="label">
+        <input
+          type="radio"
+          name="radio"
+          value="ENG"
+          checked={selectedLanguage === "ENG"}
+          onChange={handleLanguageChange}
+        />
+        <span className="check">ENG</span>
+      </label>
+      <label className="label">
+        <input
+          type="radio"
+          name="radio"
+          value="DE"
+          checked={selectedLanguage === "DE"}
+          onChange={handleLanguageChange}
+        />
+        <span className="check">DE</span>
+      </label>
+    </div>
             <motion.ul
-      className="nav-ul"
-      variants={navbarVariants}
-      initial="hidden"
-      animate="visible"
-    >
-      {link_array.map((item) => (
-        <motion.li
-          key={item.title}
-          variants={itemVariants}
-          className={item.title === "Nous contacter" ? contact_div : other_div}
-        >
-          <Link className="nav-link" href={item.to} onClick={() => clicked()}>
-            {item.title}
-          </Link>
-        </motion.li>
-      ))}
+                className="nav-ul"
+                variants={navbarVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                {link_array.map((item) => (
+                  <motion.li
+                    key={item.title}
+                    variants={itemVariants}
+                    className={item.title === "Nous contacter" ? contact_div : other_div}
+                  >
+                    <Link className="nav-link" href={item.to} onClick={() => clicked()}>
+                      {item.title}
+                    </Link>
+                  </motion.li>
+                ))}
     </motion.ul>
       
       </nav>
@@ -122,6 +171,8 @@ const Nav=()=>{
       
            
      {Nav()}
+
+  
 
      <motion.div className="nav-logo" animate="rotate" variants={logoVariants}>
         <Image src={"/static/images/Logo.png"} alt="logo_nav" width={60} height={60} />
