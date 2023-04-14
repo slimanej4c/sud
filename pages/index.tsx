@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 import {Set_cookies_redux } from '../Redux'
 
 
-import Cookies from "js-cookie";
+
 const images = [{'image': '/static/images/children_home1.jpg', 'color': '#14162F', 'id': 1 ,'fcolor':"#E0A200"},
  {'image': '/static/images/child4.png', 'color': 'black', 'id': 2,'fcolor':"#FF6B09"},
   {'image': '/static/images/hands-home.png', 'color': '#B36330', 'id': 3,'fcolor':"#00FFD6"}]
