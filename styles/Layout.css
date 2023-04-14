@@ -3,6 +3,15 @@ body {
     padding: 0px;
   
   }
+.layout-model{
+  width: 400px;
+  height: 300px;
+  position: fixed;
+  bottom: 1%;
+  left:1%;
+  background-color: aliceblue;
+  z-index: 30;
+}
   .menu-icon {
     width: 30px;
     height: 20px;

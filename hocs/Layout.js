@@ -6,28 +6,107 @@ import Footer from "../components/Footer"
 import Image from 'next/image';
 import { motion } from "framer-motion";
 import Cookies from "js-cookie";
+import { useRouter } from 'next/router';
+//import fs from 'fs';
+import { useSelector, useDispatch } from 'react-redux';
+import { Set_langue_redux } from '../Redux'
+import {Set_cookies_redux } from '../Redux'
+import { connect } from 'react-redux'
+import { Provider } from 'react-redux';
+import  { store ,wrapper ,store2 }  from '../Redux/store';
+
+import { PersistGate } from 'redux-persist/integration/react';
+import { persistReducer, persistStore } from 'redux-persist';
+
 const Layout =(props) =>{
+
 const[show_nav,setshow_nav]=useState(false)
 const [open, setOpen] = useState(false);
 const [nav_closed, setnav_closed] = useState("layout-nav");
 const [nav_opened, setnav_opened] = useState("layout-nav");
+const [refreshKey, setRefreshKey] = useState(0);
+const [per, setper] = useState(false);
+const [show_model, setshow_model] = useState(true);
+
+/* sync function readTextFile(filePath) {
+  try {
+    const fileContent = await fs.promises.readFile(filePath, 'utf-8');
+    console.log("fillleeee",fileContent);
+    console.log("fillleeee",fileContent);
+    console.log("fillleeee",fileContent);
+    if (fileContent==="yes"){
+      //setper(store)
+    }
+  } catch (error) {
+    console.error(error,"error.rrrrrrrrrrrrrrrrrrrrrr");
+    console.error(error,"error.rrrrrrrrrrrrrrrrrrrrrr");
+    console.error(error,"error.rrrrrrrrrrrrrrrrrrrrrr");
+    console.error(error,"error.rrrrrrrrrrrrrrrrrrrrrr");
+    console.error(error,"error.rrrrrrrrrrrrrrrrrrrrrr");
+  }
+}
+readTextFile('./hocs/log.txt') */
+const accept_cookies=(val)=>{
+  if(val){
+    Cookies.set('cok', true);
+    props.Set_cookies_redux(false)
+  }
+  else{
+    props.Set_cookies_redux(false)
+  }
+  
+}
+const router = useRouter();
 
 
-const [selectedLanguage, setSelectedLanguage] = useState("FR");
+
 
   const handleLanguageChange = (event) => {
-    const selectedLanguage = event.target.value;
-    setSelectedLanguage(selectedLanguage);
-    Cookies.set('language', selectedLanguage, { expires: 365 });
+   
+    props.Set_langue_redux(event.target.value)
+   
+    
   };
+try{
+  const cookieValue = Cookies.get('cok');
+  if (cookieValue){
+    {!per && setper(true)}
+  }
+  else{
+   { per && setper(false)}
+  }
+  console.log("js coookies" ,cookieValue)
+  console.log("js coookies" ,cookieValue)
+  console.log("js coookies" ,cookieValue)
+  console.log("js coookies" ,cookieValue)
+  console.log("js coookies" ,cookieValue)
+}
+catch{
 
+}
   useEffect(() => {
-    const languageCookie = Cookies.get("language");
-    if (languageCookie) {
-      setSelectedLanguage(languageCookie);
-    }
+    console.log("cokkies layout....................",props.langue,per)
+  
+   
+    
+   // props.Set_cookies_redux(true)
+ 
+
+   // props.cookies_accepted ? setper(persistStore (store)) :  setper(persistStore (store2))
+  
   }, []);
 
+  useEffect(() => {
+   
+  
+  
+  }, [props.langue]);
+  
+  useEffect(() => {
+   
+  
+  
+  }, [per]);
 const navbarVariants = {
   hidden: { y: "-100%" },
   visible: {
@@ -100,14 +179,14 @@ const Nav=()=>{
   const other_div="item-div"
   return(
     <nav className={show_nav ? nav_opened :nav_closed}>
-
+   
 <div className="radio-input">
       <label className="label">
         <input
           type="radio"
           name="radio"
           value="FR"
-          checked={selectedLanguage === "FR"}
+          checked={props.langue === "FR"}
           onChange={handleLanguageChange}
         />
         <span className="check">FR</span>
@@ -117,7 +196,7 @@ const Nav=()=>{
           type="radio"
           name="radio"
           value="ENG"
-          checked={selectedLanguage === "ENG"}
+          checked={props.langue === "ENG"}
           onChange={handleLanguageChange}
         />
         <span className="check">ENG</span>
@@ -127,7 +206,7 @@ const Nav=()=>{
           type="radio"
           name="radio"
           value="DE"
-          checked={selectedLanguage === "DE"}
+          checked={props.langue === "DE"}
           onChange={handleLanguageChange}
         />
         <span className="check">DE</span>
@@ -158,21 +237,14 @@ const Nav=()=>{
 
 
     return (
-  
-
+  <>
+    
+     
+      <PersistGate loading={null} persistor={per ? persistStore(store) :  persistStore(store2)}>
       
       <div className="layout-all">
-        {/** <div className='layout-lines' onClick={()=>setshow_nav(!show_nav)} >
-          <div className='layout-line line1'></div>
-          <div className='layout-line line2'></div>
-          <div className='layout-line line3'></div>
-      </div>*/}
-     
-      
-           
+       
      {Nav()}
-
-  
 
      <motion.div className="nav-logo" animate="rotate" variants={logoVariants}>
         <Image src={"/static/images/Logo.png"} alt="logo_nav" width={60} height={60} />
@@ -180,12 +252,17 @@ const Nav=()=>{
             <div className="layout-nav-mobile">
                 
                       {MenuIcon()}
-                    
                 
           </div>
   
      <div className='layout-header'>
-        <div className="layout-container">{props.children}
+        <div className="layout-container">
+          {props.children}
+          <div className={'layout-model'} style={{visibility: props.cookies_accepted ? "visible"  : "hidden"}}>
+                  <button className='home-part3-button prev' onClick={()=>accept_cookies(true)}>cokies</button>
+                  <button className='home-part3-button prev' onClick={()=>accept_cookies(false)}>no cokies</button>
+          </div>
+       
         
         </div>
      <Footer/>
@@ -193,10 +270,12 @@ const Nav=()=>{
       </div>
      
     </div>
-    
-     
-
+    </PersistGate>
+      
    
+  
+
+      </>
     )
   
 }
@@ -204,10 +283,24 @@ const Nav=()=>{
 
 
 
+const mapStateToProps = (state) => ({
+ 
+  langue:state.change_langue_reducer.langue,
+  cookies_accepted:state.change_langue_reducer.cookies_accepted,
+
+})
+
+const mapDispatchToProps = dispatch =>{
+return{
+  Set_langue_redux:(lang)=>dispatch(Set_langue_redux(lang)),
+  Set_cookies_redux:(val)=>dispatch(Set_cookies_redux(val)),
+}
+
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)( Layout)
 
 
 
-
-export default Layout
 
 
