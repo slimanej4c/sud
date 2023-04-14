@@ -196,11 +196,7 @@ image:"/static/images/child2.png"}
         },
       },
     };
-  const titleControls = useAnimation();
-
-  useEffect(() => {
-    titleControls.start("visible");
-  }, [props.current_image]);
+ 
     const letterVariants = {
       hidden: { opacity: 0, y: 50 },
       visible: {
@@ -268,7 +264,7 @@ image:"/static/images/child2.png"}
                   <div className="presentation-title"  >
                   <AnimatePresence key={props.current_image}  >
                             
-                            <motion.h1 variants={titleVariants} initial="hidden" animate={titleControls}>
+                            <motion.h1 variants={titleVariants} initial="hidden" animate="visible">
                               {titles[0][props.langue][props.current_image].title.split("").map((letter) => (
                                 <motion.span key={props.current_image} variants={letterVariants}>{letter}</motion.span>
                               ))}
@@ -288,7 +284,7 @@ image:"/static/images/child2.png"}
                                 style={{backgroundImage: `url(${images[props.current_image].image})` }}
                                 variants={imageVariants}
                                 initial="initial"
-                                animate="animate"
+                                whileInView="animate"
                                 exit="exit"
                                 key={currentImage}
                               /> 
@@ -300,13 +296,13 @@ image:"/static/images/child2.png"}
                              
                                
 
-                            <motion.h1 variants={titleVariants} initial="hidden" animate={titleControls}>
+                            <motion.h1 variants={titleVariants} initial="hidden" animate="visible">
                               {aprops[0][props.langue].title.split("").map((letter, index) => (
                                 <motion.span key={index} variants={letterVariants}>{letter}</motion.span>
                               ))}
                             </motion.h1>
     
-                            <motion.p variants={titleVariants2} initial="hidden" animate={titleControls} >
+                            <motion.p variants={titleVariants2} initial="hidden" animate="visible" >
                              
                               {aprops[0][props.langue].text.split("").map((letter, index) => (
                                 <motion.span key={index} variants={letterVariants}>{letter}</motion.span>
