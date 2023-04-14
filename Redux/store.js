@@ -1,9 +1,9 @@
 import { createStore, applyMiddleware } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
+
 import ReduxThunk from 'redux-thunk';
-import  { createWrapper } from 'next-redux-wrapper';
-import  configureStore  from "@reduxjs/toolkit";
-import { persistReducer, persistStore } from 'redux-persist';
+
+
+import { persistReducer,} from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import hardSet from 'redux-persist/lib/stateReconciler/hardSet'
 import rootReducer from './rootReducer';
@@ -37,13 +37,9 @@ const store2 = createStore(
 
   applyMiddleware( ReduxThunk)
 );
-const makeStore = () =>
-  createStore(
-    persistedReducer,
-    composeWithDevTools(applyMiddleware(ReduxThunk))
-  );
 
-const wrapper = createWrapper(makeStore, { debug: true });
+
+
 
 //const persistor=null
-export { wrapper ,store,store2 };
+export { store,store2 };
