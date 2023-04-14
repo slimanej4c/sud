@@ -264,12 +264,12 @@ image:"/static/images/child2.png"}
                   <div className="presentation-title"  >
                   <AnimatePresence key={props.current_image}  >
                             
-                            <motion.h1 variants={titleVariants} initial="hidden" animate="visible">
+                            <motion.h1 variants={titleVariants} initial="hidden" whileInView="visible">
                               {titles[0][props.langue][props.current_image].title.split("").map((letter) => (
                                 <motion.span key={props.current_image} variants={letterVariants}>{letter}</motion.span>
                               ))}
                             </motion.h1>
-                            <motion.p variants={titleVariants} initial="hidden" animate="visible" >
+                            <motion.p variants={titleVariants} initial="hidden" whileInView="visible" >
                             {titles[0][props.langue][props.current_image].text.split("").map((letter) => (
                                 <motion.span key={props.current_image} variants={letterVariants}>{letter}</motion.span>
                               ))}
@@ -286,7 +286,7 @@ image:"/static/images/child2.png"}
                                 initial="initial"
                                 whileInView="animate"
                                 exit="exit"
-                                key={currentImage}
+                                key={props.current_image}
                               /> 
                               </AnimatePresence>
                         </div>
