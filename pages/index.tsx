@@ -432,7 +432,7 @@ image:"/static/images/child2.png"}
               <div className='home-part4'>
                 <div>
                   <h1>
-                    sdfhskj dfhskjdfh skdfh skjdfhskdfh ssdfbsjhdfbshjfd
+             
                   </h1>
                 </div>
 

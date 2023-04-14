@@ -1,0 +1,21 @@
+footer {
+    background-color: #f5f5f5;
+    padding: 20px;
+  }
+  
+  .association-info {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .association-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .association-info p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+  

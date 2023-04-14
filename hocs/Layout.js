@@ -210,7 +210,29 @@ const radio_input=()=>{
 }
 //essayer avec position fixed ou absolute pour fixer les element de nav bar
                   
-const link_array=[{id:1,title:'Accueil',to:"/"},{id:2,title:'Agir avec nous',to:"/agir"},{id:3,title:'Nos actions',to:"/actions"},{id:4,title:'Nous contacter',to:"/contact"}]
+
+const link_array = [
+  {
+    FR: [
+      { id: 1, title: 'Accueil', to: '/' },
+      { id: 2, title: 'Agir avec nous', to: '/agir' },
+      { id: 3, title: 'Nos actions', to: '/actions' },
+      { id: 4, title: 'Nous contacter', to: '/contact' }
+    ],
+    ENG: [
+      { id: 1, title: 'Home', to: '/' },
+      { id: 2, title: 'Act with us', to: '/agir'  },
+      { id: 3, title: 'Our actions', to: '/actions' },
+      { id: 4, title: 'Contact us', to: '/contact' }
+    ],
+    DE: [
+      { id: 1, title: 'Startseite', to: '/' },
+      { id: 2, title: 'Mit uns handeln', to: '/agir'  },
+      { id: 3, title: 'Unsere Aktionen', to: '/actions'  },
+      { id: 4, title: 'Kontaktiere uns', to: '/contact' }
+    ]
+  }
+];
 const Nav=()=>{
   const contact_div="item-div contact"
   const other_div="item-div"
@@ -225,18 +247,18 @@ const Nav=()=>{
                 animate="visible"
               >
                     {radio_input()}
-                {link_array.map((item) => (
-                  <motion.li
-                    key={item.title}
-                    variants={itemVariants}
-                    className={item.title === "Nous contacter" ? contact_div : other_div}
-                  >
-                    <Link className="nav-link" href={item.to} onClick={() => clicked()}>
-                      {item.title}
-                    </Link>
-                  </motion.li>
-                ))}
-    </motion.ul>
+                    {link_array[0][props.langue].map((item) => (
+            <motion.li
+              key={item.id}
+              variants={itemVariants}
+              className={item.title === "Nous contacter" ? contact_div : other_div}
+            >
+              <Link className="nav-link" href={item.to} onClick={() => clicked()}>
+                {item.title}
+              </Link>
+            </motion.li>
+          ))}
+              </motion.ul>
       
       </nav>
   )
