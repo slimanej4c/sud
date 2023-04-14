@@ -5,18 +5,18 @@ import Link from 'next/link'
 import Footer from "../components/Footer"
 import Image from 'next/image';
 import { motion } from "framer-motion";
-import Cookies from "js-cookie";
+//import Cookies from "js-cookie";
 import { useRouter } from 'next/router';
-//import fs from 'fs';
-import { useSelector, useDispatch } from 'react-redux';
+
+
 import { Set_langue_redux } from '../Redux'
 import {Set_cookies_redux } from '../Redux'
 import { connect } from 'react-redux'
-import { Provider } from 'react-redux';
-import  { store ,wrapper ,store2 }  from '../Redux/store';
+
+import  { store ,store2 }  from '../Redux/store';
 
 import { PersistGate } from 'redux-persist/integration/react';
-import { persistReducer, persistStore } from 'redux-persist';
+import {  persistStore } from 'redux-persist';
 
 const Layout =(props) =>{
 
@@ -24,7 +24,7 @@ const[show_nav,setshow_nav]=useState(false)
 const [open, setOpen] = useState(false);
 const [nav_closed, setnav_closed] = useState("layout-nav");
 const [nav_opened, setnav_opened] = useState("layout-nav");
-const [refreshKey, setRefreshKey] = useState(0);
+
 const [per, setper] = useState(false);
 const [show_model, setshow_model] = useState(true);
 
@@ -46,7 +46,7 @@ const [show_model, setshow_model] = useState(true);
   }
 }
 readTextFile('./hocs/log.txt') */
-const accept_cookies=(val)=>{
+/* const accept_cookies=(val)=>{
   if(val){
     Cookies.set('cok', true);
     props.Set_cookies_redux(false)
@@ -55,7 +55,7 @@ const accept_cookies=(val)=>{
     props.Set_cookies_redux(false)
   }
   
-}
+} */
 const router = useRouter();
 
 
@@ -67,7 +67,7 @@ const router = useRouter();
    
     
   };
-try{
+/* try{
   const cookieValue = Cookies.get('cok');
   if (cookieValue){
     {!per && setper(true)}
@@ -83,7 +83,7 @@ try{
 }
 catch{
 
-}
+} */
   useEffect(() => {
     console.log("cokkies layout....................",props.langue,per)
   
@@ -171,16 +171,9 @@ const MenuIcon = () => {
     </div>
   );
 };
-//essayer avec position fixed ou absolute pour fixer les element de nav bar
-                  
-const link_array=[{id:1,title:'Accueil',to:"/"},{id:2,title:'Agir avec nous',to:"/agir"},{id:3,title:'Nos actions',to:"/actions"},{id:4,title:'Nous contacter',to:"/contact"}]
-const Nav=()=>{
-  const contact_div="item-div contact"
-  const other_div="item-div"
+const radio_input=()=>{
   return(
-    <nav className={show_nav ? nav_opened :nav_closed}>
-   
-<div className="radio-input">
+    <div className="radio-input">
       <label className="label">
         <input
           type="radio"
@@ -212,12 +205,26 @@ const Nav=()=>{
         <span className="check">DE</span>
       </label>
     </div>
+
+  )
+}
+//essayer avec position fixed ou absolute pour fixer les element de nav bar
+                  
+const link_array=[{id:1,title:'Accueil',to:"/"},{id:2,title:'Agir avec nous',to:"/agir"},{id:3,title:'Nos actions',to:"/actions"},{id:4,title:'Nous contacter',to:"/contact"}]
+const Nav=()=>{
+  const contact_div="item-div contact"
+  const other_div="item-div"
+  return(
+    <nav className={show_nav ? nav_opened :nav_closed}>
+    
+
             <motion.ul
                 className="nav-ul"
                 variants={navbarVariants}
                 initial="hidden"
                 animate="visible"
               >
+                    {radio_input()}
                 {link_array.map((item) => (
                   <motion.li
                     key={item.title}
@@ -240,7 +247,8 @@ const Nav=()=>{
   <>
     
      
-      <PersistGate loading={null} persistor={per ? persistStore(store) :  persistStore(store2)}>
+     {/*  <PersistGate loading={null} persistor={per ? persistStore(store) :  persistStore(store2)}> */}
+   
       
       <div className="layout-all">
        
@@ -250,7 +258,7 @@ const Nav=()=>{
         <Image src={"/static/images/Logo.png"} alt="logo_nav" width={60} height={60} />
       </motion.div>
             <div className="layout-nav-mobile">
-                
+           
                       {MenuIcon()}
                 
           </div>
@@ -258,10 +266,10 @@ const Nav=()=>{
      <div className='layout-header'>
         <div className="layout-container">
           {props.children}
-          <div className={'layout-model'} style={{visibility: props.cookies_accepted ? "visible"  : "hidden"}}>
+          {/* <div className={'layout-model'} style={{visibility: props.cookies_accepted ? "visible"  : "hidden"}}>
                   <button className='home-part3-button prev' onClick={()=>accept_cookies(true)}>cokies</button>
                   <button className='home-part3-button prev' onClick={()=>accept_cookies(false)}>no cokies</button>
-          </div>
+          </div> */}
        
         
         </div>
@@ -270,7 +278,7 @@ const Nav=()=>{
       </div>
      
     </div>
-    </PersistGate>
+   {/*  </PersistGate> */}
       
    
   

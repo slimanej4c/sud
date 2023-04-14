@@ -1,11 +1,11 @@
 import Layout from '../hocs/Layout'
-import Image from 'next/image';
+
 import { motion, AnimatePresence } from "framer-motion"
 import { useState, useEffect } from "react";
-import { useSelector, useDispatch } from 'react-redux';
-import { useRouter } from 'next/router';
+import { useAnimation } from 'framer-motion';
 import { connect } from 'react-redux'
 import {Set_cookies_redux } from '../Redux'
+import {Set_current_image_redux } from '../Redux'
 
 
 
@@ -48,32 +48,17 @@ function Home(props)  {
     const [y_init_image, sety_init_image] = useState('100%');
     const [y_exit_image, sety_exit_image] = useState('0%');
     const [stop_auto, setstop_auto] = useState(true);
-    const [langue, setlangue] = useState("FR");
-    const [part_one_title, setpart_one_title] = useState(titles[0]["FR"][currentImage].title);
-    const [part_one_text, setpart_one_text] = useState(titles[0]["FR"][currentImage].text);
+
 
   
    
   
+  
       useEffect(() => {
       
    console.log('langue changed to', props.langue ,props.cookies_accepted)
-   
-   if (props.langue==="FR"){
-    setlangue('FR')
-    setpart_one_title(titles[0]["FR"][currentImage].title)
-    setpart_one_text(titles[0]["FR"][currentImage].text)
-}
-if (props.langue==="ENG"){
- setlangue('ENG')
- setpart_one_title(titles[0]["DE"][currentImage].title)
- setpart_one_text(titles[0]["DE"][currentImage].text)
-}
-if (props.langue==="DE"){
- setlangue('DE')
- setpart_one_title(titles[0]["DE"][currentImage].title)
- setpart_one_text(titles[0]["DE"][currentImage].text)
-}
+  
+
   }, [props.langue]);
 
    
@@ -113,11 +98,13 @@ image:"/static/images/child2.png"}
   };
     useEffect(() => {
       const interval = setInterval(() => {
-        setCurrentImage(currentImage => (currentImage + 1) % images.length);
+        {props.current_image>=images.length-1 ? props.Set_current_image_redux(0) :props.Set_current_image_redux(props.current_image+1)}
+       
+       // setCurrentImage(currentImage => (currentImage + 1) % images.length);
        
       }, 8000);
       return () => clearInterval(interval);
-    }, [currentImage ]);
+    }, [props.current_image ]);
     useEffect(() => {
       const interval = setInterval(() => {
      
@@ -209,7 +196,11 @@ image:"/static/images/child2.png"}
         },
       },
     };
-  
+  const titleControls = useAnimation();
+
+  useEffect(() => {
+    titleControls.start("visible");
+  }, [props.current_image]);
     const letterVariants = {
       hidden: { opacity: 0, y: 50 },
       visible: {
@@ -275,17 +266,18 @@ image:"/static/images/child2.png"}
 
                   
                   <div className="presentation-title"  >
-                  <AnimatePresence  >
-                            <motion.h1 variants={titleVariants} initial="hidden" animate="visible"  key={titles[0][langue][currentImage].title}>
-                              {Array.from(part_one_title).map((letter) => (
-                                <motion.span variants={letterVariants}>{letter}</motion.span>
+                  <AnimatePresence key={props.current_image}  >
+                            
+                            <motion.h1 variants={titleVariants} initial="hidden" animate={titleControls}>
+                              {titles[0][props.langue][props.current_image].title.split("").map((letter) => (
+                                <motion.span key={props.current_image} variants={letterVariants}>{letter}</motion.span>
                               ))}
                             </motion.h1>
-                            <motion.p variants={titleVariants} initial="hidden" animate="visible" key={titles[0][langue][currentImage].text} >
-                              
-                              {Array.from(part_one_text).map((letter) => (
-                                <motion.span variants={letterVariants}>{letter}</motion.span>
+                            <motion.p variants={titleVariants} initial="hidden" animate="visible" >
+                            {titles[0][props.langue][props.current_image].text.split("").map((letter) => (
+                                <motion.span key={props.current_image} variants={letterVariants}>{letter}</motion.span>
                               ))}
+                             
                             </motion.p>
                   </AnimatePresence>
     </div>
@@ -293,7 +285,7 @@ image:"/static/images/child2.png"}
                                   <AnimatePresence>
                                   <motion.div
                                 className="presentation-sous-img"
-                                style={{backgroundImage: `url(${images[currentImage].image})` }}
+                                style={{backgroundImage: `url(${images[props.current_image].image})` }}
                                 variants={imageVariants}
                                 initial="initial"
                                 animate="animate"
@@ -306,14 +298,18 @@ image:"/static/images/child2.png"}
                   <div className='home-part1-2'>
                         <div className='presentation-aprops'>
                              
-                                <motion.h1 variants={titleVariants} initial="hidden" animate="visible" >
-                              {Array.from(aprops[0]["FR"].title).map((letter) => (
-                                <motion.span variants={letterVariants}>{letter}</motion.span>
+                               
+
+                            <motion.h1 variants={titleVariants} initial="hidden" animate={titleControls}>
+                              {aprops[0][props.langue].title.split("").map((letter, index) => (
+                                <motion.span key={index} variants={letterVariants}>{letter}</motion.span>
                               ))}
                             </motion.h1>
-                            <motion.p variants={titleVariants2} initial="hidden" animate="visible" >
-                              {Array.from(aprops[0]["FR"]['text']).map((letter) => (
-                                <motion.span variants={letterVariants}>{letter}</motion.span>
+    
+                            <motion.p variants={titleVariants2} initial="hidden" animate={titleControls} >
+                             
+                              {aprops[0][props.langue].text.split("").map((letter, index) => (
+                                <motion.span key={index} variants={letterVariants}>{letter}</motion.span>
                               ))}
                             </motion.p>
                             
@@ -455,12 +451,14 @@ image:"/static/images/child2.png"}
 const mapStateToProps = (state) => ({
   langue:state.change_langue_reducer.langue,
   cookies_accepted:state.change_langue_reducer.cookies_accepted,
+  current_image:state.change_langue_reducer.current_image,
 })
 
 const mapDispatchToProps = dispatch =>{
 return{
  
   Set_cookies_redux:(val)=>dispatch(Set_cookies_redux(val)),
+  Set_current_image_redux:(val)=>dispatch(Set_current_image_redux(val)),
 
 }
 

@@ -102,9 +102,9 @@ body {
       display: flex;
       gap: 20px;
       z-index: 40;
-      position: absolute;
-      right: 20px;
-      top: 10px;
+      right: 5%;
+     
+
     }
     
     .radio-input .label {
@@ -143,7 +143,8 @@ body {
       right: 0;
       height: 60px;
       background-color: var(--navbar_color);
-      
+
+   
       display: flex;
       align-items: center;
       justify-content: center;
@@ -173,6 +174,8 @@ body {
       justify-content: center;
       align-items: center;
       height: 100%;
+      width: 100%;
+      margin-right: 0%;
     }
     .nav-item{
       list-style: none;
@@ -270,8 +273,8 @@ body {
     @media screen and (max-width: 1040px) {
       .nav-link{margin:10px;font-size: 12px;letter-spacing:2px;}
       .radio-input {
-        right: 10px;
-        top: 15px;
+        right: 3%;
+    
       }
       .radio-input .label .check {
         font-size: 10px;
@@ -283,8 +286,8 @@ body {
      @media screen and (max-width: 790px) {
       .nav-link{margin:8px;font-size: 11px;letter-spacing:2px;}
       .radio-input {
-        right: 4px;
-        top: 20px;
+        right: 2%;
+       
       }
       .radio-input .label .check {
         font-size: 8px;
@@ -295,7 +298,10 @@ body {
   
   
     @media screen and (max-width: 700px) {
-    
+      .radio-input {
+        right: 0px;
+       
+      }
       .menu-icon{
           position: fixed;
           visibility: visible;
@@ -309,12 +315,10 @@ body {
           
       }
       .radio-input {
-      
+        display: flex;
         position: static;
-        padding-top: 0;
-        
-        width: 50%;
-        margin-top: -190%;
+       
+       margin-bottom: 30px;
         
       }
     

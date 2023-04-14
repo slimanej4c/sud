@@ -13,12 +13,14 @@ import rootReducer from './rootReducer';
 
 
 const persistConfig = {
+    timeout: 1000, //Set the timeout function to 2 seconds
     key: 'root-key',
     storage,
     stateReconciler: hardSet,
     blacklist: [] // navigation will not be persisted
 };
 const persistConfig2 = {
+  timeout: 1000, //Set the timeout function to 2 seconds
   key: 'root-key',
   storage,
 
