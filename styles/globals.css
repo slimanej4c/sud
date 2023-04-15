@@ -12,6 +12,12 @@
  --title-color:#FF6B09;
  --aprops-color:#cdcdcd ;
  --mession-color:rgba(155, 164, 59, 0.969) ;
+ --footer_font_size_title_700:16px ;
+ --footer_font_size_text_700:12px ;
+ --footer_font_size_textp_700:11px ;
+ --footer_font_size_title_400:13px ;
+ --footer_font_size_text_400:11px ;
+ --footer_font_size_textp_400:10px ;
 }
 @font-face {
     font-family: inika_bold;

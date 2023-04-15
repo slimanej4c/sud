@@ -7,36 +7,12 @@ import { connect } from 'react-redux'
 import {Set_cookies_redux } from '../Redux'
 import {Set_current_image_redux } from '../Redux'
 
+import {messions ,images ,titles ,aprops,events} from "./text_index"
 
 
-const images = [{'image': '/static/images/children_home1.jpg', 'color': '#14162F', 'id': 1 ,'fcolor':"#E0A200"},
- {'image': '/static/images/child4.png', 'color': 'black', 'id': 2,'fcolor':"#FF6B09"},
-  {'image': '/static/images/hands-home.png', 'color': '#B36330', 'id': 3,'fcolor':"#00FFD6"}]
-  const titles = [
-    {
-      "FR": [
-        {"title": "SOLIDARITE SUD", "text": "Ensemble, nous avons le pouvoir de changer des vies"},
-        {"title": "AGIR ENSEMBLE", "text": "Ensemble, nous sommes plus forts pour relever les défis"},
-        {"title": "CONSTRUIRE L'AVENIR", "text": "Ensemble, nous pouvons bâtir un monde meilleur"}
-      ],
-      "ENG": [
-        {"title": "SOUTHERN SOLIDARITY", "text": "Together, we have the power to change lives"},
-        {"title": "ACTING TOGETHER", "text": "Together, we are stronger to face challenges"},
-        {"title": "BUILDING THE FUTURE", "text": "Together, we can build a better world"}
-      ],
-      "DE": [
-        {"title": "SOLIDARITÄT SÜD", "text": "Gemeinsam haben wir die Macht, Leben zu verändern"},
-        {"title": "ZUSAMMEN HANDELN", "text": "Gemeinsam sind wir stärker, um Herausforderungen zu meistern"},
-        {"title": "DIE ZUKUNFT GESTALTEN", "text": "Gemeinsam können wir eine bessere Welt aufbauen"}
-      ]
-    }
-  ]
   
 
-const aprops=[{"FR":{"title":"APROPS","text":" Soladirité est une association à but non lucratif qui travaille pour améliorer la vie des enfants en difficulté. Notre objectif est d'aider les enfants à travers divers programmes tels que l'aide alimentaire, l'accès à l'eau potable, l'éducation et la santé. Nous travaillons avec des partenaires locaux pour nous assurer que nos projets ont un impact positif et durable sur les communautés que nous aidons. Nous croyons que chaque enfant mérite une chance de réussir, et nous sommes déterminés à faire notre part pour y parvenir. Rejoignez-nous dans notre mission pour faire une différence dans la vie des enfants du monde entier."},
-"ENG":{"title":"APROPS","text":"Soladirité is a non-profit organization working to improve the lives of disadvantaged children. Our goal is to help children through various programs such as food aid, access to clean water, education, and health. We work with local partners to ensure that our projects have a positive and lasting impact on the communities we serve. We believe that every child deserves a chance to succeed, and we are committed to doing our part to make that happen. Join us in our mission to make a difference in the lives of children around the world."},
-"DE":{"title":"APROPS","text":"Soladirité ist eine gemeinnützige Organisation, die daran arbeitet, das Leben benachteiligter Kinder zu verbessern. Unser Ziel ist es, Kindern durch verschiedene Programme wie Lebensmittelhilfe, Zugang zu sauberem Wasser, Bildung und Gesundheit zu helfen. Wir arbeiten mit lokalen Partnern zusammen, um sicherzustellen, dass unsere Projekte eine positive und nachhaltige Wirkung auf die von uns unterstützten Gemeinden haben. Wir glauben, dass jedes Kind eine Chance verdient, erfolgreich zu sein, und wir sind entschlossen, unseren Beitrag dazu zu leisten. Schließen Sie sich unserer Mission an, einen Unterschied im Leben von Kindern auf der ganzen Welt zu machen."}}]
-const a={'r':"FR"}
+
 function Home(props)  {
 
  
@@ -65,17 +41,8 @@ function Home(props)  {
   
 
     
-    const messions=[{fr:[{id:1,title:'Aide alimentaire',text:"Nous fournissons des repas nutritifs aux enfants en situation demalnutrition dans les communautéslocales, afin de leur assurer une alimentation adéquatepour leur développement",image:'/static/images/children_home1.jpg'},
-    {id:2,title:"Accès à l'eau potable",text:"Nous travaillons pour améliorer l'accès à l'eau potable dans les régions où l'eau est rare ou contaminée, en installant des puits, des systèmes de filtration ou en formant des personnes pour gérer les ressources en eau",image:'/static/images/children_home1.jpg'},
-    {id:3,title:'Santé',text:"Nous travaillons pour améliorer l'accès aux soins de santé, en offrant des soins médicaux gratuits ou à faible coût, en organisant des campagnes de sensibilisation à la santé et en formant des professionnels de la santé locaux",image:'/static/images/children_home1.jpg'}
-    ]}]
-const events=[{fr:[{id:1,title:'soirée caritative pour collecter des fonds',text:"L'association de solidarité JKL organise une soirée caritative pour collecter des fonds en faveur de leur programme d'aide alimentaire pour les personnes les plus vulnérables de notre communauté.L'événement aura lieu le samedi 10 juillet au centre-ville. La soirée débutera par un cocktail de bienvenue suivi d'un dîner préparé par des chefs locaux renommés. Les participants pourront également profiter de la musique live, de divertissements et de jeux pour gagner des prix tout au long de la soirée.Des bénévoles de l'association seront présents pour expliquer les détails du programme d'aide alimentaire et comment les fonds collectés lors de la soirée seront utilisés pour aider les personnes dans le besoin.Les billets pour l'événement sont en vente dès maintenant et toutes les recettes iront directement à l'association JKL pour financer leur programme d'aide alimentaire. C'est une excellente occasion de profiter d'une soirée agréable tout en faisant une différence dans la vie des personnes les plus vulnérables de notre communauté.",
-image:"/static/images/event1.png"},
-{id:2,title:"Accès à l'eau potable",text:"Nous travaillons pour améliorer l'accès à l'eau potable dans les régions où l'eau est rare ou contaminée, en installant des puits, des systèmes de filtration ou en formant des personnes pour gérer les ressources en eau",
-image:"/static/images/child2.png"},
-{id:3,title:'Santé',text:"Nous travaillons pour améliorer l'accès aux soins de santé, en offrant des soins médicaux gratuits ou à faible coût, en organisant des campagnes de sensibilisation à la santé et en formant des professionnels de la santé locaux",
-image:"/static/images/child2.png"}
-]}]
+  
+
   
   const change_event = (myParam) => {
     setstop_auto(false)
