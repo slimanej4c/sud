@@ -251,7 +251,7 @@ const Nav=()=>{
             <motion.li
               key={item.id}
               variants={itemVariants}
-              className={item.title === "Nous contacter" ? contact_div : other_div}
+              className={item.to === "/contact" ? contact_div : other_div}
             >
               <Link className="nav-link" href={item.to} onClick={() => clicked()}>
                 {item.title}
