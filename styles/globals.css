@@ -6,18 +6,28 @@
  --navbar_mobile_ul:#5a6f43;
  --navbar_mobile_click:#cbe200;
  --mather-color:#5a6f43;
- --footer-color:darkolivegreen;
- --footer-shadow-color:#090600;
- --footer-font-color:#090600;
+
  --title-color:#FF6B09;
- --aprops-color:#cdcdcd ;
- --mession-color:rgba(155, 164, 59, 0.969) ;
+ --aprops-color:#cad2b8 ;
+
+
+ --mession-color:#383f2f ;
+ --mession-font-color:#a1b18b ;
+ --mession-font-title-color:#b2c09e ;
+ --mession-font-big-title-color:#20221c;
+
+ --event-font-big-title-color:#20221c;
+ --event-bg-text:#b0c093;
+
+ --footer-color:#1b2504;
+ --footer-shadow-color:#090600;
+ --footer-font-color:#939f81;
  --footer_font_size_title_700:16px ;
  --footer_font_size_text_700:12px ;
  --footer_font_size_textp_700:11px ;
- --footer_font_size_title_400:13px ;
- --footer_font_size_text_400:11px ;
- --footer_font_size_textp_400:10px ;
+ --footer_font_size_title_400:14px ;
+ --footer_font_size_text_400:12px ;
+ --footer_font_size_textp_400:11px ;
 }
 @font-face {
     font-family: inika_bold;

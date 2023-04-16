@@ -82,9 +82,9 @@ const link_array = [
                   <li>E-mail: solidaritesud1@gmail.com</li>
                 </ul>
                 <div className='footer-icons'>
-                <FontAwesomeIcon icon={faFacebook} style={{  color: "black" }} className="footer-icon"/>
-                <FontAwesomeIcon icon={faTwitter} style={{ color: "black" }} className="footer-icon"/>
-                <FontAwesomeIcon icon={faLinkedin} style={{  color: "black" }} className="footer-icon"/>
+                <FontAwesomeIcon icon={faFacebook}  className="footer-icon"/>
+                <FontAwesomeIcon icon={faTwitter}  className="footer-icon"/>
+                <FontAwesomeIcon icon={faLinkedin}  className="footer-icon"/>
               </div>
               </div>
         </div>
@@ -129,7 +129,7 @@ const link_array = [
                     </div> 
             </div>
        
-        <h3>Personne de référence : M. Maurice Zellweger, Président</h3>
+        <h4>Personne de référence : M. Maurice Zellweger, Président</h4>
       </div>
    
   </footer>

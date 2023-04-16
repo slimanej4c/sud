@@ -6,6 +6,7 @@ import '../styles/globals.css'
 import '../styles/home-part1.css'
 import '../styles/home-part2.css'
 import '../styles/home-part3.css'
+import '../styles/home-part4.css'
 import '../styles/footer.css'
 import { Provider } from 'react-redux';
 import  { store }  from '../Redux/store';

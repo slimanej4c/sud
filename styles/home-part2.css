@@ -3,16 +3,17 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-  
+    margin-bottom: 100px;
     position: relative;
     overflow: hidden;
+    
 
 }
 .home-part2-1{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
     width: 100%;
 
 
@@ -24,42 +25,43 @@
     height: 20%;
 }
 .messions-title h1{
-    font-size:70px;
+    font-size:60px;
     font-family:inika_bold;
     text-decoration: underline;
+    color:var( --mession-font-big-title-color);
 }
 .messions-type{
 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-   
- 
-    width: 100%;
+   display: flex;
 
+  overflow: hidden; /* Ajouter cette ligne */
  
 }
 .mession{
+    
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding-left:10px;
+    padding-right:10px;
     margin: 10px;
     align-items: center;
     background-color: var(--mession-color);
     width: 30%;
-    height: 200px;
+    height: 300px;
     object-fit: contain;
     background-size: cover;
     background-position: center center;
     border-radius: 20px;
     box-shadow: 2px 6px 8px 0px rgb(22, 31, 13);
-
- 
+    transform: translateX(-00%);
+    color: var(--mession-font-color);
+    padding: 2%;
+    
 }
 .mession h1{
     text-align: center;
     font-family:inika_bold;
- 
+    color: var( --mession-font-title-color);
 }
 .mession p{
    text-align: center;
@@ -78,20 +80,20 @@
     }
     .mession h1{
         text-align: center;
-        font-size: 25px;
+        font-size: 20px;
       
      
     }
     .mession p{
        text-align: center;
-       margin-top: -1rem;
-       font-size: 18;
+       margin-top: -0.5rem;
+       font-size: 12;
     
      
     }
     .mession{
       
-        height: 250px;
+        height: 300px;
    
     
      
@@ -119,8 +121,8 @@
         margin-right: 5%;
         padding: 0;
         width: 60%;
-        height: 200px;
-      
+        height: 250px;
+        padding: 2%;
     
      
     }
@@ -149,7 +151,7 @@
     .mession{
        
         width: 90%;
-        height: 200px;
+        padding: 5%;
       
     
      

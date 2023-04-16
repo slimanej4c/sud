@@ -177,46 +177,16 @@ function Home(props)  {
         },
       },
     };
-  
     const messionVariants = {
-      hidden: {  opacity:0 },
-      visible: {
-        
-        opacity:1 ,
-        transition: {
-          
-          duration: 0,
-          type: "spring",
-          stiffness: 100,
-         
-          mass: 0.5,
-          damping: 10,
-          staggerChildren: 0.1,
-          delayChildren: 0.5,
-        },
-      },
+      hidden: { opacity: 0 },
+      visible: { opacity: 1, transition: { staggerChildren: 1 , type: "spring", } },
     };
     
+    // Variants pour chaque élément de la liste de missions
     const mession_itemVariants = {
-      hidden: { x: "-200%", opacity: 0.5 },
-      visible: {
-        x: 0,
-        opacity: 1,
-        transition: {
-         
-          duration: 3,
-          
-          type: "spring",
-          stiffness: 100,
-          mass: 0.5,
-          damping: 10,
-          staggerChildren: 0.1,
-          delayChildren: 0.5,
-        },
-      },
+      hidden: { x: -3000 },
+      visible: { x: 0, transition: { duration: 1  , type: "spring",} },
     };
-
-
     return(
     <Layout
         title='httpOnly Auth | Home'
@@ -287,26 +257,28 @@ function Home(props)  {
                               <h1>Messions</h1>
                       </div>
                       
-                      <motion.div className='messions-type' 
-                      variants={messionVariants}
-                      initial="hidden"
-                      whileInView="visible"
-                      >
-                        {
-                          messions[0]['fr'].map((items=>{
-                            return(
-                              <motion.div className='mession' key={items.id}
-                               variants={mession_itemVariants}
-                              // style={{backgroundImage: `url(${items.image})` }}
-                      >
-                                <h1>{items.title}</h1>
-                                <p>{items.text}</p>
-                              </motion.div>
-                            )
-                          }))
-                        }
-
-                      </motion.div>
+                    
+                      <motion.div
+                              className='messions-type'
+                              variants={messionVariants}
+                              initial='hidden'
+                              animate='visible'
+                            >
+                              {messions[0]['fr'].map((item) => {
+                                return (
+                                  <motion.div
+                                    className='mession'
+                                    key={item.id}
+                                    variants={mession_itemVariants}
+                                    transition={{ delay: item.id * 2 }}
+                                   
+                                  >
+                                    <h1>{item.title}</h1>
+                                    <p>{item.text}</p>
+                                  </motion.div>
+                                );
+                              })}
+                            </motion.div>
 
                     </div>
               </div>
@@ -397,10 +369,55 @@ function Home(props)  {
               </div>
 
               <div className='home-part4'>
-                <div>
-                  <h1>
-             
-                  </h1>
+                <div className='home-part4-title'>
+                <h1>Témoignages de bénévoles et de bénéficiaires</h1>
+                </div>
+               
+                <div className='home-figure'>
+                <figure className="snip1390">
+                          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample3.jpg" alt="profile-sample3" className="profile" />
+                          <figcaption>
+                            <h2>Eleanor Crisp</h2>
+                            <h4>bénévole</h4>
+                            <blockquote>Je suis fier de faire partie de Soladirité, une association qui s'engage à améliorer la vie des enfants en difficulté à travers l'accès à l'éducation, la santé, l'eau potable et l'aide alimentaire. En travaillant en collaboration avec des partenaires locaux, nous avons réussi à faire une réelle différence dans la vie des enfants les plus vulnérables de la société</blockquote>
+                          </figcaption>
+                        </figure>
+                <figure className="snip1390 hover"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" className="profile" />
+                        <figcaption>
+                          <h2>Gordon Norman</h2>
+                          <h4>bénéficiaire</h4>
+                          <blockquote>Grâce à l'aide de Solidarité, mes enfants ont maintenant accès à une alimentation saine et équilibrée, ainsi qu'à l'éducation. Je suis vraiment reconnaissant pour tout ce que l'association a fait pour nous. </blockquote>
+                        </figcaption>
+                </figure>
+                <figure className="snip1390"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample6.jpg" alt="profile-sample6" className="profile" />
+                        <figcaption>
+                          <h2>Sue Shei</h2>
+                          <h4>bénévole</h4>
+                          <blockquote>Travailler en tant que bénévole pour Soladirité a été une expérience extrêmement gratifiante. Pouvoir contribuer à améliorer la vie des enfants défavorisés en leur offrant des opportunités d'éducation, de santé et d'aide alimentaire est une source de fierté et de satisfaction pour moi</blockquote>
+                        </figcaption>
+                </figure>
+                <figure className="snip1390">
+                          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample3.jpg" alt="profile-sample3" className="profile" />
+                          <figcaption>
+                            <h2>Eleanor Crisp</h2>
+                            <h4>bénévole</h4>
+                            <blockquote>En tant que bénévole pour Soladirité, j'ai pu découvrir l'impact positif que peut avoir une association à but non lucratif. En travaillant avec passion et dévouement pour aider les enfants en difficulté, j'ai non seulement aidé à changer leur vie, mais j'ai également enrichi la mienne</blockquote>
+                          </figcaption>
+                        </figure>
+                <figure className="snip1390 hover"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" className="profile" />
+                        <figcaption>
+                          <h2>Gordon Norman</h2>
+                          <h4>bénéficiaire</h4>
+                          <blockquote>La collaboration de Solidarité avec les partenaires locaux est remarquable. Ils travaillent ensemble pour fournir de l'eau potable propre et des soins de santé aux enfants dans le besoin. Grâce à leur travail acharné, nous avons vu une amélioration significative de la qualité de vie de nos enfants.</blockquote>
+                        </figcaption>
+                </figure>
+                <figure className="snip1390"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample6.jpg" alt="profile-sample6" className="profile" />
+                        <figcaption>
+                          <h2>Sue Shei</h2>
+                          <h4>bénéficiaire</h4>
+                          <blockquote>Je ne sais pas ce que nous ferions sans Solidarité. Ils ont été là pour nous lorsque nous avons perdu notre maison à cause d'une inondation. Grâce à leur aide, nous avons eu accès à un logement temporaire et à de la nourriture pour survivre. Ils ont également aidé nos enfants à retourner à l'école. Nous sommes tellement reconnaissants pour leur soutien et leur aide.</blockquote>
+                        </figcaption>
+                </figure>
                 </div>
 
               </div>
