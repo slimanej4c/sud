@@ -169,7 +169,7 @@
      
         flex-direction: column;
       
-        height: 600px;
+        height: 900px;
         
       }
       
@@ -223,7 +223,7 @@
   
   @media screen and (max-width:450px) {
     .home-part1-1 { 
-        height: 400px;
+        height: 500px;
         
       }
       

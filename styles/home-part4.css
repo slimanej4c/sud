@@ -135,6 +135,10 @@ figure.snip1390 .profile {
 }
 
 @media screen and (max-width:750px) {
+  .home-part4-title h1{
+
+   font-size: 20px;
+  }
   .home-figure{
    
     width: 95%;
@@ -156,5 +160,9 @@ figure.snip1390 .profile {
 
 
 @media screen and (max-width:450px) {
+  .home-part4-title h1{
+
+    font-size: 18px;
+   }
   
 }

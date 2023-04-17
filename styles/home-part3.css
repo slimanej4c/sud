@@ -1,7 +1,7 @@
 .home-part3 {
   display: flex;
   flex-direction: column;
-  width:90%;
+  width:85%;
 
   justify-content: center;
   align-items: center;
@@ -134,14 +134,14 @@
     border-radius: 50px;
   }
   .prev {
-    background-color: var(--navbar_color);
-    color: var(--mession-color);
+    background-color: var(--title-color);
+    color: wheat;
     font-size: 2em;
     font-weight: bold;
   }
  .next {
-    background-color: var(--navbar_color);
-    color: var(--mession-color);
+    background-color: var(--title-color);
+    color: wheat;
     font-size: 2em;
   }
   @media screen and (max-width: 1100px) {
@@ -177,7 +177,7 @@
         flex-direction: column;
         width: 95%;
         
-        height: 100%;
+        height: 700px;
     
        
     }
@@ -218,11 +218,10 @@
        
         display: flex;
   flex-direction: column;
-  background-size: contain;
-  background-position: center center;
+
   position: absolute;
   width: 100%;
-  height: auto;
+  height: 500px;
   background-color: var( --event-bg-text);
   top: 250px;
   right: 0;
@@ -250,14 +249,14 @@
     .prev {
        
         font-size: 1em;
-        left: 5%;
-        top:35%;
+        left: -5%;
+        top:30%;
       }
      .next {
        
         font-size: 1em;
-        right: 5%;
-        top:35%;
+        right: -5%;
+        top:30%;
       }
       .home-part3-button {
         position: absolute;
@@ -266,7 +265,7 @@
        
       }.home-part3-3-index{
       position: absolute;
-      top:45%;
+      top:40%;
     }
 
   }
@@ -291,7 +290,7 @@
         flex-direction: column;
         width: 95%;
         
-        height: 100%;
+         height: 700px;;
     
        
     }
@@ -311,7 +310,7 @@
     }
     .home-part3-help2{
         width: 100%;
-        height: auto;
+      
        visibility: hidden;
 
     }
@@ -329,11 +328,10 @@
        
         display: flex;
   flex-direction: column;
-  background-size: contain;
-  background-position: center center;
+
   position: absolute;
   width: 100%;
-  height: auto;
+  height: 500px;
   background-color: var(--event-bg-text);
   bottom: 0;
   right: 0;
@@ -341,6 +339,7 @@
     }
     .home-part3-2-text-div {
         position: absolute;
+        
         top: 0%;
       
     }
@@ -358,13 +357,13 @@
     .prev {
        
         font-size: 1em;
-        left: 5%;
+        left: -5%;
         top:280px;
       }
      .next {
        
         font-size: 1em;
-        right: 5%;
+        right: -5%;
         top:280px;
       }
       .home-part3-button {
@@ -374,7 +373,7 @@
        
       }.home-part3-3-index{
       position: absolute;
-      top:350px;
+      top:40%;
     }
    
 
