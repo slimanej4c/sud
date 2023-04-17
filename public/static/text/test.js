@@ -1,13 +1,13 @@
-import Layout from '../hocs/Layout'
+import Layout from '../../../hocs/Layout'
 
 import { motion, AnimatePresence } from "framer-motion"
 import { useState, useEffect } from "react";
 import { useAnimation } from 'framer-motion';
 import { connect } from 'react-redux'
-import {Set_cookies_redux } from '../Redux'
-import {Set_current_image_redux } from '../Redux'
+import {Set_cookies_redux } from '../../../Redux'
+import {Set_current_image_redux } from '../../../Redux'
 
-import {messions ,images ,titles ,aprops,events} from "../public/static/text/text_index"
+import {messions ,images ,titles ,aprops,events} from "./text_index"
 
 
   
