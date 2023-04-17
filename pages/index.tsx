@@ -1,34 +1,65 @@
 import Layout from '../hocs/Layout'
-
-import { motion, AnimatePresence } from "framer-motion"
+import { useMediaQuery } from 'react-responsive';
+import { motion, AnimatePresence , useMotionValue, useDragControls} from "framer-motion"
 import { useState, useEffect } from "react";
 import { useAnimation } from 'framer-motion';
 import { connect } from 'react-redux'
 import {Set_cookies_redux } from '../Redux'
 import {Set_current_image_redux } from '../Redux'
+import { useInView } from "react-intersection-observer";
+import {messions ,images ,titles ,aprops,events,figures} from "../public/static/text/text_index"
 
-import {messions ,images ,titles ,aprops,events} from "../public/static/text/text_index"
 
 
-  
 
 
 function Home(props)  {
 
- 
- 
+  const isSmallScreen = useMediaQuery({ maxWidth: 750 });
+
     const [currentImage, setCurrentImage] = useState(0);
     const [currentEvent, setcurrentEvent] = useState(0);
+    const [currentFigure, setcurrentFigure] = useState(0);
     const [y_init, sety_init] = useState('0%');
     const [y_exit, sety_exit] = useState('-100%');
     const [y_init_image, sety_init_image] = useState('100%');
     const [y_exit_image, sety_exit_image] = useState('0%');
+    
     const [stop_auto, setstop_auto] = useState(true);
+    const [stop_auto_figure, setstop_auto_figure] = useState(true);
+    const [y_exit_figure, sety_exit_figure] = useState('0%');
+    const [y_init_figure, sety_init_figure] = useState('100%');
 
-
-  
+    const apropsVariants = {
+      visible: { opacity: 1,x:"0%", transition: { duration: 1  , type: "spring", } },
+      hidden: { opacity: 0 ,x:"-100%"}
+    };
+ 
+    const dragControls = useDragControls();
+    useEffect(() => {
+    
    
-  
+    }, [y_exit_figure ,dragControls]);
+    const handleDragEnd = (event, info) => {
+   
+        sety_exit_figure('0%')
+      if (info.offset.x > 50) {
+        // if the user has dragged the image by more than 50 pixels to the right, move to the next figure
+        sety_init_figure('-100%')
+        sety_exit_figure('0%')
+     
+        setcurrentFigure((currentFigure - 1 + figures.length) % figures.length);
+       
+       
+      } else if (info.offset.x < -50) {
+        // if the user has dragged the image by more than 50 pixels to the left, move to the previous figure
+        sety_init_figure('100%')
+        sety_exit_figure('0%')
+        setcurrentFigure((currentFigure + 1) % figures.length);
+        
+      }
+    };
+   
   
       useEffect(() => {
       
@@ -84,26 +115,41 @@ function Home(props)  {
       }, 8000);
       return () => clearInterval(interval);
     }, [currentEvent]);
+
+    useEffect(() => {
+      const interval = setInterval(() => {
+     
+      if (stop_auto_figure){
+        setcurrentFigure((currentFigure + 1) % figures.length);
+        sety_init('100%')
+      sety_init_figure('-100%')
+      }
+       
+      }, 10000);
+      return () => clearInterval(interval);
+    }, [currentFigure]);
+
     const imageVariants = {
       initial: {
         opacity: 0,
-        x: '100%',
+     
       },
       animate: {
         opacity: 1,
-        x: '0%',
+      
         transition: {
-          duration: 3,
+          duration: 2,
         },
       },
       exit: {
         opacity: 0,
-        x: '-100%',
+    
         transition: {
-          duration: 3,
+          duration: 2,
         },
       },
     };
+    
     const textVariants = {
       initial: {
         opacity: 0,
@@ -154,12 +200,23 @@ function Home(props)  {
         },
       },
     };
-    const titleVariants2 = {
-      hidden: { opacity: 0 },
-      visible: {
-        opacity: 0.9,
+    const image_figuretVariants = {
+      initial: {
+        opacity: 0,
+        x: y_init_figure,
+      },
+      animate: {
+        opacity: 1,
+        x: '0%',
         transition: {
-          staggerChildren: 0.009,
+          duration: 1,
+        },
+      },
+      exit: {
+        opacity: 0,
+        x: y_exit_figure,
+        transition: {
+          duration: 1,
         },
       },
     };
@@ -179,14 +236,20 @@ function Home(props)  {
     };
     const messionVariants = {
       hidden: { opacity: 0 },
-      visible: { opacity: 1, transition: { staggerChildren: 1 , type: "spring", } },
+      visible: { opacity: 1, transition: { staggerChildren: 0.2 , type: "spring", } },
     };
     
     // Variants pour chaque élément de la liste de missions
+   
+   
+   
     const mession_itemVariants = {
-      hidden: { x: -3000 },
-      visible: { x: 0, transition: { duration: 1  , type: "spring",} },
+      hidden: {opacity: 0 ,x:-1000 ,y:0},
+      visible: { opacity: 1, x:0,y:0, transition: { duration: 2  , type: "spring",} },
     };
+    
+
+   
     return(
     <Layout
         title='httpOnly Auth | Home'
@@ -194,179 +257,174 @@ function Home(props)  {
     >
         <div className='home-all'>
           <div className='home-all-part'>
-                <div className='home-part1'>
-                  <div className='home-part1-1'    style={{ backgroundColor:`${images[currentImage].color}`,color:`${images[currentImage].fcolor}` , transition: 'background-color 3s ease'}}>
-
-                  
-                  <div className="presentation-title"  >
-                  <AnimatePresence key={props.current_image}  >
-                            
-                            <motion.h1 variants={titleVariants} initial="hidden" whileInView="visible">
-                              {titles[0][props.langue][props.current_image].title.split("").map((letter) => (
-                                <motion.span key={props.current_image} variants={letterVariants}>{letter}</motion.span>
-                              ))}
-                            </motion.h1>
-                            <motion.p variants={titleVariants} initial="hidden" whileInView="visible" >
-                            {titles[0][props.langue][props.current_image].text.split("").map((letter) => (
-                                <motion.span key={props.current_image} variants={letterVariants}>{letter}</motion.span>
-                              ))}
-                             
-                            </motion.p>
-                  </AnimatePresence>
-    </div>
-                          <div   className="presentation-img">
-                                  <AnimatePresence>
-                                  <motion.div
-                                className="presentation-sous-img"
-                                style={{backgroundImage: `url(${images[props.current_image].image})` }}
-                                variants={imageVariants}
-                                initial="initial"
-                                whileInView="animate"
-                                exit="exit"
-                                key={props.current_image}
-                              /> 
-                              </AnimatePresence>
-                        </div>
-                  </div>
-                  <div className='home-part1-2'>
-                        <div className='presentation-aprops'>
-                             
-                               
-
-                            <motion.h1 variants={titleVariants} initial="hidden" animate="visible">
-                              {aprops[0][props.langue].title.split("").map((letter, index) => (
-                                <motion.span key={index} variants={letterVariants}>{letter}</motion.span>
-                              ))}
-                            </motion.h1>
-    
-                            <motion.p variants={titleVariants2} initial="hidden" animate="visible" >
-                             
-                              {aprops[0][props.langue].text.split("").map((letter, index) => (
-                                <motion.span key={index} variants={letterVariants}>{letter}</motion.span>
-                              ))}
-                            </motion.p>
-                            
-                        </div>
-                  </div>
-               </div>
-               <div className='home-part2'>
-
-                          
-                    <div className='home-part2-1'>
-                      <div className='messions-title'>
-                              <h1>Messions</h1>
-                      </div>
-                      
-                    
-                      <motion.div
-                              className='messions-type'
-                              variants={messionVariants}
-                              initial='hidden'
-                              animate='visible'
-                            >
-                              {messions[0]['fr'].map((item) => {
-                                return (
-                                  <motion.div
-                                    className='mession'
-                                    key={item.id}
-                                    variants={mession_itemVariants}
-                                    transition={{ delay: item.id * 2 }}
-                                   
-                                  >
-                                    <h1>{item.title}</h1>
-                                    <p>{item.text}</p>
-                                  </motion.div>
-                                );
-                              })}
-                            </motion.div>
-
-                    </div>
+          <div className='home-part1'>
+            <div
+              className='home-part1-1'
+              style={{
+                backgroundColor: `${images[currentImage].color}`,
+                color: `${images[currentImage].fcolor}`,
+                transition: 'background-color 3s ease'
+              }}
+            >
+              <div className="presentation-title">
+                <AnimatePresence key={props.current_image}>
+                  <motion.h1 variants={titleVariants} initial="hidden" whileInView="visible">
+                    {titles[0][props.langue][props.current_image].title.split("").map((letter) => (
+                      <motion.span key={props.current_image} variants={letterVariants}>{letter}</motion.span>
+                    ))}
+                  </motion.h1>
+                  <motion.p variants={titleVariants} initial="hidden" whileInView="visible">
+                    {titles[0][props.langue][props.current_image].text.split("").map((letter) => (
+                      <motion.span key={props.current_image} variants={letterVariants}>{letter}</motion.span>
+                    ))}
+                  </motion.p>
+                </AnimatePresence>
               </div>
+              <div className="presentation-img">
+                <AnimatePresence>
+                  <motion.div
+                    className="presentation-sous-img"
+                    style={{ backgroundImage: `url(${images[props.current_image].image})` }}
+                    variants={imageVariants}
+                    initial="initial"
+                    whileInView="animate"
+                    exit="exit"
+                    key={props.current_image}
+                  />
+                </AnimatePresence>
+              </div>
+            </div>
+            <div className='home-part1-2'>
+              <AnimatePresence>
+                <motion.div
+                  className='presentation-aprops'
+                  viewport={{ once: true }}
+                  whileInView="visible"
+                  initial="hidden"
+                  variants={apropsVariants}
+                >
+                  <h1>
+                    <span>{aprops[0][props.langue].title}</span>
+                  </h1>
+                  <p>
+                    <span>{aprops[0][props.langue].text}</span>
+                  </p>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          </div>
 
-              <div className='home-part3'>
+          <div className='home-part2'>
+              <div className='home-part2-1'>
+                <div className='messions-title'>
+                  <h1>Messions</h1>
+                </div>
+                <motion.div
+                  className='messions-type'
+                  variants={messionVariants}
+                  initial='hidden'
+                  whileInView='visible'
+                  viewport={{ once: true }}
+                >
+                  {messions[0]['fr'].map((item) => {
+                    return (
+                      <AnimatePresence key={item.id}>
+                        <motion.div
+                          className='mession'
+                          key={item.id}
+                          variants={mession_itemVariants}
+                          whileHover={{ scale: 1.05 }}
+                          transition={{ delay: item.id * 2 }}
+                        >
+                          <div className='mession-title'>
+                               <h1>{item.title}</h1>
+                          </div>
+                          <div className='mession-text'>
+                              <p>{item.text}</p>
+                          </div>
+                        </motion.div>
+                      </AnimatePresence>
+                    );
+                  })}
+                </motion.div>
+              </div>
+            </div>
 
+
+           <div className='home-part3'>
                   <div className='home-part3-1'>
-                        <h1>Actualités et événements</h1>
-
+                    <h1>Actualités et événements</h1>
                   </div>
 
                   <div className='home-part3-2'>
-                          <AnimatePresence >
-                              <motion.div className='home-part3-2-image'
-                                style={{backgroundImage: `url(${events[0]["fr"][currentEvent].image})`}}
-                                variants={image_eventVariants}
-                                initial="initial"
-                                animate="animate"
-                                exit="exit"
-                                key={events[0]["fr"][currentEvent].image}
-                               >
+                    <AnimatePresence>
+                      <motion.div
+                        className='home-part3-2-image'
+                        style={{backgroundImage: `url(${events[0]["fr"][currentEvent].image})`}}
+                        variants={image_eventVariants}
+                        initial="initial"
+                        animate="animate"
+                        exit="exit"
+                        key={events[0]["fr"][currentEvent].image}
+                      >
+                      </motion.div>
+                                        
+                      <motion.div
+                        className='home-part3-2-text'
+                        variants={textVariants}
+                        initial="initial"
+                        animate="animate"
+                        exit="exit"
+                        key={events[0]['fr'][currentEvent].title}
+                        onAnimationComplete={definition => {
+                          console.log('Completed animating', definition)
+                        }}
+                      >
+                        <div className='home-part3-2-text-div'>
+                          <h1>
+                            {events[0]['fr'][currentEvent].title}
+                          </h1>
+                          <p>
+                            {events[0]['fr'][currentEvent].text}
+                          </p>
+                        </div>
+                      </motion.div>
+                    </AnimatePresence>
 
-                              </motion.div>
-                         
-                                <motion.div className='home-part3-2-text'
-                                variants={textVariants}
-                                initial="initial"
-                                animate="animate"
-                                exit="exit"
-                               key={events[0]['fr'][currentEvent].title}
-                                onAnimationComplete={definition => {
-                                  console.log('Completed animating', definition)
-                                
-                                
-                                }}
-                                >
-                                  <div className='home-part3-2-text-div'>
-                                  
-                                        <h1>
-                                        {events[0]['fr'][currentEvent].title}
-                                        </h1>
-                                        <p>
-                                          {events[0]['fr'][currentEvent].text}
-                                        </p>
-                                        </div>
-                                 
-                                </motion.div>
-                          </AnimatePresence>
-                          <div className='home-part3-help1'   style={{backgroundImage: `url(${events[0]['fr'][currentEvent].image})`}}>
-                             
+                    <div className='home-part3-help1' style={{backgroundImage: `url(${events[0]['fr'][currentEvent].image})`}}>
+                    </div>
 
-                          </div>
-                          
-                          <div className='home-part3-help2'>
-                                  
-                                  <h1>
-                                  {events[0]['fr'][currentEvent].title}
-                                  </h1>
-                                  <p>
-                                    {events[0]['fr'][currentEvent].text}
-                                  </p>
-                          </div>
-
+                    <div className='home-part3-help2'>
+                      <h1>
+                        {events[0]['fr'][currentEvent].title}
+                      </h1>
+                      <p>
+                        {events[0]['fr'][currentEvent].text}
+                      </p>
+                    </div>
                   </div>
+
                   <div className='home-part3-3'>
                     <div className='home-part3-3-index'>
-                    {events[0]['fr'].map((index)=>{
-                                let backgroundColor = 'green';
-                                if (index.id ===currentEvent+1) {
-                                  backgroundColor = '#B64D07';
-                                }
-                                return(
-                                  <div className='home-part3-3-index-div' style={{backgroundColor}}>
-                                  </div>
-                                )
-                              })}
+                      {events[0]['fr'].map((index)=>{
+                        let backgroundColor = 'green';
+                        if (index.id ===currentEvent+1) {
+                          backgroundColor = '#B64D07';
+                        }
+                        return(
+                          <div className='home-part3-3-index-div' style={{backgroundColor}}>
+                          </div>
+                        )
+                      })}
                     </div>
+
                     <div className='home-part3-buttons'>
-                        <button className='home-part3-button prev' onClick={()=>change_event('prev')}>&lt;</button>
-                        <button className='home-part3-button next' onClick={()=>change_event('next')}>&gt;</button>
-
+                      <button className='home-part3-button prev' onClick={()=>change_event('prev')}>&lt;</button>
+                      <button className='home-part3-button next' onClick={()=>change_event('next')}>&gt;</button>
                     </div>
-                 
-                        
-
                   </div>
-
-              </div>
+                </div>
+                  
 
               <div className='home-part4'>
                 <div className='home-part4-title'>
@@ -374,50 +432,40 @@ function Home(props)  {
                 </div>
                
                 <div className='home-figure'>
-                <figure className="snip1390">
-                          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample3.jpg" alt="profile-sample3" className="profile" />
+                <AnimatePresence>
+                <motion.figure className="snip1390"
+                 variants={image_figuretVariants}
+                 initial="initial"
+                 animate="animate"
+                 exit="exit"
+                 key={figures[currentFigure].id}
+                 drag="x"
+                 dragConstraints={{ left: 0, right: 0 }}
+        dragElastic={0.2}
+        dragControls={dragControls}
+        onDragEnd={handleDragEnd}>
+                          <img src={figures[currentFigure].imgSrc} alt={figures[currentFigure].imgAlt} className="profile" />
                           <figcaption>
-                            <h2>Eleanor Crisp</h2>
-                            <h4>bénévole</h4>
-                            <blockquote>Je suis fier de faire partie de Soladirité, une association qui s'engage à améliorer la vie des enfants en difficulté à travers l'accès à l'éducation, la santé, l'eau potable et l'aide alimentaire. En travaillant en collaboration avec des partenaires locaux, nous avons réussi à faire une réelle différence dans la vie des enfants les plus vulnérables de la société</blockquote>
+                            <h2>{figures[currentFigure].name}</h2>
+                            <h4>{figures[currentFigure].role}</h4>
+                            <blockquote>{figures[currentFigure].quote}</blockquote>
                           </figcaption>
-                        </figure>
-                <figure className="snip1390 hover"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" className="profile" />
-                        <figcaption>
-                          <h2>Gordon Norman</h2>
-                          <h4>bénéficiaire</h4>
-                          <blockquote>Grâce à l'aide de Solidarité, mes enfants ont maintenant accès à une alimentation saine et équilibrée, ainsi qu'à l'éducation. Je suis vraiment reconnaissant pour tout ce que l'association a fait pour nous. </blockquote>
-                        </figcaption>
-                </figure>
-                <figure className="snip1390"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample6.jpg" alt="profile-sample6" className="profile" />
-                        <figcaption>
-                          <h2>Sue Shei</h2>
-                          <h4>bénévole</h4>
-                          <blockquote>Travailler en tant que bénévole pour Soladirité a été une expérience extrêmement gratifiante. Pouvoir contribuer à améliorer la vie des enfants défavorisés en leur offrant des opportunités d'éducation, de santé et d'aide alimentaire est une source de fierté et de satisfaction pour moi</blockquote>
-                        </figcaption>
-                </figure>
-                <figure className="snip1390">
-                          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample3.jpg" alt="profile-sample3" className="profile" />
-                          <figcaption>
-                            <h2>Eleanor Crisp</h2>
-                            <h4>bénévole</h4>
-                            <blockquote>En tant que bénévole pour Soladirité, j'ai pu découvrir l'impact positif que peut avoir une association à but non lucratif. En travaillant avec passion et dévouement pour aider les enfants en difficulté, j'ai non seulement aidé à changer leur vie, mais j'ai également enrichi la mienne</blockquote>
-                          </figcaption>
-                        </figure>
-                <figure className="snip1390 hover"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" className="profile" />
-                        <figcaption>
-                          <h2>Gordon Norman</h2>
-                          <h4>bénéficiaire</h4>
-                          <blockquote>La collaboration de Solidarité avec les partenaires locaux est remarquable. Ils travaillent ensemble pour fournir de l'eau potable propre et des soins de santé aux enfants dans le besoin. Grâce à leur travail acharné, nous avons vu une amélioration significative de la qualité de vie de nos enfants.</blockquote>
-                        </figcaption>
-                </figure>
-                <figure className="snip1390"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample6.jpg" alt="profile-sample6" className="profile" />
-                        <figcaption>
-                          <h2>Sue Shei</h2>
-                          <h4>bénéficiaire</h4>
-                          <blockquote>Je ne sais pas ce que nous ferions sans Solidarité. Ils ont été là pour nous lorsque nous avons perdu notre maison à cause d'une inondation. Grâce à leur aide, nous avons eu accès à un logement temporaire et à de la nourriture pour survivre. Ils ont également aidé nos enfants à retourner à l'école. Nous sommes tellement reconnaissants pour leur soutien et leur aide.</blockquote>
-                        </figcaption>
-                </figure>
+                 </motion.figure>
+                 </AnimatePresence>
+
+           
+                 <div className='home-figure-index'>
+                      {figures.map((index)=>{
+                        let backgroundColor = 'green';
+                        if (index.id ===currentFigure+1) {
+                          backgroundColor = '#B64D07';
+                        }
+                        return(
+                          <div className='home-figure-index-div' style={{backgroundColor}}>
+                          </div>
+                        )
+                      })}
+                       </div>
                 </div>
 
               </div>

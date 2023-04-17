@@ -73,38 +73,7 @@ const link_array = [
             </div>
           
         </div>
-        <div class="footer-coordone">
-              <h1>{info["Contact"][props.langue]}</h1>
-                <ul>
-                  <li>Adresse : Worben 5, CH-5706 Boniswil (SUISSE)</li>
-                  <li>Tél: +41 62 535 62 31</li>
-                  <li>Mobile: +41 79 550 17 45</li>
-                  <li>E-mail: solidaritesud1@gmail.com</li>
-                </ul>
-                <div className='footer-icons'>
-                <FontAwesomeIcon icon={faFacebook}  className="footer-icon"/>
-                <FontAwesomeIcon icon={faTwitter}  className="footer-icon"/>
-                <FontAwesomeIcon icon={faLinkedin}  className="footer-icon"/>
-              </div>
-              </div>
-        </div>
-
-      
-        <div className='footer-top-2'>
-        
-              
-              <div class="footer-coordone-bank">
-              <h1>{info["Coor"][props.langue]}</h1>
-                <ul>
-                  <li></li>
-                  <li>RAIFFEISEN BANK</li>
-                  <li>Aarau-Raiffeisen</li>
-                  <li>SOLIDARITé-SUD</li>
-                  <li>IBAN CH33 8080 8006 4374 7900 6</li>
-                  <li>Kasinostrasse 37 – 5000 Aarau</li>
-                </ul>
-              </div>
-              <nav class="footer-menu">
+        <nav class="footer-menu">
                 <h1>{info["Menu"][props.langue]}</h1>
                 <ul>
                   {link_array[0][props.langue].map((item) => (
@@ -115,7 +84,28 @@ const link_array = [
                     </li>
                   ))}
                 </ul>
+                <div className='footer-icons'>
+                <FontAwesomeIcon icon={faFacebook}  className="footer-icon"/>
+                <FontAwesomeIcon icon={faTwitter}  className="footer-icon"/>
+                <FontAwesomeIcon icon={faLinkedin}  className="footer-icon"/>
+              </div>
               </nav>
+        
+        </div>
+
+      
+        <div className='footer-top-2'>
+        
+        <div class="footer-coordone">
+              <h1>{info["Contact"][props.langue]}</h1>
+                <ul>
+                  <li>Adresse : Worben 5, CH-5706 Boniswil (SUISSE)</li>
+                  <li>Tél: +41 62 535 62 31</li>
+                  <li>Mobile: +41 79 550 17 45</li>
+                  <li>E-mail: solidaritesud1@gmail.com</li>
+                </ul>
+               
+              </div>
         </div>
       </div>
       <div class="footer-bottom">

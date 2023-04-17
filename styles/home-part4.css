@@ -13,28 +13,58 @@
    margin-left: 2%;
    margin-right: 2%;
    margin-top: -3%;
+  
+   width: 100%;
 }
 .home-part4-title h1{
 
   text-align: center;
 }
 .home-figure{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
+  position: relative;
+  display: flex;
+
+
+  width: 50%;
+  height: 500px;
   
-    flex-wrap: wrap;
-    justify-content: center;
+  justify-content: center;
+ align-items: center;
+ overflow: hidden;
+ border-radius: 20px;
+
+
+}
+.home-figure-index{
+  position: absolute;
+  bottom: 0;
+  z-index: 20;
+  width: 50%;
+  height: 10%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.home-figure-index-div{
+  display: flex;
+  flex-direction: row;
+  width: 15px;
+    height: 15px;
+    background-color: #d4b800;
+    border-radius: 20px;
+    margin: 5px;
 }
 figure.snip1390 {
   font-family:inika_reg;
-  position: relative;
+  position: absolute;
   overflow: hidden;
-  margin: 3%;
-  min-width: 230px;
-  max-width: 315px;
+  margin: 5%;
+  min-width: 80%;
+  max-width: 90%;
   width: 100%;
   color: #000000;
+  height: 90%;
   text-align: center;
   font-size: 16px;
   background-color: #1b2504;
@@ -44,6 +74,7 @@ figure.snip1390 {
   box-sizing: border-box;
   border-radius: 15px;
   box-shadow: 2px 6px 8px 0px rgb(22, 31, 13);
+
 }
 figure.snip1390 *,
 figure.snip1390 *:before,
@@ -60,6 +91,7 @@ figure.snip1390 h2,
 figure.snip1390 h4,
 figure.snip1390 blockquote {
   margin: 0;
+
 }
 figure.snip1390 h2,
 figure.snip1390 h4 {
@@ -80,6 +112,7 @@ figure.snip1390 blockquote {
   box-shadow: inset -1.4px -1.4px 2px rgba(0, 0, 0, 0.3);
   text-align: left;
   position: relative;
+  height: 300px;
   
 }
 figure.snip1390 blockquote:before {
@@ -102,6 +135,12 @@ figure.snip1390 .profile {
 }
 
 @media screen and (max-width:750px) {
+  .home-figure{
+   
+    width: 95%;
+ 
+  
+  }
   figure.snip1390 blockquote:before {
  
     font-size: 40px;

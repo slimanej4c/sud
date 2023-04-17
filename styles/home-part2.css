@@ -2,7 +2,7 @@
      display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 95%;
     margin-bottom: 100px;
     position: relative;
     overflow: hidden;
@@ -12,8 +12,8 @@
 .home-part2-1{
     display: flex;
     flex-direction: column;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 2%;
+    margin-right: 2%;
     width: 100%;
 
 
@@ -36,14 +36,16 @@
 
   overflow: hidden; /* Ajouter cette ligne */
  
+ 
 }
 .mession{
     
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
-    padding-left:10px;
-    padding-right:10px;
-    margin: 10px;
+    padding-left:5px;
+    padding-right:5px;
+    margin: 5px;
     align-items: center;
     background-color: var(--mession-color);
     width: 30%;
@@ -55,17 +57,42 @@
     box-shadow: 2px 6px 8px 0px rgb(22, 31, 13);
     transform: translateX(-00%);
     color: var(--mession-font-color);
-    padding: 2%;
+    padding: 1%;
     
+}
+.mession-title{
+    display: flex;
+    width:95%;
+    height: 10%;
+ 
+
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+  
+    
+}
+.mession-text{
+  width: 95%;
+  height: 80%;
+  background-color: #e4e4e4;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 3px 4px 0px rgb(22, 31, 13);
+    padding: 2%;
 }
 .mession h1{
     text-align: center;
-    font-family:inika_bold;
+    font-family:inika_reg;
+    font-size: 25px;
     color: var( --mession-font-title-color);
 }
 .mession p{
    text-align: center;
-   margin-top: -1rem;
+   
    font-family:inika_reg;
  
 }
@@ -80,20 +107,20 @@
     }
     .mession h1{
         text-align: center;
-        font-size: 20px;
+        font-size: 18px;
       
      
     }
     .mession p{
        text-align: center;
-       margin-top: -0.5rem;
+ 
        font-size: 12;
     
      
     }
     .mession{
       
-        height: 300px;
+        height: 350px;
    
     
      
@@ -107,34 +134,34 @@
       
     }
     .messions-type{
-
+        display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-       
+
         width: 100%;
         height: 80%;
      
     }
     .mession{
-        margin-left: 5%;
-        margin-right: 5%;
+        margin-left: 2%;
+        margin-right: 2%;
         padding: 0;
         width: 60%;
-        height: 250px;
-        padding: 2%;
+        height: 370px;
+        padding: 1%;
     
      
     }
     .mession h1{
       
-      font-size: 20;
+      font-size: 18;
      
     }
     .mession p{
     
-       margin-top: -1rem;
-       font-size: 16;
+   
+       font-size: 12;
      
     }
    
@@ -150,7 +177,7 @@
     }
     .mession{
        
-        width: 90%;
+        width: 80%;
         padding: 5%;
       
     
@@ -158,13 +185,13 @@
     }
     .mession h1{
       
-      font-size: 16;
+      font-size: 14;
      
     }
     .mession p{
     
-       margin-top: -1rem;
-       font-size: 12;
+
+       font-size: 11;
      
     }
     

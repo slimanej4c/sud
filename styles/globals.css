@@ -4,17 +4,17 @@
  --navbar_color:#1b1200;
  --navbar_mobile_color:#424223;
  --navbar_mobile_ul:#5a6f43;
- --navbar_mobile_click:#cbe200;
- --mather-color:#5a6f43;
+ --navbar_mobile_click:#1e1e1e;
+ --mather-color:#81AA5B;
 
  --title-color:#FF6B09;
- --aprops-color:#cad2b8 ;
+ --aprops-color:#1e1e1e ;
 
 
- --mession-color:#383f2f ;
- --mession-font-color:#a1b18b ;
- --mession-font-title-color:#b2c09e ;
- --mession-font-big-title-color:#20221c;
+ --mession-color:#e4e6d6;
+ --mession-font-color:#0b1301 ;
+ --mession-font-title-color:rgb(24, 27, 14); ;
+ --mession-font-big-title-color:#000000;
 
  --event-font-big-title-color:#20221c;
  --event-bg-text:#b0c093;

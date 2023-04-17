@@ -58,3 +58,46 @@ export const aprops=[{"FR":{"title":"À propos","text":" Soladirité est une ass
     ],
     },
     ];
+
+
+    export const figures = [
+      {
+        id:1,
+        imgSrc: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample3.jpg",
+        imgAlt: "profile-sample3",
+        name: "Eleanor Crisp",
+        role: "bénévole",
+        quote: "Je suis fier de faire partie de Solidarité, une association qui s'engage à améliorer la vie des enfants en difficulté à travers l'accès à l'éducation, la santé, l'eau potable et l'aide alimentaire. En travaillant en collaboration avec des partenaires locaux, nous avons réussi à faire une réelle différence dans la vie des enfants les plus vulnérables de la société"
+      },
+      {
+        id:2,
+        imgSrc: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg",
+        imgAlt: "profile-sample5",
+        name: "Gordon Norman",
+        role: "bénéficiaire",
+        quote: "Grâce à l'aide de Solidarité, mes enfants ont maintenant accès à une alimentation saine et équilibrée, ainsi qu'à l'éducation. Je suis vraiment reconnaissant pour tout ce que l'association a fait pour nous."
+      },
+      {
+        id:3,
+        imgSrc: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample6.jpg",
+        imgAlt: "profile-sample6",
+        name: "Sue Shei",
+        role: "bénévole",
+        quote: "Travailler en tant que bénévole pour Solidarité a été une expérience extrêmement gratifiante. Pouvoir contribuer à améliorer la vie des enfants défavorisés en leur offrant des opportunités d'éducation, de santé et d'aide alimentaire est une source de fierté et de satisfaction pour moi."
+      },
+      {
+        id:4,
+        imgSrc: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample3.jpg",
+        imgAlt: "profile-sample3",
+        name: "Eleanor Crisp",
+        role: "bénévole",
+        quote: "En tant que bénévole pour Solidarité, j'ai pu découvrir l'impact positif que peut avoir une association à but non lucratif. En travaillant avec passion et dévouement pour aider les enfants en difficulté, j'ai non seulement aidé à changer leur vie, mais j'ai également enrichi la mienne."
+      },
+      {
+        id:5,
+        imgSrc: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg",
+        imgAlt: "profile-sample5",
+        name: "Gordon Norman",
+        role: "bénéficiaire",
+        quote: "La collaboration de Solidarité avec les partenaires locaux est remarquable. Ils travaillent ensemble pour fournir de l'eau potable propre et des soins de santé aux enfants dans le besoin. Grâce à leur travail acharné, nous avons vu une amélioration significative de la qualité de vie de nos enfants."
+      }]
