@@ -84,11 +84,7 @@ const link_array = [
                     </li>
                   ))}
                 </ul>
-                <div className='footer-icons'>
-                <FontAwesomeIcon icon={faFacebook}  className="footer-icon"/>
-                <FontAwesomeIcon icon={faTwitter}  className="footer-icon"/>
-                <FontAwesomeIcon icon={faLinkedin}  className="footer-icon"/>
-              </div>
+              
               </nav>
         
         </div>
@@ -108,6 +104,7 @@ const link_array = [
               </div>
         </div>
       </div>
+      <hr></hr>
       <div class="footer-bottom">
       <div className='footer-logo-title'>
                   <div class="footer-logo">
@@ -117,7 +114,13 @@ const link_array = [
                   <div class="footer-title">
                             <h2>SOLIDARITé</h2>
                     </div> 
+                    
             </div>
+            <div className='footer-icons'>
+                <FontAwesomeIcon icon={faFacebook}  className="footer-icon"/>
+                <FontAwesomeIcon icon={faTwitter}  className="footer-icon"/>
+                <FontAwesomeIcon icon={faLinkedin}  className="footer-icon"/>
+              </div>
        
         <h4>Personne de référence : M. Maurice Zellweger, Président</h4>
       </div>

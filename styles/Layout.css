@@ -185,10 +185,10 @@ body {
     .nav-link{
      text-decoration: none;
      color: #FFE0E0;
-     margin: 20px;
+     margin: 25px;
      font-size: 12px;
-     letter-spacing:4px;
-     font-family:inika_bold;
+     letter-spacing:5px;
+     font-family:inika_reg;
   
     }
     .item-div{

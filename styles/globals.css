@@ -1,11 +1,11 @@
 :root {
   
  margin: auto; 
- --navbar_color:#1b1200;
+ --navbar_color:#252402;
  --navbar_mobile_color:#424223;
  --navbar_mobile_ul:#5a6f43;
- --navbar_mobile_click:#1e1e1e;
- --mather-color:#81AA5B;
+ --navbar_mobile_click:#81AA5B;
+ --mather-color:#ecf5e3;
 
  --title-color:#FF6B09;
  --aprops-color:#1e1e1e ;
@@ -19,7 +19,7 @@
  --event-font-big-title-color:#20221c;
  --event-bg-text:#b0c093;
 
- --footer-color:#1b2504;
+ --footer-color:#2b380b;
  --footer-shadow-color:#090600;
  --footer-font-color:#939f81;
  --footer_font_size_title_700:16px ;

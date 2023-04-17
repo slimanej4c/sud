@@ -7,8 +7,14 @@
     align-items: center;
     font-size: 14px;
     position: relative;
-  
+   
     color: var(--footer-font-color);
+  }
+  hr {
+    border: none;
+    border-top: 1px solid rgb(255, 255, 255);
+   
+    width: 90%;
   }
   .footer h1{
     font-size: 18px;
@@ -17,10 +23,13 @@
   .footer li { 
     font-size: 14px;
     font-family:inika_reg;
+   
   }
   .footer a{
+    display: flex;
     font-size: 14px;
     font-family:inika_reg;
+    margin-bottom: 5%;
     text-decoration: none;
     list-style: none;
     color:var(--footer-font-color);
@@ -56,30 +65,29 @@
   .footer-top-1{
     display: flex;
     flex-direction: row;
-    width: 50%;
-    justify-content:center;
+    width: 60%;
 
-   
+
   }
   .footer-top-2{
     display: flex;
     flex-direction: row;
-    width: 50%;
-    justify-content:center;
-    align-items: center;
- 
+    width: 40%;
+
+
+
    
   }
   .footer-description{
     position: relative;
     display: flex;
     flex-direction:column;
-    justify-content:space-around;
+    padding-right: 5%;
+
    
-  
     height: 100%;
 
-    width: 60%;
+    width: 80%;
 
   }
   .footer-logo-title{
@@ -105,17 +113,21 @@
     display: flex;
 
     flex-direction: column;
-
+    justify-content: center;
+   padding-left: 5%;
    width: 80%;
+
   }
 
   
   .footer-menu {
     display: flex;
     flex-direction: column;
-    width: 70%;
-   padding-left: 20%;
-   margin-left:70px;
+
+    width: 20%;
+   padding-left: 0%;
+   
+
    
  
  
@@ -125,7 +137,10 @@
   .footer-menu ul {
     display: flex;
     flex-direction: column;
+ 
     list-style: none;
+   
+    width: 100%;
     margin: 0;
     padding: 0;
     margin-bottom: 10%;
@@ -139,7 +154,7 @@
     display: flex;
     flex-direction: column;
 
-    justify-content: center;
+   
     align-items: center;
     width: 100%;
    
@@ -244,15 +259,16 @@
     }
     .footer-description{
      
-      width: 50%;
-      margin-left: 5%;
-  
+      width: 60%;
+     padding-right: 2%;
+    
     }
     .footer-menu {
    
-      width: 50%;
+      width: 30%;
       margin-left: 5%;
-      margin-right: 5%;
+      padding-left: 0%;
+ 
    
     }
     .footer-coordone {
@@ -268,7 +284,7 @@
     }
     .footer-aprops{
    
-  
+      padding-left: 4%;
      width: 100%;
     }
     .footer h1{
@@ -289,6 +305,7 @@
     }
     .footer a{
       font-size: var(--footer_font_size_text_700);
+    
       
    
     }

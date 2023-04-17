@@ -1,13 +1,14 @@
 .home-part3 {
   display: flex;
   flex-direction: column;
-  width:85%;
+  width:90%;
 
   justify-content: center;
   align-items: center;
   font-family:inika_reg;
   margin-left: 2%;
   margin-right: 2%;
+
 
 
 }
@@ -26,7 +27,7 @@
     position: relative;
     display: flex;
     
-    width: 70%;
+    width: 80%;
     height: 500px;
     
     justify-content: center;
@@ -91,13 +92,18 @@
    
 }
 .home-part3-3 {
-    
+    position: absolute;
+   
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 200px;
+    
     justify-content: center;
     align-items: center;
+   
+    height: 100px;
+    
+
    
 }
 .home-part3-3-index{
@@ -105,16 +111,16 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 20px;
+    height: 100px;
     justify-content:center;
-    margin-top: -80px;
+
     align-items: center;
     
 }
 .home-part3-3-index-div{
     width: 15px;
     height: 15px;
-    background-color: #d4b800;
+ 
     border-radius: 20px;
     margin: 5px;
   
@@ -124,25 +130,32 @@
     flex-direction: row;
     justify-content: space-around;
     width: 100%;
+  
+   
     
 }
 .home-part3-button {
     width: 50px;
     height: 50px;
     text-align: center;
-    padding-top: 2px;
+  
     border-radius: 50px;
+    position: absolute;
+    bottom:0%;
   }
   .prev {
+    position: absolute;
     background-color: var(--title-color);
     color: wheat;
     font-size: 2em;
     font-weight: bold;
+    right: 88%;
   }
  .next {
     background-color: var(--title-color);
     color: wheat;
     font-size: 2em;
+    left: 88%;
   }
   @media screen and (max-width: 1100px) {
   
@@ -155,6 +168,7 @@
        font-size: 14px;
        
     }
+    
  
    
   }
@@ -181,6 +195,7 @@
     
        
     }
+  
     .home-part3-help1{
         width: 100%;
         height: 250px;
@@ -215,17 +230,17 @@
        
        
         
-       
-        display: flex;
-  flex-direction: column;
+                
+             display: flex;
+            flex-direction: column;
 
-  position: absolute;
-  width: 100%;
-  height: 500px;
-  background-color: var( --event-bg-text);
-  top: 250px;
-  right: 0;
-  bottom: 0;
+            position: absolute;
+            width: 100%;
+            height: 500px;
+            background-color: var( --event-bg-text);
+            top: 250px;
+            right: 0;
+            bottom: 0;
     
     }
     .home-part3-2-text-div {
@@ -245,27 +260,33 @@
        font-size: 14px;
        
     }
+    .home-part3-3{
+   
+        top: 40%;
+    }
   
     .prev {
        
         font-size: 1em;
-        left: -5%;
-        top:30%;
+        right:98%;
+        top: 0;
+       
       }
      .next {
        
         font-size: 1em;
-        right: -5%;
-        top:30%;
+        left:98%;
+        top: 0;
+      
       }
       .home-part3-button {
         position: absolute;
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
        
       }.home-part3-3-index{
       position: absolute;
-      top:40%;
+      top:35%;
     }
 
   }
@@ -354,26 +375,31 @@
        font-size: 12px;
        
     }
+    .home-part3-3 {
+       
+    }
     .prev {
        
         font-size: 1em;
-        left: -5%;
-        top:280px;
+        right:97%;
+        top: 0;
+       
       }
      .next {
        
         font-size: 1em;
-        right: -5%;
-        top:280px;
+        left:97%;
+        top: 0;
+      
       }
       .home-part3-button {
-        position: absolute;
-        width: 40px;
-        height: 40px;
+        width: 25px;
+        height: 25px;
+      
        
       }.home-part3-3-index{
-      position: absolute;
-      top:40%;
+    
+     
     }
    
 

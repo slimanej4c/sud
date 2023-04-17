@@ -48,14 +48,14 @@ function Home(props)  {
         sety_init_figure('-100%')
         sety_exit_figure('0%')
      
-        setcurrentFigure((currentFigure - 1 + figures.length) % figures.length);
+        setcurrentFigure((currentFigure - 1 + figures[0][props.langue].length) % figures[0][props.langue].length);
        
        
       } else if (info.offset.x < -50) {
         // if the user has dragged the image by more than 50 pixels to the left, move to the previous figure
         sety_init_figure('100%')
         sety_exit_figure('0%')
-        setcurrentFigure((currentFigure + 1) % figures.length);
+        setcurrentFigure((currentFigure + 1) % figures[0][props.langue].length);
         
       }
     };
@@ -78,14 +78,14 @@ function Home(props)  {
   const change_event = (myParam) => {
     setstop_auto(false)
      if (myParam==="next"){
-      { currentEvent===events[0]['fr'].length-1 ? setcurrentEvent(0)   :  setcurrentEvent(currentEvent+1)}
+      { currentEvent===events[0][props.langue].length-1 ? setcurrentEvent(0)   :  setcurrentEvent(currentEvent+1)}
       props.Set_cookies_redux(true)
       sety_init('100%')
       sety_init_image('-100%')
     
      }
      else{
-      { currentEvent===0 ?  setcurrentEvent(events[0]['fr'].length-1)  : setcurrentEvent(currentEvent-1)}
+      { currentEvent===0 ?  setcurrentEvent(events[0][props.langue].length-1)  : setcurrentEvent(currentEvent-1)}
       props.Set_cookies_redux(false)
       sety_init('-100%')
       sety_init_image('100%')
@@ -107,7 +107,7 @@ function Home(props)  {
       const interval = setInterval(() => {
      
       if (stop_auto){
-        { currentEvent===events[0]['fr'].length-1 ? setcurrentEvent(0)   :  setcurrentEvent(currentEvent+1)}
+        { currentEvent===events[0][props.langue].length-1 ? setcurrentEvent(0)   :  setcurrentEvent(currentEvent+1)}
         sety_init('100%')
       sety_init_image('-100%')
       }
@@ -324,10 +324,10 @@ function Home(props)  {
                   
                  
                 >
-                  <AnimatePresence key={messions[0]['fr'][0].id}>
+                  <AnimatePresence key={messions[0][props.langue][0].id}>
   <motion.div
     className='mession'
-    key={messions[0]['fr'][0].id}
+    key={messions[0][props.langue][0].id}
     variants={mession_itemVariants}
     whileHover={{ scale: 1.05 }}
     viewport={{ once: true }}
@@ -335,18 +335,18 @@ function Home(props)  {
     whileInView='visible'
   >
     <div className='mession-title'>
-      <h1>{messions[0]['fr'][0].title}</h1>
+      <h1>{messions[0][props.langue][0].title}</h1>
     </div>
     <div className='mession-text'>
-      <p>{messions[0]['fr'][0].text}</p>
+      <p>{messions[0][props.langue][0].text}</p>
     </div>
   </motion.div>
 </AnimatePresence>
 
-<AnimatePresence key={messions[0]['fr'][1].id}>
+<AnimatePresence key={messions[0][props.langue][1].id}>
   <motion.div
     className='mession'
-    key={messions[0]['fr'][0].id}
+    key={messions[0][props.langue][0].id}
     variants={mession_itemVariants}
     whileHover={{ scale: 1.05 }}
     viewport={{ once: true }}
@@ -354,18 +354,18 @@ function Home(props)  {
     whileInView='visible'
   >
     <div className='mession-title'>
-      <h1>{messions[0]['fr'][1].title}</h1>
+      <h1>{messions[0][props.langue][1].title}</h1>
     </div>
     <div className='mession-text'>
-      <p>{messions[0]['fr'][1].text}</p>
+      <p>{messions[0][props.langue][1].text}</p>
     </div>
   </motion.div>
 </AnimatePresence>
 
-<AnimatePresence key={messions[0]['fr'][2].id}>
+<AnimatePresence key={messions[0][props.langue][2].id}>
   <motion.div
    className='mession'
-   key={messions[0]['fr'][0].id}
+   key={messions[0][props.langue][0].id}
    variants={mession_itemVariants}
    whileHover={{ scale: 1.05 }}
    viewport={{ once: true }}
@@ -373,18 +373,18 @@ function Home(props)  {
    whileInView='visible'
   >
     <div className='mession-title'>
-      <h1>{messions[0]['fr'][2].title}</h1>
+      <h1>{messions[0][props.langue][2].title}</h1>
     </div>
     <div className='mession-text'>
-      <p>{messions[0]['fr'][2].text}</p>
+      <p>{messions[0][props.langue][2].text}</p>
     </div>
   </motion.div>
 </AnimatePresence>
 
-<AnimatePresence key={messions[0]['fr'][3].id}>
+<AnimatePresence key={messions[0][props.langue][3].id}>
   <motion.div
     className='mession'
-    key={messions[0]['fr'][0].id}
+    key={messions[0][props.langue][0].id}
     variants={mession_itemVariants}
     whileHover={{ scale: 1.05 }}
     viewport={{ once: true }}
@@ -392,10 +392,10 @@ function Home(props)  {
     whileInView='visible'
   >
     <div className='mession-title'>
-      <h1>{messions[0]['fr'][3].title}</h1>
+      <h1>{messions[0][props.langue][3].title}</h1>
     </div>
     <div className='mession-text'>
-      <p>{messions[0]['fr'][3].text}</p>
+      <p>{messions[0][props.langue][3].text}</p>
     </div>
   </motion.div>
 </AnimatePresence>
@@ -414,12 +414,12 @@ function Home(props)  {
                     <AnimatePresence>
                       <motion.div
                         className='home-part3-2-image'
-                        style={{backgroundImage: `url(${events[0]["fr"][currentEvent].image})`}}
+                        style={{backgroundImage: `url(${events[0][props.langue][currentEvent].image})`}}
                         variants={image_eventVariants}
                         initial="initial"
                         animate="animate"
                         exit="exit"
-                        key={events[0]["fr"][currentEvent].image}
+                        key={events[0][props.langue][currentEvent].image}
                       >
                       </motion.div>
                                         
@@ -429,38 +429,45 @@ function Home(props)  {
                         initial="initial"
                         animate="animate"
                         exit="exit"
-                        key={events[0]['fr'][currentEvent].title}
+                        key={events[0][props.langue][currentEvent].title}
                         onAnimationComplete={definition => {
                           console.log('Completed animating', definition)
                         }}
                       >
                         <div className='home-part3-2-text-div'>
                           <h1>
-                            {events[0]['fr'][currentEvent].title}
+                            {events[0][props.langue][currentEvent].title}
                           </h1>
                           <p>
-                            {events[0]['fr'][currentEvent].text}
+                            {events[0][props.langue][currentEvent].text}
                           </p>
                         </div>
                       </motion.div>
                     </AnimatePresence>
 
-                    <div className='home-part3-help1' style={{backgroundImage: `url(${events[0]['fr'][currentEvent].image})`}}>
+                    <div className='home-part3-help1' style={{backgroundImage: `url(${events[0][props.langue][currentEvent].image})`}}>
                     </div>
 
                     <div className='home-part3-help2'>
                       <h1>
-                        {events[0]['fr'][currentEvent].title}
+                        {events[0][props.langue][currentEvent].title}
                       </h1>
                       <p>
-                        {events[0]['fr'][currentEvent].text}
+                        {events[0][props.langue][currentEvent].text}
                       </p>
                     </div>
                   </div>
 
                   <div className='home-part3-3'>
-                    <div className='home-part3-3-index'>
-                      {events[0]['fr'].map((index)=>{
+                   
+
+                    <div className='home-part3-buttons'>
+                      <button className='home-part3-button prev' onClick={()=>change_event('prev')}>&lt;</button>
+                      <button className='home-part3-button next' onClick={()=>change_event('next')}>&gt;</button>
+                    </div>
+                  </div>
+                  <div className='home-part3-3-index'>
+                      {events[0][props.langue].map((index)=>{
                         let backgroundColor = 'green';
                         if (index.id ===currentEvent+1) {
                           backgroundColor = '#B64D07';
@@ -471,12 +478,6 @@ function Home(props)  {
                         )
                       })}
                     </div>
-
-                    <div className='home-part3-buttons'>
-                      <button className='home-part3-button prev' onClick={()=>change_event('prev')}>&lt;</button>
-                      <button className='home-part3-button next' onClick={()=>change_event('next')}>&gt;</button>
-                    </div>
-                  </div>
                 </div>
                   
 
@@ -492,24 +493,24 @@ function Home(props)  {
                  initial="initial"
                  animate="animate"
                  exit="exit"
-                 key={figures[currentFigure].id}
+                 key={figures[0][props.langue][currentFigure].id}
                  drag="x"
                  dragConstraints={{ left: 0, right: 0 }}
         dragElastic={0.2}
         dragControls={dragControls}
         onDragEnd={handleDragEnd}>
-                          <img src={figures[currentFigure].imgSrc} alt={figures[currentFigure].imgAlt} className="profile" />
+                          <img src={figures[0][props.langue][currentFigure].imgSrc} alt={figures[0][props.langue][currentFigure].imgAlt} className="profile" />
                           <figcaption>
-                            <h2>{figures[currentFigure].name}</h2>
-                            <h4>{figures[currentFigure].role}</h4>
-                            <blockquote>{figures[currentFigure].quote}</blockquote>
+                            <h2>{figures[0][props.langue][currentFigure].name}</h2>
+                            <h4>{figures[0][props.langue][currentFigure].role}</h4>
+                            <blockquote>{figures[0][props.langue][currentFigure].quote}</blockquote>
                           </figcaption>
                  </motion.figure>
                  </AnimatePresence>
 
            
                  <div className='home-figure-index'>
-                      {figures.map((index)=>{
+                      {figures[0][props.langue].map((index)=>{
                         let backgroundColor = 'green';
                         if (index.id ===currentFigure+1) {
                           backgroundColor = '#B64D07';
