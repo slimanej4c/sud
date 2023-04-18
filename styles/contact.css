@@ -1,0 +1,305 @@
+.contact-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 800px;
+    position: relative;
+ 
+    overflow: hidden;
+}
+
+/* .contact-page::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: 0.2;
+}
+ */
+.contact-all {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 90%;
+    box-shadow: 2px 4px 20px 0px rgb(57, 87, 2);
+    z-index: 1;
+}
+.contact-top{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 70%;
+ 
+
+}
+.contact-top .contact-info{
+    width: 50%;
+    height: 100%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+
+    
+     
+}
+.contact-info-image{
+    width: 100%;
+    height: 100%;
+
+    background-image:url("/static/images/contact-image.jpg" );
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    top: 0;
+     left: 0;
+     background-repeat: no-repeat;
+     opacity: 0.8;
+     box-shadow: 2px 0px 0px 0px rgb(141, 143, 138);
+     z-index: -1;
+
+}
+
+.contact-info-text{
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    left: 10%;
+    top:10%;
+    display: flex;
+  
+    z-index: 2;
+    opacity: 1;
+    background-color: rgba(243, 255, 237, 0.729);
+    border-radius: 10px;
+}
+.contact-info-text ul{
+ 
+    width: 100%;
+    height: 100%;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+.contact-info-text li{
+   display: flex;
+   flex-direction: row;
+   font-family:inika_bold;
+   align-items: center;
+   color: rgb(27, 22, 2);
+}
+.contact-icon{
+    display: flex;
+    color: rgb(39, 36, 0);
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+.contact-top .contact-form{
+    display: flex;
+    width: 50%;
+    height: 100%;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 2px 0px rgb(141, 143, 138);
+}
+.contact-form-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    padding: 20px;
+    border-radius: 5px;
+
+}
+hr {
+    border: none;
+    border-top: 1px solid rgb(0, 0, 0);
+   
+    width: 90%;
+  }
+.contact-div{
+    width: 90%;
+    margin-bottom: 10px;
+   
+}
+.contact-item{ 
+    width: 100%;
+    height: 30px;
+    font-family:inika_reg;
+    background-color: rgb(255, 255, 255);
+    border: none; /* supprime la bordure sur tous les côtés */
+    border-bottom: 2px solid var(--navbar_mobile_click); /* ajoute une bordure en bas */
+    outline: none; /* supprime la bordure bleue de focus */
+}
+.contact-message{
+
+    height: 180px;
+    border-width: 2px;
+}
+
+.contact-line{
+
+    width: 2px;
+    height: 400px;
+    background-color: rgb(255, 170, 0);
+}
+.contact-button{
+    font-weight: bold;
+    font-family:inika_reg;
+    color: antiquewhite;
+    border:0px ;
+    padding: 5px;
+    height: 40px;
+    width: 80px;
+    border-radius: 5px;
+    box-shadow: 0px 1px 0px 1px var(--bg);
+    background-color: rgb(61, 87, 3);
+}
+.contact-bottom{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 30%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 2px 2px 4px 0px rgb(141, 143, 138);
+  
+
+
+}
+.contact-bottom .contact-bank-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  
+}
+.contact-bank-section{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+ 
+    align-items: center;
+
+
+ }
+ .contact-page h1{
+    font-size: 25px;
+    font-family:inika_bold;
+    letter-spacing: 4px;
+ }
+.contact-bank-info ul{
+    
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+   
+
+}
+.contact-bank-info li{
+    display: flex;
+    flex-direction: row;
+    font-family:inika_bold;
+    align-items: center;
+    color: rgb(27, 22, 2);
+    letter-spacing: 1px;
+ }
+ .bank{
+    color: rgb(39, 36, 0);
+    width: 120px;
+    height: 120px;
+    margin-right: 10px;
+ }
+
+@media screen and (max-width:750px) {
+    .contact-page{
+       
+        height: 1200px;
+        justify-content: center;
+        align-items: center;
+    }
+    .contact-icon{
+        width: 20px;
+        height: 20px;
+    }
+    .bank{
+        width: 40px;
+        height: 40px;
+        margin-right: -10px;
+    
+
+    }
+    .contact-page li{
+       
+      font-size: 12px;
+    }
+    .contact-page h1{
+       
+        font-size: 16px;
+        letter-spacing: 2px;
+      }
+    .contact-all {
+        width: 90%;
+        height: 95%;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+       
+    }
+    .contact-top{
+        flex-direction: column;
+        width: 90%;
+        height: 70%;
+    
+    }
+    .contact-top .contact-info{
+        width: 100%;
+        height:40%;
+    }
+    .contact-top .contact-form{
+        width: 100%;
+        height:60%;
+        z-index: 5;
+    
+    }
+    .contact-bottom {
+        width: 84%;
+        padding: 3%;
+    }
+    .contact-bottom .contact-bank-info{
+     
+      
+    }
+    .contact-bank-info ul{
+    
+       width: 100%;
+       
+    
+    }
+    .contact-bank-section{
+       
+        flex-direction: column;
+       
+    
+    
+     }
+}
+@media screen and (max-width:450px) {
+
+
+}

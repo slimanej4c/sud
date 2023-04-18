@@ -257,7 +257,7 @@ function Home(props)  {
     >
         <div className='home-all'>
           <div className='home-all-part'>
-          <div className='home-part1'>
+          <section className='home-part1'>
             <div
               className='home-part1-1'
               style={{
@@ -312,9 +312,9 @@ function Home(props)  {
                 </motion.div>
               </AnimatePresence>
             </div>
-          </div>
+          </section>
 
-          <div className='home-part2'>
+          <section className='home-part2'>
               <div className='home-part2-1'>
                 <div className='messions-title'>
                   <h1>Messions</h1>
@@ -402,10 +402,10 @@ function Home(props)  {
 
                 </div>
               </div>
-            </div>
+            </section>
 
 
-           <div className='home-part3'>
+           <section className='home-part3'>
                   <div className='home-part3-1'>
                     <h1>Actualités et événements</h1>
                   </div>
@@ -478,10 +478,10 @@ function Home(props)  {
                         )
                       })}
                     </div>
-                </div>
+                </section>
                   
 
-              <div className='home-part4'>
+              <section className='home-part4'>
                 <div className='home-part4-title'>
                 <h1>Témoignages de bénévoles et de bénéficiaires</h1>
                 </div>
@@ -523,7 +523,7 @@ function Home(props)  {
                        </div>
                 </div>
 
-              </div>
+              </section>
                 
             </div>
         </div>

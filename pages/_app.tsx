@@ -8,6 +8,7 @@ import '../styles/home-part2.css'
 import '../styles/home-part3.css'
 import '../styles/home-part4.css'
 import '../styles/footer.css'
+import '../styles/contact.css'
 import { Provider } from 'react-redux';
 import  { store }  from '../Redux/store';
 

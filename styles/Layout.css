@@ -203,8 +203,8 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #FF6B09;
-      height: 25px;
+      background-color: #8dbe44;
+      height: 30px;
     
       border-radius: 10px;
     }
@@ -326,7 +326,7 @@ body {
      
       display: flex;
       position: fixed;
-      width: 100%;
+      width: 60%;
       height:700px;
       margin-top:0%;
       
@@ -336,14 +336,16 @@ body {
       animation-duration: 0.5s;
       visibility: visible;
       overflow: hidden;
-      opacity: 0.9;
+      justify-content: center;
+      align-items: center;
       z-index: 10;
     
   
      }
      .nav_closed{
+      display: flex;
       position: fixed;
-      width: 100%;
+      width: 60%;
       height:700px;
       margin-top:0%;
       left: -120%;
@@ -353,7 +355,7 @@ body {
       visibility: visible;
       overflow: hidden;
       z-index: 10;
-  
+    
      }
      .layout-nav-mobile{
       position: fixed;
@@ -378,18 +380,24 @@ body {
     .nav-ul{
  
       flex-direction: column;
-       position: absolute;
-      padding-top: 0;
-      top: 0%;
-      left: 8%;
-      width: 50%;
-      height: 60%;
-      border-radius: 100px;
+  position: absolute;
+  padding-right: 10%;
+  top: 0%;
+  text-align: center;
+  width: 100%;
+  height: 60%;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
       
+    }
+    .nav-ul li{
+     
     }
     .nav-item{
       
-     
+       
   
     }
     .nav-link{
@@ -397,8 +405,24 @@ body {
   
     }
     .item-div{
+      display: flex;
       margin-top: 40px;
+      display: inline-block;
+  font-family:inika_bold;
 
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  
+     
+
+    }
+    .nav-link{
+      display: inline-block;
+      font-family:inika_bold;
+      color: rgb(27, 22, 2);
+      text-align: center;
+      
     }
     .layout-header{
       position: relative;
