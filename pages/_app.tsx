@@ -9,6 +9,8 @@ import '../styles/home-part3.css'
 import '../styles/home-part4.css'
 import '../styles/footer.css'
 import '../styles/contact.css'
+import '../styles/agir.css'
+import '../styles/benevole_part1.css'
 import { Provider } from 'react-redux';
 import  { store }  from '../Redux/store';
 

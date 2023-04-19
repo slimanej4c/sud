@@ -1,0 +1,209 @@
+.d-part1{
+    display: flex;
+width: 90%;
+height: 1000px;
+flex-direction: column;
+
+
+align-items: center;
+flex-direction: column;
+
+
+}
+.d-part1-0{ 
+    width: 100%;
+    height:20%;
+    display: flex;
+
+
+justify-content: center;
+align-items: center;
+}
+.d-part1-1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    justify-content: center;
+align-items: center;
+background-color: rgb(207, 246, 161);
+position: relative;
+
+}
+.d-part1-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30%;
+    justify-content: center;
+    margin-top: 1%;
+align-items: center;
+background-color: rgb(207, 246, 161);
+position: relative;
+
+}
+.d-part1-title{ 
+    display: flex;
+    width: 100%;
+
+    display: flex;
+  
+   
+justify-content:center;
+
+}
+.d-part1-title h1{ 
+  
+   font-size: 70px;
+   font-family:inika_bold;
+}
+
+
+
+.d-part1-1-1{
+  position: absolute;
+   width: 40%;
+   height: 80%;
+   background-image:url("/static/images/benevole1.png" );
+   background-size: cover;
+background-position: center center;
+top: -10%;
+left: 10%;
+box-shadow: 2px 4px 40px 0px rgb(57, 87, 2);
+}
+.d-part1-1-2{
+   
+    position: absolute;
+    width: 35%;
+    height: 80%;
+    background-color: var(--mather-color);
+    top: 5%;
+   left: 40%;
+    border-radius: 5px;
+    box-shadow: 2px 4px 40px 0px rgb(57, 87, 2);
+    text-align: center;
+    padding: 2%;
+    font-family:inika_reg;
+}
+.d-part1-2-1{
+   
+ 
+    width: 35%;
+    height: 100%;
+    background-color: #e8e8e8;
+ 
+    border-radius: 5px;
+    box-shadow: 2px 4px 40px 0px rgb(98, 115, 64);
+    text-align: center;
+  
+    font-family:inika_reg;
+}
+.d-part1-1-2 h1{
+   color: black;
+   font-size: 25px;
+   
+ 
+
+}
+.d-part1-1-2 p{
+    color: rgb(19, 23, 1);
+
+ 
+ }
+ .d-part1-2 button {
+    color: #090909;
+    padding: 0.7em 1.7em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: var( --devenir_bene_button);
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+    box-shadow: 6px 6px 12px #c5c5c5,
+                -6px -6px 12px #ffffff;
+   }
+   
+   button:active {
+    color: #666;
+    box-shadow: inset 4px 4px 12px #c5c5c5,
+                inset -4px -4px 12px #ffffff;
+   }
+@media screen and (max-width:700px) {
+    .d-part1{
+       
+        height: 1000px;
+      
+        width: 98%;
+        
+        }
+    .d-part1-0{ 
+        width: 100%;
+        height: 10%;
+        display: flex;
+    
+      background-color: #c5c5c5;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .d-part1-1{
+       flex-direction: column;
+    
+    }
+    
+   
+.d-part1-1-1{
+    position: absolute;
+     width: 90%;
+     height:80%;
+     background-image:url("/static/images/benevole1.png" );
+     background-size: cover;
+  background-position: center center;
+  top: 0%;
+  right: 18%;
+  left: 1%;
+  box-shadow: 2px 4px 40px 0px rgb(57, 87, 2);
+  }
+  .d-part1-1-2{
+     
+      position: absolute;
+      width: 76%;
+      height: 80%;
+      background-color: rgba(220, 218, 218, 0.9);
+      box-shadow: 2px 1px 4px 0px rgb(57, 87, 2);
+      top: 30%;
+      bottom: 0%;
+      left: 20%;
+   
+  }
+  .d-part1-2-1{
+   
+ 
+    width: 95%;
+    margin-top: 30%;
+    box-shadow: 2px 1px 6px 0px rgb(103, 148, 20);
+}
+
+  .d-part1-title h1{ 
+  
+    font-size: 40px;
+ 
+ }
+ .d-part1-1-2 h1{
+     font-size: 18px;
+ }
+ .d-part1-1-2 p{
+    font-size: 14px;
+ }
+ .d-part1-2 h1{
+    font-size: 18px;
+ }
+ .d-part1-2 p{
+    font-size: 14px;
+}
+}
+@media screen and (max-width:450px) {
+   
+
+}

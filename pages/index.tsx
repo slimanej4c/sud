@@ -325,80 +325,80 @@ function Home(props)  {
                  
                 >
                   <AnimatePresence key={messions[0][props.langue][0].id}>
-  <motion.div
-    className='mession'
-    key={messions[0][props.langue][0].id}
-    variants={mession_itemVariants}
-    whileHover={{ scale: 1.05 }}
-    viewport={{ once: true }}
-    initial='hidden'
-    whileInView='visible'
-  >
-    <div className='mession-title'>
-      <h1>{messions[0][props.langue][0].title}</h1>
-    </div>
-    <div className='mession-text'>
-      <p>{messions[0][props.langue][0].text}</p>
-    </div>
-  </motion.div>
-</AnimatePresence>
+                          <motion.div
+                            className='mession'
+                            key={messions[0][props.langue][0].id}
+                            variants={mession_itemVariants}
+                            whileHover={{ scale: 1.05 }}
+                            viewport={{ once: true }}
+                            initial='hidden'
+                            whileInView='visible'
+                          >
+                            <div className='mession-title'>
+                              <h1>{messions[0][props.langue][0].title}</h1>
+                            </div>
+                            <div className='mession-text'>
+                              <p>{messions[0][props.langue][0].text}</p>
+                            </div>
+                          </motion.div>
+                        </AnimatePresence>
 
-<AnimatePresence key={messions[0][props.langue][1].id}>
-  <motion.div
-    className='mession'
-    key={messions[0][props.langue][0].id}
-    variants={mession_itemVariants}
-    whileHover={{ scale: 1.05 }}
-    viewport={{ once: true }}
-    initial='hidden'
-    whileInView='visible'
-  >
-    <div className='mession-title'>
-      <h1>{messions[0][props.langue][1].title}</h1>
-    </div>
-    <div className='mession-text'>
-      <p>{messions[0][props.langue][1].text}</p>
-    </div>
-  </motion.div>
-</AnimatePresence>
+                        <AnimatePresence key={messions[0][props.langue][1].id}>
+                          <motion.div
+                            className='mession'
+                            key={messions[0][props.langue][0].id}
+                            variants={mession_itemVariants}
+                            whileHover={{ scale: 1.05 }}
+                            viewport={{ once: true }}
+                            initial='hidden'
+                            whileInView='visible'
+                          >
+                            <div className='mession-title'>
+                              <h1>{messions[0][props.langue][1].title}</h1>
+                            </div>
+                            <div className='mession-text'>
+                              <p>{messions[0][props.langue][1].text}</p>
+                            </div>
+                          </motion.div>
+                        </AnimatePresence>
 
-<AnimatePresence key={messions[0][props.langue][2].id}>
-  <motion.div
-   className='mession'
-   key={messions[0][props.langue][0].id}
-   variants={mession_itemVariants}
-   whileHover={{ scale: 1.05 }}
-   viewport={{ once: true }}
-   initial='hidden'
-   whileInView='visible'
-  >
-    <div className='mession-title'>
-      <h1>{messions[0][props.langue][2].title}</h1>
-    </div>
-    <div className='mession-text'>
-      <p>{messions[0][props.langue][2].text}</p>
-    </div>
-  </motion.div>
-</AnimatePresence>
+                        <AnimatePresence key={messions[0][props.langue][2].id}>
+                          <motion.div
+                          className='mession'
+                          key={messions[0][props.langue][0].id}
+                          variants={mession_itemVariants}
+                          whileHover={{ scale: 1.05 }}
+                          viewport={{ once: true }}
+                          initial='hidden'
+                          whileInView='visible'
+                          >
+                            <div className='mession-title'>
+                              <h1>{messions[0][props.langue][2].title}</h1>
+                            </div>
+                            <div className='mession-text'>
+                              <p>{messions[0][props.langue][2].text}</p>
+                            </div>
+                          </motion.div>
+                        </AnimatePresence>
 
-<AnimatePresence key={messions[0][props.langue][3].id}>
-  <motion.div
-    className='mession'
-    key={messions[0][props.langue][0].id}
-    variants={mession_itemVariants}
-    whileHover={{ scale: 1.05 }}
-    viewport={{ once: true }}
-    initial='hidden'
-    whileInView='visible'
-  >
-    <div className='mession-title'>
-      <h1>{messions[0][props.langue][3].title}</h1>
-    </div>
-    <div className='mession-text'>
-      <p>{messions[0][props.langue][3].text}</p>
-    </div>
-  </motion.div>
-</AnimatePresence>
+                        <AnimatePresence key={messions[0][props.langue][3].id}>
+                          <motion.div
+                            className='mession'
+                            key={messions[0][props.langue][0].id}
+                            variants={mession_itemVariants}
+                            whileHover={{ scale: 1.05 }}
+                            viewport={{ once: true }}
+                            initial='hidden'
+                            whileInView='visible'
+                          >
+                            <div className='mession-title'>
+                              <h1>{messions[0][props.langue][3].title}</h1>
+                            </div>
+                            <div className='mession-text'>
+                              <p>{messions[0][props.langue][3].text}</p>
+                            </div>
+                          </motion.div>
+                        </AnimatePresence>
 
                 </div>
               </div>

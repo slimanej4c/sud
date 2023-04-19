@@ -62,8 +62,8 @@ const link_array = [
 ];
   return (
     
-    <footer class="footer">
-    <div class="footer-top">
+    <footer className="footer">
+    <div className="footer-top">
       <div className='footer-top-1'>
         <div className='footer-description'>
           
@@ -73,11 +73,11 @@ const link_array = [
             </div>
           
         </div>
-        <nav class="footer-menu">
+        <nav className="footer-menu">
                 <h1>{info["Menu"][props.langue]}</h1>
                 <ul>
                   {link_array[0][props.langue].map((item) => (
-                    <li>
+                    <li key={item.to}>
                       <Link className="footer-nav-link" href={item.to} onClick={() => clicked()}>
                         {item.title}
                       </Link>
@@ -92,7 +92,7 @@ const link_array = [
       
         <div className='footer-top-2'>
         
-        <div class="footer-coordone">
+        <div className="footer-coordone">
               <h1>{info["Contact"][props.langue]}</h1>
                 <ul>
                   <li>Adresse : Worben 5, CH-5706 Boniswil (SUISSE)</li>
@@ -105,13 +105,13 @@ const link_array = [
         </div>
       </div>
       <hr></hr>
-      <div class="footer-bottom">
+      <div className="footer-bottom">
       <div className='footer-logo-title'>
-                  <div class="footer-logo">
+                  <div className="footer-logo">
               
                   
                   </div>
-                  <div class="footer-title">
+                  <div className="footer-title">
                             <h2>SOLIDARITé</h2>
                     </div> 
                     

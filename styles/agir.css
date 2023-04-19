@@ -1,0 +1,21 @@
+.agir-container{
+    display: flex;
+    width: 100%;
+    height: 1000px;
+    background-color: var(--mather-color);
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.devenir-benevole{
+    display: flex;
+    width: 100%;
+    height: 1000px;
+    background-color: var(--mather-color);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}

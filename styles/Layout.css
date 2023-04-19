@@ -128,7 +128,7 @@ body {
     }
     
     .radio-input .label input:checked + .check {
-      color:rgb(254, 254, 254);
+      color:rgb(2, 0, 0);
       box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5),
        -1px -1px 4px rgba(255, 255, 255, 0.5),
        inset 3px 3px 6px rgba(0, 0, 0, 0.5),
@@ -327,7 +327,7 @@ body {
       display: flex;
       position: fixed;
       width: 60%;
-      height:700px;
+      height:100%;
       margin-top:0%;
       
       left: 0%;
