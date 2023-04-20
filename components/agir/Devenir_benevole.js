@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { motion, AnimatePresence  } from "framer-motion"
-import { useMediaQuery } from "@material-ui/core";
+
 import { useState, useEffect } from "react";
 export const Devenir_benevole = (props) => {
   
