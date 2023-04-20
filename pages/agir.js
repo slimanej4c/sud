@@ -1,15 +1,21 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Layout from '../hocs/Layout'
+import Devenir_benevole from '../components/agir/Devenir_benevole'
+import Don from '../components/agir/Don'
 
-import Benevole_part1 from '../components/Benevole_part1'
 export const agir = (props) => {
   return (
     <Layout>
     <div  className='agir-container'>
              <section className='devenir-benevole'>
 
-                  <Benevole_part1 />
+                  <Devenir_benevole/>
+  
+             </section>
+             <section className='don'>
+
+             
   
              </section>
       

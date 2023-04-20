@@ -29,7 +29,7 @@ align-items: center;
 align-items: center;
 background-color: rgb(207, 246, 161);
 position: relative;
-
+overflow: hidden;
 }
 .d-part1-2{
     display: flex;
@@ -40,7 +40,7 @@ position: relative;
     justify-content: center;
     margin-top: 1%;
 align-items: center;
-background-color: rgb(207, 246, 161);
+
 position: relative;
 
 }
@@ -80,7 +80,7 @@ box-shadow: 2px 4px 40px 0px rgb(57, 87, 2);
     height: 80%;
     background-color: var(--mather-color);
     top: 5%;
-   left: 40%;
+   left: 45%;
     border-radius: 5px;
     box-shadow: 2px 4px 40px 0px rgb(57, 87, 2);
     text-align: center;
@@ -90,7 +90,7 @@ box-shadow: 2px 4px 40px 0px rgb(57, 87, 2);
 .d-part1-2-1{
    
  
-    width: 35%;
+    width: 55%;
     height: 100%;
     background-color: #e8e8e8;
  
@@ -100,6 +100,17 @@ box-shadow: 2px 4px 40px 0px rgb(57, 87, 2);
   
     font-family:inika_reg;
 }
+
+.d-part1-2-2{
+
+     width: 30%;
+     height: 100%;
+     background-image:url("/static/images/benevole.jpg" );
+     background-size: cover;
+  background-position: center center;
+
+  box-shadow: 2px 4px 40px 0px rgb(57, 87, 2);
+  }
 .d-part1-1-2 h1{
    color: black;
    font-size: 25px;
@@ -147,16 +158,22 @@ box-shadow: 2px 4px 40px 0px rgb(57, 87, 2);
     align-items: center;
     }
 
+  
+    
     .d-part1-1{
-       flex-direction: column;
-    
-    }
-    
-   
+        height: 60%;
+        flex-direction: column;
+     
+     }
+     .d-part1-2{
+        height: 30%;
+        flex-direction: column;
+     
+     }
 .d-part1-1-1{
     position: absolute;
      width: 90%;
-     height:80%;
+     height:70%;
      background-image:url("/static/images/benevole1.png" );
      background-size: cover;
   background-position: center center;
@@ -169,7 +186,7 @@ box-shadow: 2px 4px 40px 0px rgb(57, 87, 2);
      
       position: absolute;
       width: 76%;
-      height: 80%;
+      height: 60%;
       background-color: rgba(220, 218, 218, 0.9);
       box-shadow: 2px 1px 4px 0px rgb(57, 87, 2);
       top: 30%;
@@ -177,14 +194,32 @@ box-shadow: 2px 4px 40px 0px rgb(57, 87, 2);
       left: 20%;
    
   }
+  @keyframes slide-horizontally {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0%);
+    }
+  }
   .d-part1-2-1{
    
- 
+    position: absolute;
     width: 95%;
-    margin-top: 30%;
+    margin-top:15%;
+    height: 90%;
     box-shadow: 2px 1px 6px 0px rgb(103, 148, 20);
+  
+    top: 40%;
+    z-index: 2;
 }
 
+.d-part1-2-2{
+    position: absolute;
+    width: 95%;
+    height: 90%;
+ 
+}
   .d-part1-title h1{ 
   
     font-size: 40px;
@@ -201,6 +236,10 @@ box-shadow: 2px 4px 40px 0px rgb(57, 87, 2);
  }
  .d-part1-2 p{
     font-size: 14px;
+}
+.d-part1-2{
+   flex-direction: column;
+
 }
 }
 @media screen and (max-width:450px) {
