@@ -3,8 +3,11 @@
 import { connect } from 'react-redux'
 import Link from 'next/link'
 import Image from 'next/image';
-import { FontAwesomeIcon  } from '@fortawesome/react-fontawesome';
 
+import {faLocationDot ,faPhone ,faMobilePhone ,faEnvelope ,faBank ,faMoneyBill
+
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
   faFacebook ,faTwitter,faLinkedin
   
@@ -22,10 +25,10 @@ const info = {
       "DE": "Bankverbindung"
   },
   "Contact": {
-      "FR": "Contact",
-      "ENG": "Contact",
-      "DE": "Kontakt"
-  },
+    "FR": "Coordonnées de contact",
+    "ENG": "Contact Information",
+    "DE": "Kontaktinformationen"
+    },
   "Menu": {
     "FR": "Menu",
     "ENG": "Menu",
@@ -95,10 +98,10 @@ const link_array = [
         <div className="footer-coordone">
               <h1>{info["Contact"][props.langue]}</h1>
                 <ul>
-                  <li>Adresse : Worben 5, CH-5706 Boniswil (SUISSE)</li>
-                  <li>Tél: +41 62 535 62 31</li>
-                  <li>Mobile: +41 79 550 17 45</li>
-                  <li>E-mail: solidaritesud1@gmail.com</li>
+                  <li><FontAwesomeIcon icon={faLocationDot}  className="footer-icon"/>Worben 5, CH-5706 Boniswil (SUISSE)</li>
+                  <li> <FontAwesomeIcon icon={faPhone}  className="footer-icon"/>+41 62 535 62 31</li>
+                  <li><FontAwesomeIcon icon={faMobilePhone}  className="footer-icon"/>+41 79 550 17 45</li>
+                  <li><FontAwesomeIcon icon={faEnvelope}  className="footer-icon"/>solidaritesud1@gmail.com</li>
                 </ul>
                
               </div>
@@ -116,11 +119,7 @@ const link_array = [
                     </div> 
                     
             </div>
-            <div className='footer-icons'>
-                <FontAwesomeIcon icon={faFacebook}  className="footer-icon"/>
-                <FontAwesomeIcon icon={faTwitter}  className="footer-icon"/>
-                <FontAwesomeIcon icon={faLinkedin}  className="footer-icon"/>
-              </div>
+         
        
         <h4>Personne de référence : M. Maurice Zellweger, Président</h4>
       </div>

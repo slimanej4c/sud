@@ -21,8 +21,10 @@
     font-family:inika_bold;
   }
   .footer li { 
+    display: flex;
     font-size: 14px;
     font-family:inika_reg;
+    margin-bottom: 5%;
    
   }
   .footer a{
@@ -176,14 +178,11 @@
     padding: 0;
     margin-bottom: 5%;
   }
-  .footer-icons{
-    display: flex;
-   
-  }
+ 
   .footer-icon{
     display: flex;
-    margin-right: 2%;
-    font-size: 25px;
+    margin-right: 5%;
+    font-size: 20px;
   }
   .footer-coordone-bank ul {
     list-style: none;

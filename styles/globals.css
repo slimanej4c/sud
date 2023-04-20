@@ -18,15 +18,20 @@
  --mession-font-big-title-color:rgb(61, 59, 0);
 
  --event-font-big-title-color:#20221c;
- --event-bg-text:#b0c093;
-
+ --event-bg-text:#ecf5e3;
+ --button_event_color:#81AA5B;
 
  --devenir_bene_button:#81AA5B;
 
+--figure_snip_bg_color:#81AA5B;
+--figure_blockquote_bg_color:#ecf5e3;
+--figure_text_color:#000000;
+--figure_title_color:#000000;
 
- --footer-color:#2b380b;
- --footer-shadow-color:#090600;
- --footer-font-color:#939f81;
+
+ --footer-color:#8dbe44;
+ --footer-shadow-color:#585e45;
+ --footer-font-color:#111b03;
  --footer_font_size_title_700:16px ;
  --footer_font_size_text_700:12px ;
  --footer_font_size_textp_700:11px ;

@@ -13,20 +13,21 @@
    margin-left: 2%;
    margin-right: 2%;
    margin-top:10%;
-  
+
    width: 100%;
 }
 .home-part4-title h1{
-
+  font-size: 45px;
   text-align: center;
+  font-family:inika_bold;
 }
 .home-figure{
   position: relative;
   display: flex;
 
 
-  width: 50%;
-  height: 500px;
+  width: 80%;
+  height: 600px;
   
   justify-content: center;
  align-items: center;
@@ -66,8 +67,8 @@ figure.snip1390 {
   color: #000000;
   height: 90%;
   text-align: center;
-  font-size: 16px;
-  background-color: #1b2504;
+  font-size: 25px;
+  background-color: var(--figure_snip_bg_color);
   padding: 10px;
   background-image: linear-gradient(-25deg, rgba(0, 0, 0, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
   -webkit-box-sizing: border-box;
@@ -101,13 +102,13 @@ figure.snip1390 h2 {
   color: #ffffff;
 }
 figure.snip1390 h4 {
-  color: #a6a6a6;
+  color: #3e3e3e;
 }
 figure.snip1390 blockquote {
   font-size: 1em;
   padding: 45px 10px 40px 50px;
   margin-top: 10px;
-  background-color: #b3b597;
+  background-color: var(--figure_blockquote_bg_color);
   border-radius: 5px;
   box-shadow: inset -1.4px -1.4px 2px rgba(0, 0, 0, 0.3);
   text-align: left;
@@ -133,7 +134,41 @@ figure.snip1390 .profile {
   margin-bottom: 10px;
   border: solid 5px #A6A57A;
 }
+.home-part4-buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width:100%;
+  height: 100px;
 
+ 
+ 
+}
+.home-part4-button {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+
+  border-radius: 50px;
+
+  bottom:0%;
+}
+.home-part4-buttons .prev {
+
+  background-color: var(--button_event_color);
+  color: wheat;
+  font-size: 2em;
+  font-weight: bold;
+  z-index: 30;
+}
+.home-part4-buttons .next {
+
+  background-color: var(--button_event_color);
+  color: wheat;
+  font-size: 2em;
+  font-weight: bold;
+  z-index: 30;
+}
 @media screen and (max-width:750px) {
   .home-part4-title h1{
 
@@ -151,7 +186,7 @@ figure.snip1390 .profile {
     
   }
   figure.snip1390 blockquote {
-    font-size: 0.8em;
+    font-size: 0.6em;
   
     
   }

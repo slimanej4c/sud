@@ -58,14 +58,14 @@ export const aprops=[{"FR":{"title":"À propos","text":" Soladirité est une ass
     title: "Distribution d'eau potable aux enfants dans le besoin",
     text:
     "L'association JKL a organisé une campagne de distribution d'eau potable aux enfants dans le besoin. Cette campagne vise à fournir de l'eau potable à des enfants qui n'y ont pas accès dans les zones les plus défavorisées de notre communauté. L'association a distribué des bouteilles d'eau potable dans les écoles et les centres de soins de la région. Les membres de l'association ont également fourni des informations sur l'importance de l'eau potable pour la santé et comment la consommer de manière sûre.",
-    image: "/static/images/child2.png",
+    image: "/static/images/eaux.jpg",
     },
     {
     id: 3,
     title: "Campagne de sensibilisation à l'éducation pour les enfants défavorisés",
     text:
     "L'association JKL a lancé une campagne de sensibilisation à l'éducation pour les enfants défavorisés de notre communauté. Cette campagne vise à sensibiliser les parents et les enfants sur l'importance de l'éducation pour l'avenir des enfants. Les membres de l'association ont organisé des ateliers pour les enfants et les parents sur l'importance de l'éducation et comment ils peuvent aider leurs enfants à réussir à l'école. Ils ont également distribué des fournitures scolaires aux enfants qui en ont besoin.",
-    image: "/static/images/child2.png",
+    image: "/static/images/education.jpg",
     },
     ],
     ENG: [
@@ -81,14 +81,14 @@ export const aprops=[{"FR":{"title":"À propos","text":" Soladirité est une ass
       title: "Distribution of clean water to children in need",
       text:
       "The JKL association has organized a campaign to distribute clean water to children in need. This campaign aims to provide clean water to children who do not have access to it in the most disadvantaged areas of our community. The association distributed bottles of clean water in schools and healthcare centers in the region. Members of the association also provided information on the importance of clean water for health and how to consume it safely.",
-      image: "/static/images/child2.png",
+      image: "/static/images/eaux.jpg",
       },
       {
       id: 3,
       title: "Awareness campaign for education for underprivileged children",
       text:
       "The JKL association has launched an awareness campaign for education for underprivileged children in our community. This campaign aims to raise awareness among parents and children about the importance of education for children's future. Members of the association organized workshops for children and parents on the importance of education and how they can help their children succeed in school. They also distributed school supplies to children in need.",
-      image: "/static/images/child2.png",
+      image: "/static/images/education.jpg",
       },
       ],
 
@@ -105,14 +105,14 @@ export const aprops=[{"FR":{"title":"À propos","text":" Soladirité est une ass
         title: "Verteilung von Trinkwasser an bedürftige Kinder",
         text:
         "Der Verein JKL hat eine Kampagne zur Verteilung von Trinkwasser an bedürftige Kinder organisiert. Diese Kampagne zielt darauf ab, Kindern, die in den benachteiligten Gebieten unserer Gemeinschaft keinen Zugang dazu haben, Trinkwasser zur Verfügung zu stellen. Der Verein hat Trinkflaschen in Schulen und Gesundheitszentren in der Region verteilt. Die Mitglieder des Vereins haben auch Informationen über die Bedeutung von Trinkwasser für die Gesundheit bereitgestellt und wie es sicher konsumiert werden kann.",
-        image: "/static/images/child2.png",
+        image: "/static/images/eaux.jpg",
         },
         {
         id: 3,
         title: "Sensibilisierungskampagne für benachteiligte Kinder zur Bildung",
         text:
         "Der Verein JKL hat eine Sensibilisierungskampagne für benachteiligte Kinder in unserer Gemeinschaft gestartet. Diese Kampagne zielt darauf ab, Eltern und Kinder auf die Bedeutung von Bildung für die Zukunft der Kinder aufmerksam zu machen. Die Mitglieder des Vereins haben Workshops für Kinder und Eltern zur Bedeutung von Bildung und wie sie ihren Kindern helfen können, in der Schule erfolgreich zu sein, organisiert. Sie haben auch Schulbedarf an Kinder verteilt, die ihn benötigen.",
-        image: "/static/images/child2.png",
+        image: "/static/images/education.jpg",
         },
         ],
     },
