@@ -29,7 +29,7 @@ align-items: center;
 align-items: center;
 background-color: rgb(207, 246, 161);
 position: relative;
-overflow: hidden;
+
 }
 .d-part1-2{
     display: flex;
@@ -163,6 +163,7 @@ box-shadow: 2px 4px 40px 0px rgb(57, 87, 2);
     .d-part1-1{
         height: 60%;
         flex-direction: column;
+        overflow: hidden;
      
      }
      .d-part1-2{
@@ -243,6 +244,27 @@ box-shadow: 2px 4px 40px 0px rgb(57, 87, 2);
 }
 }
 @media screen and (max-width:450px) {
+    .d-part1-title h1{ 
+  
+        font-size: 30px;
+     
+     }
+     .d-part1-1-2 h1{
+         font-size: 14px;
+     }
+     .d-part1-1-2 p{
+        font-size: 12px;
+     }
+     .d-part1-2 h1{
+        font-size: 14px;
+     }
+     .d-part1-2 p{
+        font-size: 12px;
+    }
+    .d-part1-2{
+       flex-direction: column;
+    
+    }
    
 
 }

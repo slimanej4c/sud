@@ -13,9 +13,9 @@ export const agir = (props) => {
                   <Devenir_benevole/>
   
              </section>
-             <section className='don'>
+             <section className='don-section'>
 
-             
+             <Don/>
   
              </section>
       

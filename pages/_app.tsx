@@ -11,6 +11,7 @@ import '../styles/footer.css'
 import '../styles/contact.css'
 import '../styles/agir.css'
 import '../styles/devenir_benevole.css'
+import '../styles/don.css'
 import { Provider } from 'react-redux';
 import  { store }  from '../Redux/store';
 
