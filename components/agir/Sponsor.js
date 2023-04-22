@@ -12,29 +12,32 @@ export const Sponsor = (props) => {
         {/* première sous-section */}
         <div className='sous-sponsor'>
                    <div className='text'>
-                    <h1>Sposors</h1>
-
+                    <h1>Nos Sposors</h1>
+                    <hr className='line'></hr>
                    </div>
-                   <div className='list'>
-                      <div className='item'>
+              
+               
 
-                      </div> <div class="sponsor-container">
-    <div class="sponsor-item">
-      <img src={ `url(${"/static/images/collecter.jpg"})` } alt="Sponsor 1"/>
+      <div className="sponsor-container">
+    <div className="sponsor-item" style={{ backgroundImage: `url(${"/static/images/sponsor.jpg"})` }} >
+   
     </div>
-    <div class="sponsor-item">
-      <img src="https://exemple.com/sponsor2.jpg" alt="Sponsor 2"/>
+    <div className="sponsor-item" style={{ backgroundImage: `url(${"/static/images/sponsor.jpg"})` }}>
+   
     </div>
-    <div class="sponsor-item">
-      <img src="https://exemple.com/sponsor3.jpg" alt="Sponsor 3"/>
+    <div className="sponsor-item" style={{ backgroundImage: `url(${"/static/images/sponsor.jpg"})` }}>
+   
     </div>
-    <div class="sponsor-item">
-      <img src="https://exemple.com/sponsor4.jpg" alt="Sponsor 4"/>
-    </div>
+    <div className="sponsor-item" style={{ backgroundImage: `url(${"/static/images/sponsor.jpg"})` }}>
+   
+   </div>
+   <div className="sponsor-item" style={{ backgroundImage: `url(${"/static/images/sponsor.jpg"})` }}>
+   
+   </div>
   </div>
-                   </div>
-        </div>
+                
       
+  </div>
        
       </div>
   )
