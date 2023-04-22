@@ -1,0 +1,147 @@
+.agir_nous{
+
+    display: flex;
+  width: 100%;
+  height: 700px;
+  flex-direction: column;
+  
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+
+.agir_nous .image{  
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    flex-direction: column;
+ background-position: center center;
+ 
+ 
+z-index: 1;}
+.agir_nous .text{
+    display: flex;
+    width: 100%;
+    height: 100%;
+background-color: rgba(97, 194, 129, 0.4);
+flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ position: relative;
+ overflow: hidden;
+ }
+ .agir_nous h1{
+    width: 90%;
+    text-align: center;
+    font-size: 130px;
+    margin-top: 0%;
+    letter-spacing: 20px;
+    font-family:inika_bold;
+    color: rgba(11, 42, 0, 0.731);
+    
+ }
+ .agir_nous p{
+    width: 80%;
+    text-align: center;
+    font-size: 25px;
+    font-family:inika_reg;
+    letter-spacing: 2px;
+    color: rgb(7, 19, 2);
+ }
+ .agir_nous .linne{
+    width: 50%;
+    border: none;
+    margin-top: -8%;
+  border-top: 2px solid black;
+  height: 0;
+ }
+ .agir_nous .button{
+  width: 30%;
+  height: 60px;
+ }
+
+.agir_nous button {
+  background-color: #6ca200;
+  border: 1px solid #13aa52;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: rgb(7, 15, 1);
+  cursor: pointer;
+  font-family:inika_reg;
+  font-size: 25px;
+  font-weight: 400;
+  outline: none;
+  outline: 0;
+  padding: 10px 25px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.agir_nous button:hover {
+  box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 700px) {
+  .agir_nous button {
+   
+  }
+  .agir_nous{
+
+   
+  height: 620px;
+ 
+}
+  .agir_nous h1{
+    width: 95%;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 0%;
+    letter-spacing: 1px;
+    font-family:inika_bold;
+    color: rgba(11, 42, 0, 0.731);
+    
+ }
+ .agir_nous p{
+    width: 95%;
+    text-align: center;
+    font-size: 12px;
+    font-family:inika_reg;
+    letter-spacing: 0px;
+    color: rgb(7, 19, 2);
+ }
+ .agir_nous .linne{
+    width: 50%;
+    border: none;
+   
+  border-top: 2px solid black;
+  height: 0;
+ }
+ .agir_nous .button{
+    width: 80%;
+    height: 50px;
+   }
+  
+  .agir_nous button {
+  
+    
+    font-size: 18px;
+    
+  }
+  
+
+
+}

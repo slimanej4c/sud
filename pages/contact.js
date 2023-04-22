@@ -139,7 +139,7 @@ export const contact = (props) => {
                       <li> RAIFFEISEN BANK</li>
                       <li>Aarau-Raiffeisen</li>
                       <li>SOLIDARITé-SUD</li>
-                      <li>IBAN CH33 8080 8006 4374 7900 6</li>
+                      <li>IBAN CH33 0000 0000 0000 0000 0</li>
                       <li>Kasinostrasse 37 – 5000 Aarau</li>
                     </ul>
                    </div>

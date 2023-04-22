@@ -1,23 +1,43 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Layout from '../hocs/Layout'
-import Devenir_benevole from '../components/agir/Devenir_benevole'
+
 import Don from '../components/agir/Don'
+import Devenir from '../components/agir/Devenir'
+import Parrainer_enfant from '../components/agir/Parrainer_enfant'
+import Collecte_fonds from '../components/agir/Collecte_fonds'
+import Sponsor from '../components/agir/Sponsor'
+import Agir_nous from '../components/agir/Agir_nous'
 
 export const agir = (props) => {
   return (
     <Layout>
     <div  className='agir-container'>
-             <section className='devenir-benevole'>
+            <section className='agir-nous-section'>
+            <Agir_nous/>
+            </section>
+             <section className='agir-section'>
 
-                  <Devenir_benevole/>
+                  <Devenir/>
   
              </section>
-             <section className='don-section'>
+              <section className='agir-section'>
+              <Don />
 
-             <Don/>
-  
-             </section>
+              </section>
+              <section className='agir-section'>
+              <Parrainer_enfant/>
+
+              </section>
+              <section className='agir-section'>
+              <Collecte_fonds/>
+
+              </section>
+              <section className='agir-section'>
+              <Sponsor/>
+
+              </section>
+      
       
       </div>
 
