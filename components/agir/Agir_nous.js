@@ -2,10 +2,9 @@ import React from 'react'
 import { useState, useEffect } from "react";
 import { connect } from 'react-redux'
 import { motion, AnimatePresence } from "framer-motion"
+import { intro_text } from '../../public/static/text/agir/intro';
 export const Agir_nous = (props) => {
-    const don_text=[{"FR":{title:"AGIR AVEC NOUS","intro":"Faire un don est un acte important et généreux qui peut faire une grande différence dans la vie des personnes dans le besoin. Si vous souhaitez soutenir notre organisation et aider à faire une différence dans la vie des personnes que nous aidons, faire un don est un excellent moyen de le faire. Dans cet article, nous allons vous expliquer comment faire un don et pourquoi cela est important pour notre organisation.",
-    "button_title":"Faire un don",
-    }}]
+  
 
     const titleVariants = {
         hidden: { opacity: 0 },
@@ -58,7 +57,7 @@ export const Agir_nous = (props) => {
                             >
                             <div className='text'>
                             <motion.h1 variants={titleVariants} initial="hidden" whileInView="visible">
-                                    {don_text[0]["FR"].title.split("").map((letter) => (
+                                    {intro_text[0][props.langue].title.split("").map((letter) => (
                                     <motion.span key={1} variants={letterVariants}>{letter}</motion.span>
                                     ))}
                                 </motion.h1>
@@ -69,9 +68,9 @@ export const Agir_nous = (props) => {
                             whileInView="animate"
                             exit="exit"
                             key={2}/>
-                                <p>{don_text[0]["FR"].intro}</p>
+                                <p>{intro_text[0][props.langue].intro}</p>
                                 <div className='button'>
-                                    <button>{don_text[0]["FR"].title}
+                                    <button>{intro_text[0][props.langue].title}
                                     </button>
                         </div>
                                 
@@ -86,8 +85,11 @@ export const Agir_nous = (props) => {
   )
 }
 
-const mapStateToProps = (state) => ({})
-
+const mapStateToProps = (state) => ({
+  langue:state.change_langue_reducer.langue,
+  cookies_accepted:state.change_langue_reducer.cookies_accepted,
+  current_image:state.change_langue_reducer.current_image,
+})
 const mapDispatchToProps = {}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Agir_nous)

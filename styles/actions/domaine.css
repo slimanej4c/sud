@@ -1,0 +1,209 @@
+.domaine-part2{
+    display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 95%;
+   margin-bottom: 100px;
+   position: relative;
+   overflow: hidden;
+   
+
+}
+.domaine-part2-1{
+   display: flex;
+   flex-direction: column;
+   margin-left: 2%;
+   margin-right: 2%;
+   width: 100%;
+
+
+}
+.domaine-title{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 20%;
+}
+.domaine-title h1{
+   font-size:30px;
+   font-family:inika_bold;
+   text-align: center;
+   text-decoration: underline;
+   color:var( --domaine-font-big-title-color);
+}
+.domaine-type{
+
+  display: flex;
+
+ overflow: hidden; /* Ajouter cette ligne */
+
+
+}
+.domaine{
+   
+   display: flex;
+   justify-content: space-between;
+   flex-direction: column;
+   padding-left:5px;
+   padding-right:5px;
+   margin: 5px;
+   align-items: center;
+   background-color: var(--domaine-color);
+   width: 30%;
+   height: 300px;
+   object-fit: contain;
+   background-size: cover;
+   background-position: center center;
+   border-radius: 20px;
+   box-shadow: 2px 2px 4px 0px rgb(57, 87, 2);
+   transform: translateX(-00%);
+   color: var(--domaine-font-color);
+   padding: 1%;
+   border: 1px solid rgb(77, 152, 3);
+   
+}
+.domaine-title{
+   display: flex;
+   width:95%;
+   height: 20%;
+
+
+   border-radius: 10px;
+   justify-content: center;
+   align-items: center;
+   justify-content: center;
+   align-content: center;
+ 
+   
+}
+.domaine-text{
+ width: 95%;
+ height: 80%;
+
+   border-radius: 10px;
+   justify-content: center;
+   align-items: center;
+
+   padding: 2%;
+}
+.domaine h1{
+   text-align: center;
+   font-family:inika_reg;
+   font-size: 25px;
+   color: var( --domaine-font-title-color);
+}
+.domaine p{
+  text-align: center;
+  
+  font-family:inika_reg;
+
+}
+
+
+
+ @media screen and (max-width: 1100px) {
+   .domaine-title h1{
+       font-size:50px;
+   
+     
+   }
+   .domaine h1{
+       text-align: center;
+       font-size: 18px;
+     
+    
+   }
+   .domaine p{
+      text-align: center;
+
+      font-size: 12;
+   
+    
+   }
+   .domaine{
+     
+       height: 350px;
+  
+   
+    
+   }
+ }
+
+ @media screen and (max-width:750px) {
+   .domaine-part2-1{
+      justify-content: center;
+      align-items: center;
+   
+   
+   }
+   .domaine-title h1{
+       font-size:35px;
+   
+     
+   }
+   .domaine-type{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       width: 100%;
+       height: 80%;
+    
+   }
+   .domaine{
+       margin-left: 2%;
+       margin-right: 2%;
+       padding: 0;
+       width: 60%;
+       width: 90%;
+       height: 250px;
+       padding: 1%;
+       box-shadow: 2px 2px 4px 0px rgb(93, 141, 3);
+    
+   }
+   .domaine h1{
+     
+     font-size: 24px;
+    
+   }
+   .domaine p{
+   
+  
+      font-size: 18px;
+    
+   }
+  
+
+ }
+ 
+ 
+ @media screen and (max-width:450px) {
+   .domaine-title h1{
+       font-size:25px;
+  
+   
+     
+   }
+   .domaine{
+      
+       width: 80%;
+       padding: 5%;
+     
+   
+    
+   }
+   .domaine h1{
+     
+     font-size: 20px;
+    
+   }
+   .domaine p{
+   
+
+      font-size: 14px;
+    
+   }
+   
+ }

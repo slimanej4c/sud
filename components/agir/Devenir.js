@@ -1,12 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { motion, AnimatePresence  } from "framer-motion"
-
+import {devenir_benevole_text} from "../../public/static/text/agir/devenir_benevol"
 import { useState, useEffect } from "react";
 export const Devenir = (props) => {
-    const benevole_text=[{"FR":{title:"Agir avec nous","intro":"En tant qu'organisation à but non lucratif, notre travail repose en grande partie sur le soutien et l'engagement des bénévoles. Sans le dévouement de notre communauté de bénévoles, nous ne pourrions pas réaliser notre mission. Si vous cherchez un moyen de donner de votre temps et de vos compétences pour soutenir une bonne cause, devenir bénévole est un excellent moyen de le faire. Dans cet article, nous allons vous expliquer comment devenir bénévole pour notre organisation",
-    "intro_title":"Devenez bénévole pour notre organisation à but non lucratif.","intro_title2":"Devenez bénévole","intro2":" si vous cherchez à donner de votre temps et de vos compétences pour soutenir une bonne cause, devenir bénévole pour notre organisation est un excellent moyen de le faire. Contactez-nous pour exprimer votre intérêt et nous serons ravis de discuter avec vous de la façon dont vous pouvez vous impliquer. Nous avons hâte de travailler avec vous pour réaliser notre mission commune.",
-    }}]
+
     
     const [isMobile, setIsMobile] = useState(false);
 
@@ -35,7 +33,7 @@ export const Devenir = (props) => {
           <AnimatePresence>
             <motion.div className='agir-image'
            
-              style={{ backgroundImage: `url(${"/static/images/benevole.jpg"})` }}
+              style={{ backgroundImage: `url(${devenir_benevole_text[1].image})` }}
               initial={{ opacity: 1, x: "20%" }}
               viewport={{ once: true }}
               whileInView={{ opacity: 1, x: "0%", transition: { duration: 1 } }}>
@@ -49,10 +47,10 @@ export const Devenir = (props) => {
               viewport={{ once: true }}
               whileInView={{ opacity: 1, x: "0%", transition: { duration: 1 } }}>
                 <div className='text'>
-                   <h1>{benevole_text[0]["FR"].intro_title}</h1>
-                   <p>{benevole_text[0]["FR"].intro}</p>
+                   <h1>{devenir_benevole_text[0][props.langue].intro_title}</h1>
+                   <p>{devenir_benevole_text[0][props.langue].intro}</p>
                    <div className='button'>
-                   <button> Faire un don
+                   <button> {devenir_benevole_text[0][props.langue].button}
                   </button>
                 </div>
                 </div>
@@ -67,9 +65,11 @@ export const Devenir = (props) => {
       
       )
       }
-
-const mapStateToProps = (state) => ({})
-
+      const mapStateToProps = (state) => ({
+        langue:state.change_langue_reducer.langue,
+        cookies_accepted:state.change_langue_reducer.cookies_accepted,
+        current_image:state.change_langue_reducer.current_image,
+      })
 const mapDispatchToProps = {}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Devenir)

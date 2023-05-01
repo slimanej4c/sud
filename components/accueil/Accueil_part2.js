@@ -2,7 +2,8 @@ import React from 'react'
 import { useState, useEffect } from "react";
 import { connect } from 'react-redux'
 import { motion, AnimatePresence } from "framer-motion"
-import {messions ,images ,titles ,aprops,events,figures} from "../../public/static/text/text_index"
+import {missions_text ,missions_title ,missions_image} from '../../public/static/text/accueil/missions'
+
 export const Accueil_part2 = (props) => {
 
 
@@ -18,85 +19,95 @@ export const Accueil_part2 = (props) => {
     <section className='home-part2'>
               <div className='home-part2-1'>
                 <div className='messions-title'>
-                  <h1>Messions</h1>
+                  <h1>{missions_title[0][props.langue]}</h1>
                 </div>
                 <div
                   className='messions-type'
                   
                  
                 >
-                  <AnimatePresence key={messions[0][props.langue][0].id}>
+                  <AnimatePresence key={missions_text[0][props.langue]}>
                           <motion.div
                             className='mession'
-                            key={messions[0][props.langue][0].id}
+                            key={missions_text[0][props.langue]}
                             variants={mession_itemVariants}
-                            whileHover={{ scale: 1.05 }}
+                        
+                            viewport={{ once: true }}
+                            initial='hidden'
+                            whileInView='visible'
+                            style={{ backgroundImage:  `url(${missions_image[0].image})`  }}
+                          >
+                          
+                            <div className='mession-text'>
+                              <p>{missions_text[0][props.langue]}</p>
+                              <div className='button' >
+                                  <button > {missions_title[1][props.langue]}
+                                  </button>
+                              </div>
+                            </div>
+                            
+                          </motion.div>
+                        </AnimatePresence>
+
+                        <AnimatePresence key={missions_text[1][props.langue]}>
+                          <motion.div
+                            className='mession'
+                            key={missions_text[1][props.langue]}
+                            variants={mession_itemVariants}
+                            style={{ backgroundImage:  `url(${missions_image[2].image})`  }}
                             viewport={{ once: true }}
                             initial='hidden'
                             whileInView='visible'
                           >
-                            <div className='mession-title'>
-                              <h1>{messions[0][props.langue][0].title}</h1>
-                            </div>
+                         
                             <div className='mession-text'>
-                              <p>{messions[0][props.langue][0].text}</p>
+                              <p>{missions_text[1][props.langue]}</p>
+                              <div className='button' >
+                                  <button > {missions_title[1][props.langue]}
+                                  </button>
+                              </div>
                             </div>
                           </motion.div>
                         </AnimatePresence>
 
-                        <AnimatePresence key={messions[0][props.langue][1].id}>
-                          <motion.div
-                            className='mession'
-                            key={messions[0][props.langue][0].id}
-                            variants={mession_itemVariants}
-                            whileHover={{ scale: 1.05 }}
-                            viewport={{ once: true }}
-                            initial='hidden'
-                            whileInView='visible'
-                          >
-                            <div className='mession-title'>
-                              <h1>{messions[0][props.langue][1].title}</h1>
-                            </div>
-                            <div className='mession-text'>
-                              <p>{messions[0][props.langue][1].text}</p>
-                            </div>
-                          </motion.div>
-                        </AnimatePresence>
-
-                        <AnimatePresence key={messions[0][props.langue][2].id}>
+                        <AnimatePresence key={missions_text[3][props.langue]}>
                           <motion.div
                           className='mession'
-                          key={messions[0][props.langue][0].id}
+                          key={missions_text[3][props.langue]}
                           variants={mession_itemVariants}
-                          whileHover={{ scale: 1.05 }}
+                          style={{ backgroundImage:  `url(${missions_image[1].image})`  }}
                           viewport={{ once: true }}
                           initial='hidden'
                           whileInView='visible'
                           >
-                            <div className='mession-title'>
-                              <h1>{messions[0][props.langue][2].title}</h1>
-                            </div>
+                           
                             <div className='mession-text'>
-                              <p>{messions[0][props.langue][2].text}</p>
+                              <p>{missions_text[3][props.langue]}</p>
+                              <div className='button' >
+                                  <button > {missions_title[1][props.langue]}
+                                  </button>
+                              </div>
                             </div>
                           </motion.div>
                         </AnimatePresence>
 
-                        <AnimatePresence key={messions[0][props.langue][3].id}>
+                        <AnimatePresence key={missions_text[4][props.langue]}>
                           <motion.div
                             className='mession'
-                            key={messions[0][props.langue][0].id}
+                            key={missions_text[4][props.langue]}
                             variants={mession_itemVariants}
-                            whileHover={{ scale: 1.05 }}
+                            style={{ backgroundImage:  `url(${missions_image[3].image})`  }}
                             viewport={{ once: true }}
                             initial='hidden'
                             whileInView='visible'
                           >
-                            <div className='mession-title'>
-                              <h1>{messions[0][props.langue][3].title}</h1>
-                            </div>
+                       
                             <div className='mession-text'>
-                              <p>{messions[0][props.langue][3].text}</p>
+                              <p>{missions_text[4][props.langue]}</p>
+                              <div className='button' >
+                                  <button > {missions_title[1][props.langue]}
+                                  </button>
+                              </div>
                             </div>
                           </motion.div>
                         </AnimatePresence>

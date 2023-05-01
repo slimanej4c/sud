@@ -1,0 +1,218 @@
+.action-item {
+    display: flex;
+    width: 90%;
+    height: 700px;
+    flex-direction: column;
+    
+    
+    align-items: center;
+    flex-direction: column;
+  
+    }
+    
+    .action-sous-item {
+      /* styles pour la première sous-section */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    } 
+  
+    .action-video{
+      /* styles pour l'image animée */
+  
+     width: 50%;
+     height: 80%;
+   background-color: rgb(184, 255, 166);
+     background-size: cover;
+  background-position: center center;
+   object-fit: contain;
+  box-shadow: 2px 4px 40px 0px rgb(250, 251, 248);
+
+  
+    }
+    .bg-video{
+        /* styles pour l'image animée */
+    position: fixed;
+       width: 100%;
+       height: 100%;
+     background-color: rgb(184, 255, 166);
+       background-size: cover;
+    background-position: center center;
+     object-fit: cover;
+    box-shadow: 2px 4px 40px 0px rgb(251, 253, 247);
+
+    
+      }
+    .action-text {
+      /* styles pour le texte animé */
+      display: flex;
+      width: 50%;
+      height: 80%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+     
+    
+    }
+    
+    .action-text .text {
+      /* styles pour le texte statique */
+      display: flex;
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+      margin: 5%;
+      text-align: center;
+      align-items: center;
+     
+    }
+    
+    .action-text  h1 {
+      /* styles pour le titre */
+      font-family:inika_bold;
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-bottom: -1%;
+      font-size:60px;
+   
+    }
+    
+    .action-text  p {
+      /* styles pour le paragraphe */
+      display: flex;
+      margin-left: 5%;
+      margin-right: 5%;
+      font-family:inika_reg;
+      font-size:16px;
+    }
+    
+  
+  .action-text .button{
+      width: 40%;
+      height: 60px;
+     }
+    
+  .action-text button {
+      background-color: #6ca200;
+      border: 1px solid #13aa52;
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
+      box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+      box-sizing: border-box;
+      color: rgb(7, 15, 1);
+      cursor: pointer;
+      font-family:inika_reg;
+      font-size: 25px;
+      font-weight: 400;
+      outline: none;
+      outline: 0;
+      padding: 10px 25px;
+      text-align: center;
+      transform: translateY(0);
+      transition: transform 150ms, box-shadow 150ms;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+  
+    @media screen and (max-width:700px) {
+      .action-item {
+  
+        width: 98%;
+        height: 700px;
+      
+      
+        }
+        
+        .action-sous-item {
+          /* styles pour la première sous-section */
+        
+          flex-direction: column;
+       
+        }
+        .inverse{
+      
+          flex-direction: column;
+        }
+    
+         
+    .action-video{
+        /* styles pour l'image animée */
+    
+       width: 100%;
+       height: 100%;
+    
+    
+      }
+      .bg-video{
+          /* styles pour l'image animée */
+      position: fixed;
+         width: 100%;
+         height: 100%;
+      
+      
+        }
+      .action-text {
+        /* styles pour le texte animé */
+        position: absolute;
+        display: flex;
+        width: 100%;
+        height: 100%;
+
+        background-color: rgba(29, 39, 8, 0.5);
+     
+        color: aliceblue;
+      }
+        .action-text {
+          /* styles pour le texte animé */
+        
+          width: 100%;
+          height: 60%;
+         
+        }
+        
+        .action-text .text {
+          /* styles pour le texte statique */
+          display: flex;
+          width: 100%;
+          height: 80%;
+          flex-direction: column;
+          margin: 5%;
+        }
+        
+        .action-text  h1 {
+          /* styles pour le titre */
+          font-family:inika_bold;
+          margin-left: 5%;
+          margin-right: 5%;
+          font-size:18px;
+        }
+        
+        .action-text  p {
+          /* styles pour le paragraphe */
+          display: flex;
+          margin-left: 5%;
+          margin-right: 5%;
+          font-family:inika_reg;
+          font-size:12px;
+        }
+        
+        .action-text .button{
+          width: 60%;
+          height: 40px;
+         }
+        
+      .action-text button {
+         
+          font-size: 18px;
+       
+        }
+     
+     
+  
+  }

@@ -34,7 +34,7 @@
 background-position: center center;
 
 box-shadow: 2px 4px 40px 0px rgb(57, 87, 2);
-z-index: 10;
+
 
   }
   
@@ -89,7 +89,7 @@ z-index: 10;
 .agir-text button {
     background-color: #6ca200;
     border: 1px solid #13aa52;
-    width: 100%;
+    width: 300px;
     height: 100%;
     border-radius: 4px;
     box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
@@ -97,7 +97,7 @@ z-index: 10;
     color: rgb(7, 15, 1);
     cursor: pointer;
     font-family:inika_reg;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 400;
     outline: none;
     outline: 0;

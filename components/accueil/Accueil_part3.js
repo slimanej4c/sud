@@ -2,7 +2,8 @@ import React from 'react'
 import { useState, useEffect } from "react";
 import { connect } from 'react-redux'
 import { motion, AnimatePresence } from "framer-motion"
-import {messions ,images ,titles ,aprops,events,figures} from "../../public/static/text/text_index"
+
+import {events_text ,section_title} from "../../public/static/text/accueil/actualite_event"
 import {Set_current_image_redux } from '../../Redux'
 import {Set_cookies_redux } from '../../Redux'
 export const Accueil_part3 = (props) => {
@@ -58,14 +59,14 @@ export const Accueil_part3 = (props) => {
     const change_event = (myParam) => {
         setstop_auto(false)
          if (myParam==="next"){
-          { currentEvent===events[0][props.langue].length-1 ? setcurrentEvent(0)   :  setcurrentEvent(currentEvent+1)}
+          { currentEvent===events_text[0][props.langue].length-1 ? setcurrentEvent(0)   :  setcurrentEvent(currentEvent+1)}
           props.Set_cookies_redux(true)
           sety_init('100%')
           sety_init_image('-100%')
         
          }
          else{
-          { currentEvent===0 ?  setcurrentEvent(events[0][props.langue].length-1)  : setcurrentEvent(currentEvent-1)}
+          { currentEvent===0 ?  setcurrentEvent(events_text[0][props.langue].length-1)  : setcurrentEvent(currentEvent-1)}
           props.Set_cookies_redux(false)
           sety_init('-100%')
           sety_init_image('100%')
@@ -79,7 +80,7 @@ export const Accueil_part3 = (props) => {
           const interval = setInterval(() => {
          
           if (stop_auto){
-            { currentEvent===events[0][props.langue].length-1 ? setcurrentEvent(0)   :  setcurrentEvent(currentEvent+1)}
+            { currentEvent===events_text[0][props.langue].length-1 ? setcurrentEvent(0)   :  setcurrentEvent(currentEvent+1)}
             sety_init('100%')
           sety_init_image('-100%')
           }
@@ -91,19 +92,19 @@ export const Accueil_part3 = (props) => {
   return (
     <section className='home-part3'>
     <div className='home-part3-1'>
-      <h1>Actualités et événements</h1>
+      <h1>{section_title[props.langue][0].title}</h1>
     </div>
 
     <div className='home-part3-2'>
       <AnimatePresence>
         <motion.div
           className='home-part3-2-image'
-          style={{backgroundImage: `url(${events[0][props.langue][currentEvent].image})`}}
+          style={{backgroundImage: `url(${events_text[0][props.langue][currentEvent].image})`}}
           variants={image_eventVariants}
           initial="initial"
           animate="animate"
           exit="exit"
-          key={events[0][props.langue][currentEvent].image}
+          key={events_text[0][props.langue][currentEvent].image}
         >
         </motion.div>
                           
@@ -113,31 +114,31 @@ export const Accueil_part3 = (props) => {
           initial="initial"
           animate="animate"
         
-          key={events[0][props.langue][currentEvent].title}
+          key={events_text[0][props.langue][currentEvent].title}
           onAnimationComplete={definition => {
             console.log('Completed animating', definition)
           }}
         >
           <div className='home-part3-2-text-div'>
             <h1>
-              {events[0][props.langue][currentEvent].title}
+              {events_text[0][props.langue][currentEvent].title}
             </h1>
             <p>
-              {events[0][props.langue][currentEvent].text}
+              {events_text[0][props.langue][currentEvent].resume_text}
             </p>
           </div>
         </motion.div>
       </AnimatePresence>
 
-      <div className='home-part3-help1' style={{backgroundImage: `url(${events[0][props.langue][currentEvent].image})`}}>
+      <div className='home-part3-help1' style={{backgroundImage: `url(${events_text[0][props.langue][currentEvent].image})`}}>
       </div>
 
       <div className='home-part3-help2'>
         <h1>
-          {events[0][props.langue][currentEvent].title}
+          {events_text[0][props.langue][currentEvent].title}
         </h1>
         <p>
-          {events[0][props.langue][currentEvent].text}
+          {events_text[0][props.langue][currentEvent].text}
         </p>
       </div>
     </div>
@@ -151,7 +152,7 @@ export const Accueil_part3 = (props) => {
       </div>
     </div>
     <div className='home-part3-3-index'>
-        {events[0][props.langue].map((index)=>{
+        {events_text[0][props.langue].map((index)=>{
           let backgroundColor = 'green';
           if (index.id ===currentEvent+1) {
             backgroundColor = '#B64D07';

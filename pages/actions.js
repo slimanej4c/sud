@@ -1,9 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
+
 import Layout from '../hocs/Layout'
-
-
-
+import Domaine from '../components/actions/Domaine'
+import Intro from '../components/actions/Intro'
+import Project from '../components/actions/Project'
 export const actions = (props) => {
 
   const actions = [
@@ -27,7 +28,21 @@ export const actions = (props) => {
 
   return (
     <Layout>
-    <div>actions</div>
+     <div  className='agir-container'>
+     <section className='agir-nous-section'>
+            <Intro/>
+            </section>
+            <section className='agir-nous-section'>
+            <Domaine />
+            </section>
+            <section className='agir-nous-section'>
+            <Project />
+            </section>
+            
+            
+      
+      
+      </div>
    
     </Layout>
   )

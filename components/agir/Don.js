@@ -1,14 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { motion, AnimatePresence  } from "framer-motion"
-
+import {faire_don_text} from '../../public/static/text/agir/faire_don'
 import { useState, useEffect } from "react";
 export const Don = (props) => {
 
   
-    const don_text=[{"FR":{title:"Faire un don","intro":"Faire un don est un acte important et généreux qui peut faire une grande différence dans la vie des personnes dans le besoin. Si vous souhaitez soutenir notre organisation et aider à faire une différence dans la vie des personnes que nous aidons, faire un don est un excellent moyen de le faire. Dans cet article, nous allons vous expliquer comment faire un don et pourquoi cela est important pour notre organisation.",
-"button_title":"Faire un don",
-}}]
+ 
   return (
   
      <div className='agir-item'>
@@ -17,7 +15,7 @@ export const Don = (props) => {
           {/* animation pour l'image */}
           <AnimatePresence>
             <motion.div className='agir-image'
-                 style={{ backgroundImage: `url(${"/static/images/don.jpg"})` }}
+                 style={{ backgroundImage: `url(${faire_don_text[1].image})` }}
               initial={{ opacity: 1, x: "20%" }}
               viewport={{ once: true }}
               whileInView={{ opacity: 1, x: "0%", transition: { duration: 1 } }}>
@@ -31,11 +29,11 @@ export const Don = (props) => {
               viewport={{ once: true }}
               whileInView={{ opacity: 1, x: "0%", transition: { duration: 1 } }}>
                 <div className='text'>
-                <h1 className='h'> {don_text[0]["FR"].title}</h1>
-                 <p>{don_text[0]["FR"].intro}</p>
+                <h1 className='h'> {faire_don_text[0][props.langue].title}</h1>
+                 <p>{faire_don_text[0][props.langue].intro}</p>
 
                  <div className='button'>
-                   <button> Faire un don
+                   <button> {faire_don_text[0][props.langue].button}
                   </button>
                 </div>
                 </div>
@@ -50,7 +48,11 @@ export const Don = (props) => {
   )
 }
 
-const mapStateToProps = (state) => ({})
+const mapStateToProps = (state) => ({
+  langue:state.change_langue_reducer.langue,
+  cookies_accepted:state.change_langue_reducer.cookies_accepted,
+  current_image:state.change_langue_reducer.current_image,
+})
 
 const mapDispatchToProps = {}
 

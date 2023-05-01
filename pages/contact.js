@@ -45,10 +45,10 @@ export const contact = (props) => {
                     <div className='contact-info-text'>
                     <ul>
                 
-                  <li> <FontAwesomeIcon icon={faLocationDot}  className="contact-icon"/> Worben 5, CH-5706 Boniswil (SUISSE)</li>
-                  <li> <FontAwesomeIcon icon={faPhone}  className="contact-icon"/> +41 62 535 62 31</li>
-                  <li> <FontAwesomeIcon icon={faMobilePhone}  className="contact-icon"/> +41 79 550 17 45</li>
-                  <li> <FontAwesomeIcon icon={faEnvelope}  className="contact-icon"/> solidaritesud1@gmail.com</li>
+                  <li> <FontAwesomeIcon icon={faLocationDot}  className="contact-icon"/> xxxx , XXXXX  XXXXXX (SUISSE)</li>
+                  <li> <FontAwesomeIcon icon={faPhone}  className="contact-icon"/> +XX XX XX XXX XX</li>
+                  <li> <FontAwesomeIcon icon={faMobilePhone}  className="contact-icon"/> +XX XX XX XXX XX</li>
+                  <li> <FontAwesomeIcon icon={faEnvelope}  className="contact-icon"/> solidarit@domaine.com</li>
                 </ul>
 
                     </div>
@@ -136,11 +136,11 @@ export const contact = (props) => {
                    <div className='contact-bank-section' >
                    <FontAwesomeIcon icon={faBank}  className="contact-icon bank"/>
                    <ul>
-                      <li> RAIFFEISEN BANK</li>
-                      <li>Aarau-Raiffeisen</li>
-                      <li>SOLIDARITé-SUD</li>
-                      <li>IBAN CH33 0000 0000 0000 0000 0</li>
-                      <li>Kasinostrasse 37 – 5000 Aarau</li>
+                      <li> XXXXXX BANK</li>
+                      <li>XXXXX -XXXXXX</li>
+                      <li>SOLIDARITé</li>
+                      <li>IBAN XXXX 0000 0000 0000 0000 0</li>
+                      <li>XXXXXXXXXXX XX – XXXX XXXXX</li>
                     </ul>
                    </div>
                    

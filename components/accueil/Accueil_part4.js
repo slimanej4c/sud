@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from "react";
 import { connect } from 'react-redux'
 import { motion, AnimatePresence , useMotionValue, useDragControls} from "framer-motion"
-import {messions ,images ,titles ,aprops,events,figures} from "../../public/static/text/text_index"
+import {temoignage_text  ,section_title} from "../../public/static/text/accueil/temoignage"
 import {Set_current_image_redux } from '../../Redux'
 import {Set_cookies_redux } from '../../Redux'
 export const Accueil_part4 = (props) => {
@@ -28,14 +28,14 @@ export const Accueil_part4 = (props) => {
          sety_init_figure('-100%')
         sety_exit_figure('0%')
      
-        setcurrentFigure((currentFigure - 1 + figures[0][props.langue].length) % figures[0][props.langue].length);
+        setcurrentFigure((currentFigure - 1 + temoignage_text[0][props.langue].length) % temoignage_text[0][props.langue].length);
        
       
        }
        else{
         sety_init_figure('100%')
         sety_exit_figure('0%')
-        setcurrentFigure((currentFigure + 1) % figures[0][props.langue].length);
+        setcurrentFigure((currentFigure + 1) % temoignage_text[0][props.langue].length);
         
     };
   }
@@ -47,14 +47,14 @@ export const Accueil_part4 = (props) => {
         sety_init_figure('-100%')
         sety_exit_figure('0%')
      
-        setcurrentFigure((currentFigure - 1 + figures[0][props.langue].length) % figures[0][props.langue].length);
+        setcurrentFigure((currentFigure - 1 + temoignage_text[0][props.langue].length) % temoignage_text[0][props.langue].length);
        
        
       } else if (info.offset.x < -50) {
         // if the user has dragged the image by more than 50 pixels to the left, move to the previous figure
         sety_init_figure('100%')
         sety_exit_figure('0%')
-        setcurrentFigure((currentFigure + 1) % figures[0][props.langue].length);
+        setcurrentFigure((currentFigure + 1) % temoignage_text[0][props.langue].length);
         
       }
     };
@@ -65,7 +65,7 @@ export const Accueil_part4 = (props) => {
         const interval = setInterval(() => {
        
         if (stop_auto_figure){
-          setcurrentFigure((currentFigure + 1) % figures[0][props.langue].length);
+          setcurrentFigure((currentFigure + 1) % temoignage_text[0][props.langue].length);
           sety_init('-100%')
         sety_init_figure('100%')
         }
@@ -102,7 +102,7 @@ export const Accueil_part4 = (props) => {
   return (
     <section className='home-part4'>
     <div className='home-part4-title'>
-    <h1>Témoignages de bénévoles et de bénéficiaires</h1>
+    <h1>{section_title[props.langue][0].title}</h1>
     </div>
    
     <div className='home-figure'>
@@ -112,24 +112,24 @@ export const Accueil_part4 = (props) => {
      initial="initial"
      animate="animate"
      exit="exit"
-     key={figures[0][props.langue][currentFigure].id}
-     drag="x"
+     key={temoignage_text[0][props.langue][currentFigure].id}
+     /* drag="x" */
      dragConstraints={{ left: 0, right: 0 }}
       dragElastic={0.2}
       dragControls={dragControls}
       onDragEnd={handleDragEnd}>
-              <img src={figures[0][props.langue][currentFigure].imgSrc} alt={figures[0][props.langue][currentFigure].imgAlt} className="profile" />
+              <img src={temoignage_text[0][props.langue][currentFigure].imgSrc} alt={temoignage_text[0][props.langue][currentFigure].imgAlt} className="profile" />
               <figcaption>
-                <h2>{figures[0][props.langue][currentFigure].name}</h2>
-                <h4>{figures[0][props.langue][currentFigure].role}</h4>
-                <blockquote>{figures[0][props.langue][currentFigure].quote}</blockquote>
+                <h2>{temoignage_text[0][props.langue][currentFigure].name}</h2>
+                <h4>{temoignage_text[0][props.langue][currentFigure].role}</h4>
+                <blockquote>{temoignage_text[0][props.langue][currentFigure].quote}</blockquote>
               </figcaption>
      </motion.figure>
      </AnimatePresence>
 
 
      <div className='home-figure-index'>
-          {figures[0][props.langue].map((index)=>{
+          {temoignage_text[0][props.langue].map((index)=>{
             let backgroundColor = 'green';
             if (index.id ===currentFigure+1) {
               backgroundColor = '#B64D07';

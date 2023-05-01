@@ -18,9 +18,28 @@ DE:[{id:1,title:'Lebensmittelhilfe',text:"Wir stellen nahrhafte Mahlzeiten für 
 ]}]
 
 
-export const images = [{'image': '/static/images/children_home1.jpg', 'color': '#14162F', 'id': 1 ,'fcolor':"#E0A200"},
- {'image': '/static/images/child4.png', 'color': 'black', 'id': 2,'fcolor':"#FF6B09"},
-  {'image': '/static/images/hands-home.png', 'color': '#B36330', 'id': 3,'fcolor':"#00FFD6"}]
+export const domaine=[{FR:[{id:1,title:'Aide alimentaire',text:"Nous fournissons des repas nutritifs aux enfants en situation demalnutrition dans les communautéslocales, afin de leur assurer une alimentation adéquatepour leur développement",image:'/static/images/children_home1.jpg'},
+{id:2,title:"Accès à l'eau potable",text:"Nous travaillons pour améliorer l'accès à l'eau potable dans les régions où l'eau est rare ou contaminée, en installant des puits, des systèmes de filtration ou en formant des personnes pour gérer les ressources en eau",image:'/static/images/children_home1.jpg'},
+{id:3,title:'Santé',text:"Nous travaillons pour améliorer l'accès aux soins de santé, en offrant des soins médicaux gratuits ou à faible coût, en organisant des campagnes de sensibilisation à la santé et en formant des professionnels de la santé locaux",image:'/static/images/children_home1.jpg'},
+{id:4,title:'Éducation',text:"Nous nous efforçons d'améliorer l'accès à l'éducation en fournissant des ressources éducatives et en construisant des écoles dans les régions où l'éducation est limitée. Nous travaillons également à renforcer les compétences des enseignants locaux et à offrir des bourses d'études aux élèves talentueux mais défavorisés",image:'/static/images/children_home1.jpg'},
+
+],
+ENG:[{id:1,title:'Food Assistance',text:"We provide nutritious meals to children suffering from malnutrition in local communities, ensuring they have adequate nutrition for their development",image:'/static/images/children_home1.jpg'},
+{id:2,title:"Access to Clean Water",text:"We work to improve access to clean water in regions where water is scarce or contaminated, by installing wells, filtration systems, or training people to manage water resources",image:'/static/images/children_home1.jpg'},
+{id:3,title:'Healthcare',text:"We work to improve access to healthcare by providing free or low-cost medical care, organizing health awareness campaigns, and training local healthcare professionals",image:'/static/images/children_home1.jpg'},
+{id:4,title:'Education',text:"We strive to improve access to education by providing educational resources and building schools in areas where education is limited. We also work to strengthen the skills of local teachers and offer scholarships to talented but disadvantaged students",image:'/static/images/children_home1.jpg'},
+
+],
+DE:[{id:1,title:'Lebensmittelhilfe',text:"Wir stellen nahrhafte Mahlzeiten für unterernährte Kinder in lokalen Gemeinden bereit, um eine angemessene Ernährung für ihre Entwicklung zu gewährleisten",image:'/static/images/children_home1.jpg'},
+{id:2,title:"Zugang zu sauberem Wasser",text:"Wir arbeiten daran, den Zugang zu sauberem Wasser in Regionen zu verbessern, in denen Wasser knapp oder kontaminiert ist, indem wir Brunnen, Filtersysteme installieren oder Menschen schulen, um die Wasserressourcen zu verwalten",image:'/static/images/children_home1.jpg'},
+{id:3,title:'Gesundheit',text:"Wir arbeiten daran, den Zugang zu Gesundheitsversorgung zu verbessern, indem wir kostenlose oder kostengünstige medizinische Versorgung anbieten, Gesundheitskampagnen organisieren und lokale Gesundheitsfachkräfte ausbilden",image:'/static/images/children_home1.jpg'},
+{id:4,title:'Bildung',text:"Wir bemühen uns, den Zugang zu Bildung zu verbessern, indem wir Bildungsressourcen bereitstellen und Schulen in Regionen bauen, in denen die Bildung begrenzt ist. Wir arbeiten auch daran, die Fähigkeiten lokaler Lehrer zu stärken und begabten, aber benachteiligten Schülern Stipendien anzubieten",image:'/static/images/children_home1.jpg'},
+
+]}]
+
+export const images = [{'image': '/static/images/accueil/children_home1.jpg', 'color': '#14162F', 'id': 1 ,'fcolor':"#E0A200"},
+ {'image': '/static/images/accueil/child4.png', 'color': 'black', 'id': 2,'fcolor':"#FF6B09"},
+  {'image': '/static/images/accueil/hands-home.png', 'color': '#B36330', 'id': 3,'fcolor':"#00FFD6"}]
 export const titles = [
     {
       "FR": [
@@ -43,7 +62,9 @@ export const titles = [
 export const aprops=[{"FR":{"title":"À propos","text":" Soladirité est une association à but non lucratif qui travaille pour améliorer la vie des enfants en difficulté. Notre objectif est d'aider les enfants à travers divers programmes tels que l'aide alimentaire, l'accès à l'eau potable, l'éducation et la santé. Nous travaillons avec des partenaires locaux pour nous assurer que nos projets ont un impact positif et durable sur les communautés que nous aidons. Nous croyons que chaque enfant mérite une chance de réussir, et nous sommes déterminés à faire notre part pour y parvenir. Rejoignez-nous dans notre mission pour faire une différence dans la vie des enfants du monde entier."},
   "ENG":{"title":"About","text":"Soladirité is a non-profit organization working to improve the lives of disadvantaged children. Our goal is to help children through various programs such as food aid, access to clean water, education, and health. We work with local partners to ensure that our projects have a positive and lasting impact on the communities we serve. We believe that every child deserves a chance to succeed, and we are committed to doing our part to make that happen. Join us in our mission to make a difference in the lives of children around the world."},
   "DE":{"title":"Über uns","text":"Soladirité ist eine gemeinnützige Organisation, die daran arbeitet, das Leben benachteiligter Kinder zu verbessern. Unser Ziel ist es, Kindern durch verschiedene Programme wie Lebensmittelhilfe, Zugang zu sauberem Wasser, Bildung und Gesundheit zu helfen. Wir arbeiten mit lokalen Partnern zusammen, um sicherzustellen, dass unsere Projekte eine positive und nachhaltige Wirkung auf die von uns unterstützten Gemeinden haben. Wir glauben, dass jedes Kind eine Chance verdient, erfolgreich zu sein, und wir sind entschlossen, unseren Beitrag dazu zu leisten. Schließen Sie sich unserer Mission an, einen Unterschied im Leben von Kindern auf der ganzen Welt zu machen."}}]
- export const events = [
+ 
+ 
+  export const events = [
     {
     FR: [
     {
@@ -58,14 +79,14 @@ export const aprops=[{"FR":{"title":"À propos","text":" Soladirité est une ass
     title: "Distribution d'eau potable aux enfants dans le besoin",
     text:
     "L'association JKL a organisé une campagne de distribution d'eau potable aux enfants dans le besoin. Cette campagne vise à fournir de l'eau potable à des enfants qui n'y ont pas accès dans les zones les plus défavorisées de notre communauté. L'association a distribué des bouteilles d'eau potable dans les écoles et les centres de soins de la région. Les membres de l'association ont également fourni des informations sur l'importance de l'eau potable pour la santé et comment la consommer de manière sûre.",
-    image: "/static/images/eaux.jpg",
+    image: "/static/images/accueil/eaux.jpg",
     },
     {
     id: 3,
     title: "Campagne de sensibilisation à l'éducation pour les enfants défavorisés",
     text:
     "L'association JKL a lancé une campagne de sensibilisation à l'éducation pour les enfants défavorisés de notre communauté. Cette campagne vise à sensibiliser les parents et les enfants sur l'importance de l'éducation pour l'avenir des enfants. Les membres de l'association ont organisé des ateliers pour les enfants et les parents sur l'importance de l'éducation et comment ils peuvent aider leurs enfants à réussir à l'école. Ils ont également distribué des fournitures scolaires aux enfants qui en ont besoin.",
-    image: "/static/images/education.jpg",
+    image: "/static/images/accueil/education.jpg",
     },
     ],
     ENG: [
@@ -74,21 +95,21 @@ export const aprops=[{"FR":{"title":"À propos","text":" Soladirité est une ass
       title: "Charity event to raise funds",
       text:
       "The JKL solidarity association is organizing a charity event to raise funds for their food aid program for the most vulnerable people in our community. The event will take place on Saturday, July 10th in the downtown area. The evening will begin with a welcome cocktail followed by a dinner prepared by renowned local chefs. Participants will also be able to enjoy live music, entertainment, and games to win prizes throughout the evening. Volunteers from the association will be present to explain the details of the food aid program and how the funds collected during the evening will be used to help people in need. Tickets for the event are on sale now and all proceeds will go directly to the JKL association to finance their food aid program. It's a great opportunity to enjoy a pleasant evening while making a difference in the lives of the most vulnerable people in our community.",
-      image: "/static/images/event1.png",
+      image: "/static/images/accueil/event1.png",
       },
       {
       id: 2,
       title: "Distribution of clean water to children in need",
       text:
       "The JKL association has organized a campaign to distribute clean water to children in need. This campaign aims to provide clean water to children who do not have access to it in the most disadvantaged areas of our community. The association distributed bottles of clean water in schools and healthcare centers in the region. Members of the association also provided information on the importance of clean water for health and how to consume it safely.",
-      image: "/static/images/eaux.jpg",
+      image: "/static/images/accueil/eaux.jpg",
       },
       {
       id: 3,
       title: "Awareness campaign for education for underprivileged children",
       text:
       "The JKL association has launched an awareness campaign for education for underprivileged children in our community. This campaign aims to raise awareness among parents and children about the importance of education for children's future. Members of the association organized workshops for children and parents on the importance of education and how they can help their children succeed in school. They also distributed school supplies to children in need.",
-      image: "/static/images/education.jpg",
+      image: "/static/images/acxcueil/education.jpg",
       },
       ],
 
@@ -243,3 +264,33 @@ export const aprops=[{"FR":{"title":"À propos","text":" Soladirité est une ass
           quote: "Die Zusammenarbeit von Solidarität mit lokalen Partnern ist bemerkenswert. Sie arbeiten zusammen, um sauberes Trinkwasser und Gesundheitsversorgung für bedürftige Kinder bereitzustellen. Dank ihrer harten Arbeit haben wir eine signifikante Verbesserung der Lebensqualität unserer Kinder gesehen."
         }
       ]}]
+
+
+export const missions = [
+        {
+          FR: "Notre mission est d'améliorer la vie des enfants en difficulté en fournissant une aide alimentaire, un accès à l'eau potable, une éducation et des soins de santé de qualité.",
+          ENG: "Our mission is to improve the lives of children in need by providing food aid, access to clean water, quality education, and healthcare.",
+          DE: "Unsere Mission ist es, das Leben von Kindern in Not zu verbessern, indem wir Lebensmittelhilfe, Zugang zu sauberem Wasser, hochwertige Bildung und Gesundheitsversorgung bereitstellen."
+        },
+        {
+          FR: "Nous nous engageons à donner aux enfants du monde entier une chance de réussir en leur fournissant les ressources dont ils ont besoin pour s'épanouir.",
+          ENG: "We are committed to giving children around the world a chance to succeed by providing them with the resources they need to thrive.",
+          DE: "Wir verpflichten uns, Kindern auf der ganzen Welt eine Chance zu geben, indem wir ihnen die Ressourcen zur Verfügung stellen, die sie benötigen, um erfolgreich zu sein."
+        },
+        {
+          FR: "Notre objectif est de faire une différence positive dans la vie des enfants vulnérables en travaillant avec des partenaires locaux pour mettre en place des projets durables et efficaces.",
+          ENG: "Our goal is to make a positive difference in the lives of vulnerable children by working with local partners to implement sustainable and effective projects.",
+          DE: "Unser Ziel ist es, einen positiven Unterschied im Leben von gefährdeten Kindern zu machen, indem wir mit lokalen Partnern zusammenarbeiten, um nachhaltige und effektive Projekte umzusetzen."
+        },
+        {
+          FR: "Nous sommes déterminés à aider les enfants à sortir de la pauvreté en leur fournissant une éducation de qualité, un accès à l'eau potable et des soins de santé essentiels.",
+          ENG: "We are determined to help children escape poverty by providing them with quality education, access to clean water, and essential healthcare.",
+          DE: "Wir sind entschlossen, Kindern dabei zu helfen, aus der Armut auszubrechen, indem wir ihnen eine qualitativ hochwertige Bildung, Zugang zu sauberem Wasser und wesentliche Gesundheitsversorgung bieten."
+        },
+        {
+          FR: "Notre mission est de faire en sorte que chaque enfant ait la possibilité de réaliser son potentiel en lui offrant les moyens de réussir.",
+          ENG: "Our mission is to ensure that every child has the opportunity to reach their potential by providing them with the means to succeed.",
+          DE: "Unsere Mission ist es, sicherzustellen, dass jedes Kind die Möglichkeit hat, sein Potenzial auszuschöpfen, indem wir ihm die Mittel geben, um erfolgreich zu sein."
+        }
+      ];
+      

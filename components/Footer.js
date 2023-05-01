@@ -98,10 +98,10 @@ const link_array = [
         <div className="footer-coordone">
               <h1>{info["Contact"][props.langue]}</h1>
                 <ul>
-                  <li><FontAwesomeIcon icon={faLocationDot}  className="footer-icon"/>Worben 5, CH-5706 Boniswil (SUISSE)</li>
-                  <li> <FontAwesomeIcon icon={faPhone}  className="footer-icon"/>+41 62 535 62 31</li>
-                  <li><FontAwesomeIcon icon={faMobilePhone}  className="footer-icon"/>+41 79 550 17 45</li>
-                  <li><FontAwesomeIcon icon={faEnvelope}  className="footer-icon"/>solidaritesud1@gmail.com</li>
+                  <li><FontAwesomeIcon icon={faLocationDot}  className="footer-icon"/>xxxxx 5, xxxxx Boniswil (SUISSE)</li>
+                  <li> <FontAwesomeIcon icon={faPhone}  className="footer-icon"/>+xx xx xxx xx xx </li>
+                  <li><FontAwesomeIcon icon={faMobilePhone}  className="footer-icon"/>+xx xx xxx xx xx </li>
+                  <li><FontAwesomeIcon icon={faEnvelope}  className="footer-icon"/>solidarite@domaine.com</li>
                 </ul>
                
               </div>
@@ -121,7 +121,7 @@ const link_array = [
             </div>
          
        
-        <h4>Personne de référence : M. Maurice Zellweger, Président</h4>
+        <h4>Personne de référence : M. Xxxxx Xxxxxx, Président</h4>
       </div>
    
   </footer>
