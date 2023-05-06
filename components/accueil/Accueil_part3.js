@@ -143,14 +143,7 @@ export const Accueil_part3 = (props) => {
       </div>
     </div>
 
-    <div className='home-part3-3'>
-     
-
-      <div className='home-part3-buttons'>
-        <button className='home-part3-button prev' onClick={()=>change_event('prev')}>&lt;</button>
-        <button className='home-part3-button next' onClick={()=>change_event('next')}>&gt;</button>
-      </div>
-    </div>
+   
     <div className='home-part3-3-index'>
         {events_text[0][props.langue].map((index)=>{
           let backgroundColor = 'green';
@@ -163,6 +156,14 @@ export const Accueil_part3 = (props) => {
           )
         })}
       </div>
+      <div className='home-part3-3'>
+     
+
+     <div className='home-part3-buttons'>
+       <button className='home-part3-button prev' onClick={()=>change_event('prev')}>&lt;</button>
+       <button className='home-part3-button next' onClick={()=>change_event('next')}>&gt;</button>
+     </div>
+   </div>
   </section>
   )
 }

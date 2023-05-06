@@ -170,6 +170,15 @@ figure.snip1390 .profile {
 
 }
 @media screen and (max-width:750px) {
+  .home-part4{
+
+   margin-top:40%;
+
+}
+.home-part4-title {
+
+ margin-bottom: -10%;
+ }
   .home-part4-title h1{
 
    font-size: 20px;
@@ -182,7 +191,7 @@ figure.snip1390 .profile {
   }
   figure.snip1390 blockquote:before {
  
-    font-size: 40px;
+    font-size: 30px;
     
   }
   figure.snip1390 blockquote {
@@ -190,7 +199,33 @@ figure.snip1390 .profile {
   
     
   }
+  .home-part4-buttons{
+    height: auto;
+
+  }
+  .home-part4-button {
+    width: 30px;
+    height: 30px;
+   
+  }
+  .home-part4-buttons .prev {
  
+    font-size: 1em;
+  
+  
+  }
+  .home-part4-buttons .next {
+  
+    font-size: 1em;
+  
+  
+  }
+  .home-figure-index{
+  
+    height: auto;
+  
+   
+  }
 }
 
 

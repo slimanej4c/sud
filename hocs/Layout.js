@@ -27,7 +27,11 @@ const [nav_opened, setnav_opened] = useState("layout-nav");
 
 const [per, setper] = useState(false);
 const [show_model, setshow_model] = useState(true);
+const [clickedd, setClickedd] = useState(false);
 
+  function handleClick() {
+    setClickedd(!clickedd);
+  }
 /* sync function readTextFile(filePath) {
   try {
     const fileContent = await fs.promises.readFile(filePath, 'utf-8');
