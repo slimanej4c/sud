@@ -164,7 +164,7 @@ const logoVariants = {
 };
 const openwhatsapp=()=>{
 
-  const phoneNumber = '1234567890'; // Numéro de téléphone à contacter
+  const phoneNumber = '+41 79 550 17 45'; // Numéro de téléphone à contacter
 
   // Créer le lien URI WhatsApp avec le numéro de téléphone
   const uri = `whatsapp://send?phone=${phoneNumber}`;
@@ -296,7 +296,7 @@ const Nav=()=>{
      {Nav()}
      
      <motion.div className="nav-logo" animate="rotate" variants={logoVariants}>
-        <Image src={"/static/images/Logo.png"} alt="logo_nav" width={60} height={60} />
+        <Image src={"/static/images/logo_m.png"} alt="logo_m" width={50} height={50} />
       </motion.div>
             <div className="layout-nav-mobile">
            

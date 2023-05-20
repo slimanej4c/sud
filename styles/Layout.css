@@ -139,11 +139,11 @@ body {
     .whatsapp-icon{
 
       position: fixed;
-      right: 2%;
-      bottom: 5%;
-      font-size: 45px;
+      right: 5%;
+      bottom: 10%;
+      font-size: 50px;
       color: green;
- 
+      visibility: hidden;
     }
     .layout-nav {
      
@@ -170,11 +170,11 @@ body {
       color: #3b1919;
       z-index: 25;
       left:2%;
-    
-      background-image: url("/static/images/logo.png");
+      top: 1%;
+
       object-fit: fill;
-      width: 60px;
-      height: 60px;
+      width: 50px;
+      height: 50px;
       background-size: cover;
       background-position: center;
    
@@ -299,6 +299,18 @@ body {
         right: 2%;
        
       }
+      .whatsapp-icon{
+
+        position: fixed;
+        right: 3%;
+        bottom: 3%;
+        font-size: 50px;
+        color: rgba(0, 128, 0, 0.9);
+        visibility: visible;
+        padding: auto;
+        z-index: 10;
+   
+      }
       .radio-input .label .check {
         font-size: 8px;
         width: 20px;
@@ -380,9 +392,9 @@ body {
      .nav-logo{
      
      position: fixed;
-    top:0%;
+    top:1%;
   
-     right:0%;
+     right:1%;
      left: auto;
    
       z-index: 35;
@@ -456,7 +468,7 @@ body {
     .nav-logo{
     
     
-      background-image: url("/static/images/logo_mobile.png");
+      background-image: url("/static/images/logo_mo.png");
     
    
     }
