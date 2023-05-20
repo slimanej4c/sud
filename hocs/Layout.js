@@ -7,8 +7,13 @@ import Image from 'next/image';
 import { motion } from "framer-motion";
 //import Cookies from "js-cookie";
 import { useRouter } from 'next/router';
-
-
+import {faPhone 
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  faFacebook ,faTwitter,faLinkedin ,faWhatsapp ,faWhatsappSquare ,faSquareWhatsapp
+  
+} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { Set_langue_redux } from '../Redux'
 import {Set_cookies_redux } from '../Redux'
 import { connect } from 'react-redux'
@@ -157,6 +162,16 @@ const logoVariants = {
     },
   },
 };
+const openwhatsapp=()=>{
+
+  const phoneNumber = '1234567890'; // Numéro de téléphone à contacter
+
+  // Créer le lien URI WhatsApp avec le numéro de téléphone
+  const uri = `whatsapp://send?phone=${phoneNumber}`;
+
+  // Ouvrir le lien dans une nouvelle fenêtre ou un nouvel onglet
+  window.location.href = uri;
+}
 const clicked =()=>{
   {setOpen(!open)}
   setshow_nav(!show_nav)
@@ -178,7 +193,7 @@ const MenuIcon = () => {
 const radio_input=()=>{
   return(
     <div className="radio-input">
-      <label className="label">
+      <label className="label" >
         <input
           type="radio"
           name="radio"
@@ -243,7 +258,7 @@ const Nav=()=>{
   return(
     <nav className={show_nav ? nav_opened :nav_closed}>
     
-
+  
             <motion.ul
                 className="nav-ul"
                 variants={navbarVariants}
@@ -279,7 +294,7 @@ const Nav=()=>{
       <div className="layout-all">
        
      {Nav()}
-
+     
      <motion.div className="nav-logo" animate="rotate" variants={logoVariants}>
         <Image src={"/static/images/Logo.png"} alt="logo_nav" width={60} height={60} />
       </motion.div>
@@ -299,6 +314,7 @@ const Nav=()=>{
        
         
         </div>
+        <FontAwesomeIcon icon={faSquareWhatsapp}  className="whatsapp-icon" onClick={()=>openwhatsapp()}/>
      <Footer/>
       
       </div>

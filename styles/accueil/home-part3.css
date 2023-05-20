@@ -144,6 +144,8 @@
     border-radius: 50px;
     position: absolute;
     bottom:0%;
+    border: none;
+    box-shadow: 2px 2px 4px 0px rgb(57, 118, 0);
   }
   .home-part3-buttons .prev {
     position: absolute;
@@ -297,7 +299,7 @@
         position: static;
         width: 35px;
         height: 35px;
-    
+       
       }
       .home-part3-3-index{
       position: static;

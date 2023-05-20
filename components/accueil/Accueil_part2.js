@@ -39,11 +39,12 @@ export const Accueil_part2 = (props) => {
                           >
                           
                             <div className='mession-text'>
-                              <p>{missions_text[0][props.langue]}</p>
-                              <div className='button' >
-                                  <button > {missions_title[1][props.langue]}
+                              <p>{missions_text[0][props.langue]}
+                              
+                                  <button className='btn'> {missions_title[1][props.langue]}
                                   </button>
-                              </div>
+                              </p>
+                             
                             </div>
                             
                           </motion.div>
@@ -61,11 +62,13 @@ export const Accueil_part2 = (props) => {
                           >
                          
                             <div className='mession-text'>
-                              <p>{missions_text[1][props.langue]}</p>
-                              <div className='button' >
-                                  <button > {missions_title[1][props.langue]}
+                              <p>{missions_text[1][props.langue]}
+                             
+                                  <button className='btn'> {missions_title[1][props.langue]}
                                   </button>
-                              </div>
+                       
+                              </p>
+                             
                             </div>
                           </motion.div>
                         </AnimatePresence>
@@ -82,11 +85,12 @@ export const Accueil_part2 = (props) => {
                           >
                            
                             <div className='mession-text'>
-                              <p>{missions_text[3][props.langue]}</p>
-                              <div className='button' >
-                                  <button > {missions_title[1][props.langue]}
+                              <p>{missions_text[3][props.langue]}
+                             
+                                  <button className='btn'> {missions_title[1][props.langue]}
                                   </button>
-                              </div>
+                              </p>
+                             
                             </div>
                           </motion.div>
                         </AnimatePresence>
@@ -103,11 +107,12 @@ export const Accueil_part2 = (props) => {
                           >
                        
                             <div className='mession-text'>
-                              <p>{missions_text[4][props.langue]}</p>
-                              <div className='button' >
-                                  <button > {missions_title[1][props.langue]}
+                              <p>{missions_text[4][props.langue]}
+                             
+                                  <button className='btn'> {missions_title[1][props.langue]}
                                   </button>
-                              </div>
+                              </p>
+                            
                             </div>
                           </motion.div>
                         </AnimatePresence>

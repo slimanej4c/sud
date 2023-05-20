@@ -123,17 +123,27 @@ body {
       cursor: pointer;
       transition: 0.3s;
       border: 3px solid transparent;
-      box-shadow: 3px 3px 6px rgba(168, 72, 72, 0.5),
+      box-shadow: 1px 1px 3px rgba(140, 244, 147, 0.5),
        -1px -1px 4px rgba(255, 255, 255, 0.5);
     }
     
     .radio-input .label input:checked + .check {
-      color:rgb(2, 0, 0);
-      box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5),
+      color:rgb(193, 195, 191);
+      
+      box-shadow: 3px 3px 6px rgba(49, 75, 1, 0.5),
        -1px -1px 4px rgba(255, 255, 255, 0.5),
        inset 3px 3px 6px rgba(0, 0, 0, 0.5),
        inset -1px -1px 4px rgba(255, 255, 255, 0.5);
       transform: scale(1.1);
+    }
+    .whatsapp-icon{
+
+      position: fixed;
+      right: 2%;
+      bottom: 5%;
+      font-size: 45px;
+      color: green;
+ 
     }
     .layout-nav {
      
