@@ -136,14 +136,12 @@ body {
        inset -1px -1px 4px rgba(255, 255, 255, 0.5);
       transform: scale(1.1);
     }
-    .whatsapp-icon{
-
-      position: fixed;
-      right: 5%;
-      bottom: 10%;
-      font-size: 50px;
-      color: green;
+    .whatsapp-iconn{
       visibility: hidden;
+   
+      font-size: 0px;
+
+
     }
     .layout-nav {
      
@@ -299,15 +297,15 @@ body {
         right: 2%;
        
       }
-      .whatsapp-icon{
+      .whatsapp-iconn{
 
         position: fixed;
         right: 3%;
         bottom: 3%;
-        font-size: 50px;
-        color: rgba(0, 128, 0, 0.9);
+     
+ 
         visibility: visible;
-        padding: auto;
+       
         z-index: 10;
    
       }

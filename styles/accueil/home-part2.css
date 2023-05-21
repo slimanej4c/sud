@@ -80,7 +80,7 @@
     border-radius: 20px;
     justify-content: center;
     align-items: center;
-   background-color: rgba(49, 59, 41, 0.739);
+   background-color: rgba(38, 40, 52, 0.7);
   
 }
 .mession h1{
@@ -91,7 +91,7 @@
 }
 .mession p{
    text-align: center;
-   color: rgb(232, 231, 231);
+   color: rgb(125, 255, 179);
    font-family:inika_reg;
    margin: 10px;
 
@@ -111,11 +111,19 @@
     background-color: rgba(255, 0, 0, 0);
     border: none;
     text-decoration: underline;
-    color: aliceblue;
+    color: rgb(0, 255, 81);
     font-size: 16px;
   
  }
-
+.accueil-icon{
+    color: rgb(0, 255, 81);
+    padding: 10px;
+    border: 0px solid rgb(232, 224, 200);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.373);
+    box-shadow: 0px 1px 1px 0px rgb(0, 0, 0);
+    width: 50px;
+}
   @media screen and (max-width: 1100px) {
     .messions-title h1{
         font-size:50px;

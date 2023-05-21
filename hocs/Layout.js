@@ -7,10 +7,10 @@ import Image from 'next/image';
 import { motion } from "framer-motion";
 //import Cookies from "js-cookie";
 import { useRouter } from 'next/router';
-import {faPhone 
+import {faPhone ,faWater ,faWaterLadder,faLadderWater ,faBottleWater 
 } from "@fortawesome/free-solid-svg-icons";
 import {
-  faFacebook ,faTwitter,faLinkedin ,faWhatsapp ,faWhatsappSquare ,faSquareWhatsapp
+   faSquareWhatsapp
   
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -314,7 +314,10 @@ const Nav=()=>{
        
         
         </div>
-        <FontAwesomeIcon icon={faSquareWhatsapp}  className="whatsapp-icon" onClick={()=>openwhatsapp()}/>
+        <div className="whatsapp-iconn">
+        <FontAwesomeIcon icon={faSquareWhatsapp} style={{fontSize:50 , color:"green"}}  onClick={()=>openwhatsapp()}/>
+    
+        </div>
      <Footer/>
       
       </div>

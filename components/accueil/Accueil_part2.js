@@ -3,7 +3,13 @@ import { useState, useEffect } from "react";
 import { connect } from 'react-redux'
 import { motion, AnimatePresence } from "framer-motion"
 import {missions_text ,missions_title ,missions_image} from '../../public/static/text/accueil/missions'
-
+import {faHandsHelping,faBottleWater ,faBookReader ,faChildReaching
+} from "@fortawesome/free-solid-svg-icons";
+import {
+   faSquareWhatsapp
+  
+} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 export const Accueil_part2 = (props) => {
 
 
@@ -39,6 +45,8 @@ export const Accueil_part2 = (props) => {
                           >
                           
                             <div className='mession-text'>
+                            <FontAwesomeIcon icon={faBottleWater } className="accueil-icon" style={{fontSize:50 }}  onClick={()=>openwhatsapp()}/>
+                         
                               <p>{missions_text[0][props.langue]}
                               
                                   <button className='btn'> {missions_title[1][props.langue]}
@@ -62,6 +70,8 @@ export const Accueil_part2 = (props) => {
                           >
                          
                             <div className='mession-text'>
+                            <FontAwesomeIcon icon={faHandsHelping}  className="accueil-icon"  style={{fontSize:50 }}  onClick={()=>openwhatsapp()}/>
+                        
                               <p>{missions_text[1][props.langue]}
                              
                                   <button className='btn'> {missions_title[1][props.langue]}
@@ -85,6 +95,8 @@ export const Accueil_part2 = (props) => {
                           >
                            
                             <div className='mession-text'>
+                            <FontAwesomeIcon icon={faBookReader}  className="accueil-icon"  style={{fontSize:50 }}  onClick={()=>openwhatsapp()}/>
+                            
                               <p>{missions_text[3][props.langue]}
                              
                                   <button className='btn'> {missions_title[1][props.langue]}
@@ -107,6 +119,7 @@ export const Accueil_part2 = (props) => {
                           >
                        
                             <div className='mession-text'>
+                            <FontAwesomeIcon icon={faChildReaching}  className="accueil-icon"  style={{fontSize:50 }}  onClick={()=>openwhatsapp()}/>
                               <p>{missions_text[4][props.langue]}
                              
                                   <button className='btn'> {missions_title[1][props.langue]}
