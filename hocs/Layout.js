@@ -16,9 +16,10 @@ import {
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { Set_langue_redux } from '../Redux'
 import {Set_cookies_redux } from '../Redux'
+import {Set_link_redux } from '../Redux'
 import { connect } from 'react-redux'
 
-import  { store ,store2 }  from '../Redux/store';
+import  { store  }  from '../Redux/store';
 
 import { PersistGate } from 'redux-persist/integration/react';
 import {  persistStore } from 'redux-persist';
@@ -33,37 +34,26 @@ const [nav_opened, setnav_opened] = useState("layout-nav");
 const [per, setper] = useState(false);
 const [show_model, setshow_model] = useState(true);
 const [clickedd, setClickedd] = useState(false);
+const [To_link, setTo_link] = useState(2000);
+const [showNav, setShowNav] = useState(true);
+
+useEffect(() => {
+
+ 
+    setShowNav(true)
+// Délai de 2 secondes avant d'afficher le composant de navigation
+}, []);
+
 
   function handleClick() {
     setClickedd(!clickedd);
   }
-/* sync function readTextFile(filePath) {
-  try {
-    const fileContent = await fs.promises.readFile(filePath, 'utf-8');
-    console.log("fillleeee",fileContent);
-    console.log("fillleeee",fileContent);
-    console.log("fillleeee",fileContent);
-    if (fileContent==="yes"){
-      //setper(store)
-    }
-  } catch (error) {
-    console.error(error,"error.rrrrrrrrrrrrrrrrrrrrrr");
-    console.error(error,"error.rrrrrrrrrrrrrrrrrrrrrr");
-    console.error(error,"error.rrrrrrrrrrrrrrrrrrrrrr");
-    console.error(error,"error.rrrrrrrrrrrrrrrrrrrrrr");
-    console.error(error,"error.rrrrrrrrrrrrrrrrrrrrrr");
-  }
-}
-readTextFile('./hocs/log.txt') */
-const cookieValue = Cookies.get('cok');
-console.log('hiiiiiiii layout',cookieValue)
-console.log('hiiiiiiii layout',cookieValue)
-console.log('hiiiiiiii layout',cookieValue)
-console.log('hiiiiiiii layout',cookieValue)
+
+
 
 const accept_cookies=(val)=>{
   if(val){
-    Cookies.set('cok','true');
+
     const unsubscribe = persistStore(store)
     props.Set_cookies_redux(true)
 
@@ -102,23 +92,7 @@ const router = useRouter();
    
     
   };
-/* try{
-  const cookieValue = Cookies.get('cok');
-  if (cookieValue){
-    {!per && setper(true)}
-  }
-  else{
-   { per && setper(false)}
-  }
-  console.log("js coookies" ,cookieValue)
-  console.log("js coookies" ,cookieValue)
-  console.log("js coookies" ,cookieValue)
-  console.log("js coookies" ,cookieValue)
-  console.log("js coookies" ,cookieValue)
-}
-catch{
 
-} */
   useEffect(() => {
     console.log("cokkies layout....................",props.langue,per, Cookies.get('cok'))
   
@@ -143,7 +117,7 @@ catch{
   
   }, [per]);
 const navbarVariants = {
-  hidden: { y: "-100%" },
+  hidden: { y: "0%" },
   visible: {
     y: 0,
     transition: {
@@ -160,7 +134,7 @@ const navbarVariants = {
 };
 
 const itemVariants = {
-  hidden: { y: "-200%", opacity: 0.5 },
+  hidden: { y: "0%", opacity: 1 },
   visible: {
     y: 0,
     opacity: 1,
@@ -198,18 +172,23 @@ const openwhatsapp=()=>{
   // Ouvrir le lien dans une nouvelle fenêtre ou un nouvel onglet
   window.location.href = uri;
 }
-const clicked =()=>{
+const clicked_mobile =()=>{
+  
   {setOpen(!open)}
   setshow_nav(!show_nav)
   setnav_closed("layout-nav nav_closed")
   setnav_opened("layout-nav nav_opened")
+}
+const clicked =(to_link)=>{
+  props.Set_link_redux(to_link)
+
 }
 const MenuIcon = () => {
  
  
 
   return (
-    <div className={`menu-icon ${open ? "open" : ""}`} onClick={() =>clicked()}>
+    <div className={`menu-icon ${open ? "open" : ""}`} onClick={() =>clicked_mobile()}>
       <div className="bar line1"></div>
       <div className="bar line2"></div>
       <div className="bar line3"></div>
@@ -296,10 +275,11 @@ const Nav=()=>{
             <motion.li
               key={item.id}
               variants={itemVariants}
-              className={item.to === "/contact" ? contact_div : other_div}
+              className={item.to ===props.to ? contact_div : other_div}
             >
-              <Link className="nav-link" href={item.to} onClick={() => clicked()}>
+              <Link className="nav-link" href={item.to} onClick={() => clicked(item.to)}>
                 {item.title}
+         
               </Link>
             </motion.li>
           ))}
@@ -319,7 +299,7 @@ const Nav=()=>{
       
       <div className="layout-all">
        
-     {Nav()}
+     {showNav && Nav()}
      
      <motion.div className="nav-logo" animate="rotate" variants={logoVariants}>
         <Image src={"/static/images/logo_m.png"} alt="logo_m" width={50} height={50} />
@@ -366,6 +346,8 @@ const mapStateToProps = (state) => ({
  
   langue:state.change_langue_reducer.langue,
   cookies_accepted:state.change_langue_reducer.cookies_accepted,
+  to:state.change_langue_reducer.to,
+  wait_to:state.change_langue_reducer.wait_to,
 
 })
 
@@ -373,6 +355,7 @@ const mapDispatchToProps = dispatch =>{
 return{
   Set_langue_redux:(lang)=>dispatch(Set_langue_redux(lang)),
   Set_cookies_redux:(val)=>dispatch(Set_cookies_redux(val)),
+  Set_link_redux:(link)=>dispatch(Set_link_redux(link)),
 }
 
 }

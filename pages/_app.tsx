@@ -21,7 +21,7 @@ import '../styles/actions/project.css'
 import { Provider } from 'react-redux';
 import Cookies from "js-cookie";
 import { useDispatch } from 'react-redux';
-import  { store ,store2 , persistedReducer }  from '../Redux/store';
+import  { store , persistedReducer }  from '../Redux/store';
 import { getCookiesAccepted ,z} from '../Redux/selector';
 import { PersistGate } from 'redux-persist/integration/react';
 import {  persistStore } from 'redux-persist';
