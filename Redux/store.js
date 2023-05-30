@@ -13,7 +13,7 @@ import rootReducer from './rootReducer';
 
 
 const persistConfig = {
-    timeout: 1000, //Set the timeout function to 2 seconds
+   
     key: 'root-key',
     storage,
     stateReconciler: hardSet,
@@ -44,4 +44,4 @@ const store2 = createStore(
 
 
 //const persistor=null
-export { store,store2 };
+export { store,store2 ,persistedReducer  };

@@ -71,14 +71,14 @@
   
   }
   .presentation-title button {
-    background-color: #6ca200;
+    background-color: #0cf671;
     border: 1px solid #13aa52;
     width: 400px;
     height: 100%;
     border-radius: 4px;
     box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
     box-sizing: border-box;
-    color: rgb(7, 15, 1);
+    color: rgb(24, 14, 0);
     cursor: pointer;
     font-family:inika_reg;
     font-size: 25px;

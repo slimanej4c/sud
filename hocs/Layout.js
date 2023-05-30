@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Footer from "../components/Footer"
 import Image from 'next/image';
 import { motion } from "framer-motion";
-//import Cookies from "js-cookie";
+import Cookies from "js-cookie";
 import { useRouter } from 'next/router';
 import {faPhone ,faWater ,faWaterLadder,faLadderWater ,faBottleWater 
 } from "@fortawesome/free-solid-svg-icons";
@@ -55,16 +55,42 @@ const [clickedd, setClickedd] = useState(false);
   }
 }
 readTextFile('./hocs/log.txt') */
-/* const accept_cookies=(val)=>{
+const cookieValue = Cookies.get('cok');
+console.log('hiiiiiiii layout',cookieValue)
+console.log('hiiiiiiii layout',cookieValue)
+console.log('hiiiiiiii layout',cookieValue)
+console.log('hiiiiiiii layout',cookieValue)
+
+const accept_cookies=(val)=>{
   if(val){
-    Cookies.set('cok', true);
-    props.Set_cookies_redux(false)
+    Cookies.set('cok','true');
+    const unsubscribe = persistStore(store)
+    props.Set_cookies_redux(true)
+
   }
   else{
     props.Set_cookies_redux(false)
   }
-  
-} */
+
+
+
+    fetch('http://localhost:3000/api/file', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ content: 'true' }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data); // Affiche la réponse du serveur (message de succès ou d'erreur)
+      })
+      .catch((error) => {
+        console.error('Error updating file:', error);
+      });
+
+
+} 
 const router = useRouter();
 
 
@@ -94,7 +120,7 @@ catch{
 
 } */
   useEffect(() => {
-    console.log("cokkies layout....................",props.langue,per)
+    console.log("cokkies layout....................",props.langue,per, Cookies.get('cok'))
   
    
     
@@ -196,7 +222,7 @@ const radio_input=()=>{
       <label className="label" >
         <input
           type="radio"
-          name="radio"
+          name="radio1"
           value="FR"
           checked={props.langue === "FR"}
           onChange={handleLanguageChange}
@@ -206,7 +232,7 @@ const radio_input=()=>{
       <label className="label">
         <input
           type="radio"
-          name="radio"
+          name="radio2"
           value="ENG"
           checked={props.langue === "ENG"}
           onChange={handleLanguageChange}
@@ -216,7 +242,7 @@ const radio_input=()=>{
       <label className="label">
         <input
           type="radio"
-          name="radio"
+          name="radio3"
           value="DE"
           checked={props.langue === "DE"}
           onChange={handleLanguageChange}
@@ -307,10 +333,10 @@ const Nav=()=>{
      <div className='layout-header'>
         <div className="layout-container">
           {props.children}
-          {/* <div className={'layout-model'} style={{visibility: props.cookies_accepted ? "visible"  : "hidden"}}>
-                  <button className='home-part3-button prev' onClick={()=>accept_cookies(true)}>cokies</button>
-                  <button className='home-part3-button prev' onClick={()=>accept_cookies(false)}>no cokies</button>
-          </div> */}
+         <div className={'layout-model'} style={{visibility: props.cookies_accepted ?  "hidden"  : "visible" }}>
+                  <button className='' onClick={()=>accept_cookies(true)}>cokies</button>
+                  <button className='' onClick={()=>accept_cookies(false)}>no cokies</button>
+          </div> 
        
         
         </div>

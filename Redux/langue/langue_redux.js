@@ -50,7 +50,7 @@ export const Set_langue_redux= (lang) => async dispatch => {
    
       
         langue:'FR',
-        cookies_accepted:true,
+        cookies_accepted:false,
         current_image:0,
       
       
