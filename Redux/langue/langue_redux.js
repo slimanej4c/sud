@@ -72,8 +72,9 @@ export const Set_langue_redux= (lang) => async dispatch => {
      const initialState = {
    
       
-        langue:'FR',
+        langue:'DE',
         cookies_accepted:false,
+        cookies_visible:false,
         current_image:0,
         to:"/",
         wait_to:0,
@@ -99,6 +100,7 @@ export const Set_langue_redux= (lang) => async dispatch => {
             ...state,
       
             cookies_accepted:action.set_cookies,
+            cookies_visible:true,
            
          
           }

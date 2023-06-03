@@ -36,7 +36,9 @@ const [show_model, setshow_model] = useState(true);
 const [clickedd, setClickedd] = useState(false);
 const [To_link, setTo_link] = useState(2000);
 const [showNav, setShowNav] = useState(true);
-
+const routerr = useRouter();
+const currentPath = routerr.pathname;
+const lastWord = "/"+currentPath.split('/').slice(-1)[0];
 useEffect(() => {
 
  
@@ -150,6 +152,23 @@ const itemVariants = {
     },
   },
 };
+const modelVariants = {
+  hidden: { x: "-100%", opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+     
+      duration: 2,
+      type: "spring",
+      stiffness: 50,
+      mass: 1,
+      damping: 10,
+      staggerChildren: 0.1,
+      delayChildren: 0.5,
+    },
+  },
+};
 const logoVariants = {
   rotate: {
     transform: "rotate(360deg)",
@@ -198,15 +217,16 @@ const MenuIcon = () => {
 const radio_input=()=>{
   return(
     <div className="radio-input">
-      <label className="label" >
+    
+      <label className="label">
         <input
           type="radio"
-          name="radio1"
-          value="FR"
-          checked={props.langue === "FR"}
+          name="radio3"
+          value="DE"
+          checked={props.langue === "DE"}
           onChange={handleLanguageChange}
         />
-        <span className="check">FR</span>
+        <span className="check">DE</span>
       </label>
       <label className="label">
         <input
@@ -218,16 +238,17 @@ const radio_input=()=>{
         />
         <span className="check">ENG</span>
       </label>
-      <label className="label">
+      <label className="label" >
         <input
           type="radio"
-          name="radio3"
-          value="DE"
-          checked={props.langue === "DE"}
+          name="radio1"
+          value="FR"
+          checked={props.langue === "FR"}
           onChange={handleLanguageChange}
         />
-        <span className="check">DE</span>
+        <span className="check">FR</span>
       </label>
+     
     </div>
 
   )
@@ -275,10 +296,11 @@ const Nav=()=>{
             <motion.li
               key={item.id}
               variants={itemVariants}
-              className={item.to ===props.to ? contact_div : other_div}
+              className={item.to ===lastWord  ? contact_div : other_div}
             >
               <Link className="nav-link" href={item.to} onClick={() => clicked(item.to)}>
                 {item.title}
+              
          
               </Link>
             </motion.li>
@@ -289,6 +311,28 @@ const Nav=()=>{
   )
 }
 
+const texts_model = {
+  FR: {
+    title: 'Ce site utilise des cookies.',
+    content: 'Ce site utilise des cookies. En continuant à utiliser ce site, vous consentez à l\'utilisation des cookies.',
+    acceptButton: 'Accepter les cookies',
+    continueButton: 'Continuer sans cookies'
+  },
+  ENG: {
+    title: 'This site uses cookies.',
+    content: 'This site uses cookies. By continuing to use this site, you consent to the use of cookies.',
+    acceptButton: 'Accept cookies',
+    continueButton: 'Continue without cookies'
+  },
+  DE: {
+    title: 'Diese Website verwendet Cookies.',
+    content: 'Diese Website verwendet Cookies. Durch die weitere Nutzung dieser Website stimmen Sie der Verwendung von Cookies zu.',
+    acceptButton: 'Cookies akzeptieren',
+    continueButton: 'Ohne Cookies fortfahren'
+  }
+};
+
+  const { title, content, acceptButton, continueButton } = texts_model[props.langue];
 
     return (
   <>
@@ -313,12 +357,21 @@ const Nav=()=>{
      <div className='layout-header'>
         <div className="layout-container">
           {props.children}
-         <div className={'layout-model'} style={{visibility: props.cookies_accepted ?  "hidden"  : "visible" }}>
-                  <button className='' onClick={()=>accept_cookies(true)}>cokies</button>
-                  <button className='' onClick={()=>accept_cookies(false)}>no cokies</button>
-          </div> 
+         <motion.div   
+           variants={modelVariants}
+                initial="hidden"
+                animate="visible"
+                className={'layout-model'} style={{visibility: props.cookies_visible ?  "hidden"  : "visible" }}>
+           <div className='txt'>
        
-        
+            <p>{content}</p>
+           </div>
+         
+          <div className="cookie-buttons">
+            <button className='btn' onClick={()=>accept_cookies(true)}> {acceptButton}</button>
+            <button className='btn' onClick={()=>accept_cookies(false)}> {continueButton}</button>
+          </div>
+          </motion.div> 
         </div>
         <div className="whatsapp-iconn">
         <FontAwesomeIcon icon={faSquareWhatsapp} style={{fontSize:50 , color:"green"}}  onClick={()=>openwhatsapp()}/>
@@ -346,6 +399,7 @@ const mapStateToProps = (state) => ({
  
   langue:state.change_langue_reducer.langue,
   cookies_accepted:state.change_langue_reducer.cookies_accepted,
+  cookies_visible:state.change_langue_reducer.cookies_visible,
   to:state.change_langue_reducer.to,
   wait_to:state.change_langue_reducer.wait_to,
 
