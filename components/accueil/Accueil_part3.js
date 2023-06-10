@@ -148,7 +148,7 @@ export const Accueil_part3 = (props) => {
         {events_text[0][props.langue].map((index)=>{
           let backgroundColor = 'green';
           if (index.id ===currentEvent+1) {
-            backgroundColor = '#B64D07';
+            backgroundColor = '#f75a36';
           }
           return(
             <div className='home-part3-3-index-div' style={{backgroundColor}}>

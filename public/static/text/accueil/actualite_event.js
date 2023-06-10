@@ -63,6 +63,7 @@
         title: "Wohltätigkeitsveranstaltung zur Sammlung von Spenden",
         text:
         "Der Solidaritätsverein JKL organisiert eine Wohltätigkeitsveranstaltung zur Sammlung von Spenden für ihr Programm zur Lebensmittelhilfe für die am stärksten gefährdeten Personen unserer Gemeinschaft. Die Veranstaltung findet am Samstag, den 10. Juli, im Stadtzentrum statt. Der Abend beginnt mit einem Willkommenscocktail, gefolgt von einem Abendessen, das von renommierten lokalen Köchen zubereitet wird. Die Teilnehmer können auch Live-Musik, Unterhaltung und Spiele genießen, um während des Abends Preise zu gewinnen. Freiwillige des Vereins werden anwesend sein, um die Details des Lebensmittelhilfeprogramms zu erläutern und wie die bei der Veranstaltung gesammelten Spenden verwendet werden, um den Bedürftigen zu helfen. Tickets für die Veranstaltung sind ab sofort erhältlich und alle Einnahmen gehen direkt an den Verein JKL, um ihr Programm zur Lebensmittelhilfe zu finanzieren. Dies ist eine großartige Gelegenheit, einen angenehmen Abend zu verbringen und gleichzeitig einen Unterschied im Leben der am stärksten gefährdeten Personen unserer Gemeinschaft zu machen.",
+        resume_text:"Der Solidaritätsverein JKL organisiert eine Wohltätigkeitsveranstaltung zur Sammlung von Spenden für ihr Lebensmittelhilfe-Programm. Die Veranstaltung findet am Samstag, den 10. Juli, im Stadtzentrum statt. Es gibt einen Willkommenscocktail, gefolgt von einem Abendessen mit lokalen Köchen. Live-Musik, Unterhaltung und Spiele sind Teil des Abends. Freiwillige werden das Lebensmittelhilfe-Programm erläutern. Tickets sind erhältlich, alle Einnahmen gehen an den Verein JKL. Eine großartige Gelegenheit, einen angenehmen Abend zu verbringen und den Bedürftigen zu helfen",
         image: "/static/images/event1.png",
         },
         {
@@ -70,6 +71,7 @@
         title: "Verteilung von Trinkwasser an bedürftige Kinder",
         text:
         "Der Verein JKL hat eine Kampagne zur Verteilung von Trinkwasser an bedürftige Kinder organisiert. Diese Kampagne zielt darauf ab, Kindern, die in den benachteiligten Gebieten unserer Gemeinschaft keinen Zugang dazu haben, Trinkwasser zur Verfügung zu stellen. Der Verein hat Trinkflaschen in Schulen und Gesundheitszentren in der Region verteilt. Die Mitglieder des Vereins haben auch Informationen über die Bedeutung von Trinkwasser für die Gesundheit bereitgestellt und wie es sicher konsumiert werden kann.",
+        resume_text: "Der Verein JKL hat eine Kampagne zur Verteilung von Trinkwasser an bedürftige Kinder organisiert. Diese Kampagne zielt darauf ab, Kindern, die in den benachteiligten Gebieten unserer Gemeinschaft keinen Zugang dazu haben, Trinkwasser zur Verfügung zu stellen. Der Verein hat Trinkflaschen in Schulen und Gesundheitszentren in der Region verteilt. Die Mitglieder des Vereins haben auch Informationen über die Bedeutung von Trinkwasser für die Gesundheit bereitgestellt und wie es sicher konsumiert werden kann.",
         image: "/static/images/eaux.jpg",
         },
         {
@@ -77,6 +79,7 @@
         title: "Sensibilisierungskampagne für benachteiligte Kinder zur Bildung",
         text:
         "Der Verein JKL hat eine Sensibilisierungskampagne für benachteiligte Kinder in unserer Gemeinschaft gestartet. Diese Kampagne zielt darauf ab, Eltern und Kinder auf die Bedeutung von Bildung für die Zukunft der Kinder aufmerksam zu machen. Die Mitglieder des Vereins haben Workshops für Kinder und Eltern zur Bedeutung von Bildung und wie sie ihren Kindern helfen können, in der Schule erfolgreich zu sein, organisiert. Sie haben auch Schulbedarf an Kinder verteilt, die ihn benötigen.",
+        resume_text:  "Der Verein JKL hat eine Sensibilisierungskampagne für benachteiligte Kinder in unserer Gemeinschaft gestartet. Diese Kampagne zielt darauf ab, Eltern und Kinder auf die Bedeutung von Bildung für die Zukunft der Kinder aufmerksam zu machen. Die Mitglieder des Vereins haben Workshops für Kinder und Eltern zur Bedeutung von Bildung und wie sie ihren Kindern helfen können, in der Schule erfolgreich zu sein, organisiert. Sie haben auch Schulbedarf an Kinder verteilt, die ihn benötigen.",
         image: "/static/images/education.jpg",
         },
         ],

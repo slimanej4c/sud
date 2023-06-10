@@ -9,79 +9,81 @@ export const Accueil_part4 = (props) => {
 
     const [currentFigure, setcurrentFigure] = useState(0);
  
-    const [y_init, sety_init] = useState('0%');
+    const [y_init, sety_init] = useState(0);
     const [stop_auto_figure, setstop_auto_figure] = useState(true);
-    const [y_exit_figure, sety_exit_figure] = useState('0%');
+    const [y_exit_figure, sety_exit_figure] = useState(true);
     const [y_init_figure, sety_init_figure] = useState('100%');
 
    
  
     const dragControls = useDragControls();
     useEffect(() => {
-    
-   
-    }, [y_exit_figure ,dragControls]);
+    console.log(y_exit_figure)
+    { y_exit_figure ? setcurrentFigure((currentFigure - 1 + temoignage_text[0][props.langue].length) % temoignage_text[0][props.langue].length):
+      setcurrentFigure((currentFigure + 1) % temoignage_text[0][props.langue].length);}
+    }, [y_init]);
 
     const change_figure = (myParam) => {
       setstop_auto_figure(false)
+      sety_init(y_init+1)
        if (myParam==="prev"){
          sety_init_figure('-100%')
-        sety_exit_figure('0%')
+        sety_exit_figure(true)
      
-        setcurrentFigure((currentFigure - 1 + temoignage_text[0][props.langue].length) % temoignage_text[0][props.langue].length);
+      
        
       
        }
        else{
         sety_init_figure('100%')
-        sety_exit_figure('0%')
-        setcurrentFigure((currentFigure + 1) % temoignage_text[0][props.langue].length);
+        sety_exit_figure(false)
+      
         
     };
+    
   }
     const handleDragEnd = (event, info) => {
-   
+      sety_init(y_init+1)
         sety_exit_figure('0%')
       if (info.offset.x > 50) {
         // if the user has dragged the image by more than 50 pixels to the right, move to the next figure
         sety_init_figure('-100%')
-        sety_exit_figure('0%')
-     
-        setcurrentFigure((currentFigure - 1 + temoignage_text[0][props.langue].length) % temoignage_text[0][props.langue].length);
+        sety_exit_figure(true)
+      
        
        
       } else if (info.offset.x < -50) {
         // if the user has dragged the image by more than 50 pixels to the left, move to the previous figure
         sety_init_figure('100%')
-        sety_exit_figure('0%')
-        setcurrentFigure((currentFigure + 1) % temoignage_text[0][props.langue].length);
+        sety_exit_figure(false)
+     
         
       }
     };
    
   
   
-    useEffect(() => {
-        const interval = setInterval(() => {
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
        
-        if (stop_auto_figure){
-          setcurrentFigure((currentFigure + 1) % temoignage_text[0][props.langue].length);
-          sety_init('-100%')
-        sety_init_figure('100%')
-        }
+    //     if (stop_auto_figure){
+    //       setcurrentFigure((currentFigure + 1) % temoignage_text[0][props.langue].length);
+    //       sety_init('-100%')
+    //     sety_init_figure('100%')
+    //     }
          
-        }, 6000);
-        return () => clearInterval(interval);
-      }, [currentFigure]);
+    //     }, 6000);
+    //     return () => clearInterval(interval);
+    //   }, []);
   
   
       
   
    
-      const image_figuretVariants = {
+      const image_figuretVariantsr = {
         initial: {
           opacity: 0,
-          x: y_init_figure,
+          x:"-100%",
         },
         animate: {
           opacity: 1,
@@ -92,13 +94,34 @@ export const Accueil_part4 = (props) => {
         },
         exit: {
           opacity: 0,
-          x: y_exit_figure,
+          x:"100%",
           transition: {
             duration: 1,
           },
         },
+        
       };
-   
+      const image_figuretVariantsl = {
+        initial: {
+          opacity: 0,
+          x:"100%",
+        },
+        animate: {
+          opacity: 1,
+          x: '0%',
+          transition: {
+            duration: 1,
+          },
+        },
+     
+        exit: {
+          opacity: 0,
+          x:"-100%",
+          transition: {
+            duration:0.5,
+          },
+        },
+      };
   return (
     <section className='home-part4'>
     <div className='home-part4-title'>
@@ -106,14 +129,15 @@ export const Accueil_part4 = (props) => {
     </div>
    
     <div className='home-figure'>
+      
     <AnimatePresence>
     <motion.figure className="snip1390"
-     variants={image_figuretVariants}
+     variants={y_exit_figure ? image_figuretVariantsr : image_figuretVariantsl}
      initial="initial"
      animate="animate"
      exit="exit"
      key={temoignage_text[0][props.langue][currentFigure].id}
-     /* drag="x" */
+     drag="x" 
      dragConstraints={{ left: 0, right: 0 }}
       dragElastic={0.2}
       dragControls={dragControls}

@@ -227,18 +227,26 @@ background-color: #f75a36;
     }
     .nav-link{
      text-decoration: none;
-     color: #FFE0E0;
-     margin: 25px;
+     color: #cbffe0;
+     margin: 28px;
      font-size: 12px;
      letter-spacing:5px;
      font-family:inika_reg;
+     
   
+    }
+    .nav-ul .clicked{
+     color: rgb(34, 252, 67);
+     
+     scale: 1.2;
+    
+
     }
     .item-div{
       display: flex;
       justify-content: center;
       align-items: center;
-     
+      color: #f75a36;
       height: 20px;
       
     }
@@ -246,7 +254,7 @@ background-color: #f75a36;
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #8dbe44;
+      color: #f75a36;
       height: 30px;
     
       border-radius: 10px;

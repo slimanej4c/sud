@@ -298,7 +298,9 @@ const Nav=()=>{
               variants={itemVariants}
               className={item.to ===lastWord  ? contact_div : other_div}
             >
-              <Link className="nav-link" href={item.to} onClick={() => clicked(item.to)}>
+              <Link className={item.to ===lastWord  ? "nav-link clicked"  : "nav-link"} 
+          
+              href={item.to} onClick={() => clicked(item.to)}>
                 {item.title}
               
          
@@ -361,6 +363,7 @@ const texts_model = {
            variants={modelVariants}
                 initial="hidden"
                 animate="visible"
+                viewport={{ once: true }}
                 className={'layout-model'} style={{visibility: props.cookies_visible ?  "hidden"  : "visible" }}>
            <div className='txt'>
        

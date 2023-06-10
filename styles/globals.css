@@ -1,11 +1,11 @@
 :root {
   
  margin: auto; 
- --navbar_color:#252402;
+ --navbar_color:#13192f;
  --navbar_mobile_color:#424223;
  --navbar_mobile_ul: #ecf5e3;
  --navbar_mobile_click:#81AA5B;
- --mather-color:#ecf5e3;
+ --mather-color:#e3f5f0;
 
 
 
@@ -19,20 +19,20 @@
  --mession-font-big-title-color:rgb(16, 16, 13);
 
  --event-font-big-title-color:#20221c;
- --event-bg-text:#ecf5e3;
+ --event-bg-text:#36fea1;
  --button_event_color:#81AA5B;
 
  --devenir_bene_button:#81AA5B;
-
+--btn_color:rgb(39, 255, 122);
 --figure_snip_bg_color:#81AA5B;
 --figure_blockquote_bg_color:#ecf5e3;
 --figure_text_color:#000000;
 --figure_title_color:#000000;
 
 
- --footer-color:#8dbe44;
+ --footer-color:#13192f;
  --footer-shadow-color:#585e45;
- --footer-font-color:#111b03;
+ --footer-font-color:#8d9e77;
  --footer_font_size_title_700:16px ;
  --footer_font_size_text_700:12px ;
  --footer_font_size_textp_700:11px ;
