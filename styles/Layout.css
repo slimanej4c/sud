@@ -136,7 +136,7 @@ background-color: #f75a36;
       position: fixed;
       display: flex;
       gap: 20px;
-      z-index: 40;
+  
       right: 5%;
      
 
@@ -227,7 +227,7 @@ background-color: #f75a36;
     }
     .nav-link{
      text-decoration: none;
-     color: #cbffe0;
+     color: #1adf69;
      margin: 28px;
      font-size: 12px;
      letter-spacing:5px;
@@ -339,6 +339,7 @@ background-color: #f75a36;
       .radio-input {
         right: 2%;
        
+       
       }
       .whatsapp-iconn{
 
@@ -363,13 +364,15 @@ background-color: #f75a36;
     @media screen and (max-width: 700px) {
       .radio-input {
         right: 0px;
-       
+        margin-top: 50px;
+    
       }
       .radio-input .label .check {
         color:rgb(112, 101, 101);
         font-size: 12px;
         width: 30px;
         height: 30px;
+   
         display: flex;
         justify-content: center;
         align-items: center;
