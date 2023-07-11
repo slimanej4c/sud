@@ -3,8 +3,9 @@ import { useState, useEffect } from "react";
 import { connect } from 'react-redux'
 import { motion, AnimatePresence } from "framer-motion"
 import { intro_text } from '../../public/static/text/agir/intro';
+import { useRouter } from 'next/router'
 export const Agir_nous = (props) => {
-  
+  const router = useRouter()
 
     const titleVariants = {
         hidden: { opacity: 0 },
@@ -70,7 +71,7 @@ export const Agir_nous = (props) => {
                             key={2}/>
                                 <p>{intro_text[0][props.langue].intro}</p>
                                 <div className='button'>
-                                    <button>{intro_text[0][props.langue].title}
+                                    <button onClick={()=> router.push("/contact")}>{intro_text[0][props.langue].title}
                                     </button>
                         </div>
                                 

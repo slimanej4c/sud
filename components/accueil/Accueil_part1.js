@@ -2,10 +2,11 @@ import React from 'react'
 import { useState, useEffect } from "react";
 import { connect } from 'react-redux'
 import { motion, AnimatePresence } from "framer-motion"
-
+import { useRouter } from 'next/router'
 import {images_presentation , titles_presentation , aprops_presentation ,button_presentation } from "../../public/static/text/accueil/presentation"
 import {Set_current_image_redux } from '../../Redux'
 export const Accueil_part1 = (props) => {
+  const router = useRouter()
     const [currentImage, setCurrentImage] = useState(0);
 
         useEffect(() => {
@@ -86,7 +87,7 @@ export const Accueil_part1 = (props) => {
                       <motion.span key={props.current_image} variants={letterVariants}>{letter}</motion.span>
                     ))}
                   </motion.p>
-                  <button > {button_presentation[0][props.langue]}
+                  <button onClick={()=> router.push("/contact")} > {button_presentation[0][props.langue]}
                   </button>
                 </AnimatePresence>
               </div>

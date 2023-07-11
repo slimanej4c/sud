@@ -2,9 +2,10 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { motion, AnimatePresence  } from "framer-motion"
 import {parrainer_enfant_text}  from '../../public/static/text/agir/parrainer_enfant'
+import { useRouter } from 'next/router'
 export const Parrainer_enfant = (props) => {
   
- 
+  const router = useRouter()
   return (
   
      <div className='agir-item'>
@@ -30,7 +31,7 @@ export const Parrainer_enfant = (props) => {
                 <h1 className='h'> {parrainer_enfant_text[0][props.langue].title}</h1>
                  <p>{parrainer_enfant_text[0][props.langue].intro}</p>
                  <div className='button' >
-                   <button > {parrainer_enfant_text[0][props.langue].button}
+                   <button onClick={()=> router.push("/contact")} > {parrainer_enfant_text[0][props.langue].button}
                   </button>
                 </div>
                 </div>

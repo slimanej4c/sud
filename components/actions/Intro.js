@@ -2,9 +2,10 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { motion, AnimatePresence  } from "framer-motion"
 import { intro_text } from '../../public/static/text/actions/intro'
+import { useRouter } from 'next/router'
 export const Intro = (props) => {
 
-
+  const router = useRouter()
   return (
   
      <div className='action-item'>
@@ -35,7 +36,7 @@ export const Intro = (props) => {
                  <p>{intro_text[0][props.langue].texte}</p>
                
                  <div className='button'>
-                <button> {intro_text[0][props.langue].button}
+                <button onClick={()=> router.push("/contact")}> {intro_text[0][props.langue].button}
                 </button>
                 </div>
                 </div>

@@ -3,8 +3,9 @@ import { connect } from 'react-redux'
 import { motion, AnimatePresence  } from "framer-motion"
 import {faire_don_text} from '../../public/static/text/agir/faire_don'
 import { useState, useEffect } from "react";
+import { useRouter } from 'next/router'
 export const Don = (props) => {
-
+  const router = useRouter()
   
  
   return (
@@ -33,7 +34,7 @@ export const Don = (props) => {
                  <p>{faire_don_text[0][props.langue].intro}</p>
 
                  <div className='button'>
-                   <button> {faire_don_text[0][props.langue].button}
+                   <button onClick={()=> router.push("/contact")}> {faire_don_text[0][props.langue].button}
                   </button>
                 </div>
                 </div>

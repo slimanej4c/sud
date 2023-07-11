@@ -30,8 +30,7 @@ export const Project = (props) => {
                   <h1>{item.title}</h1>
                   <p>{item.project}</p>
                   <div className='button' >
-                      <button > {project_button[0][props.langue].title}
-                      </button>
+                      
                   </div>
           </div>
           )

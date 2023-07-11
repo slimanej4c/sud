@@ -49,8 +49,7 @@ export const Accueil_part2 = (props) => {
                          
                               <p>{missions_text[0][props.langue]}
                               
-                                  <button className='btn'> {missions_title[1][props.langue]}
-                                  </button>
+                               
                               </p>
                              
                             </div>
@@ -74,8 +73,7 @@ export const Accueil_part2 = (props) => {
                         
                               <p>{missions_text[1][props.langue]}
                              
-                                  <button className='btn'> {missions_title[1][props.langue]}
-                                  </button>
+                              
                        
                               </p>
                              
@@ -99,8 +97,7 @@ export const Accueil_part2 = (props) => {
                             
                               <p>{missions_text[3][props.langue]}
                              
-                                  <button className='btn'> {missions_title[1][props.langue]}
-                                  </button>
+                                  
                               </p>
                              
                             </div>
@@ -122,8 +119,7 @@ export const Accueil_part2 = (props) => {
                             <FontAwesomeIcon icon={faChildReaching}  className="accueil-icon"  style={{fontSize:50 }}  onClick={()=>openwhatsapp()}/>
                               <p>{missions_text[4][props.langue]}
                              
-                                  <button className='btn'> {missions_title[1][props.langue]}
-                                  </button>
+                                 
                               </p>
                             
                             </div>

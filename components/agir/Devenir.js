@@ -3,9 +3,10 @@ import { connect } from 'react-redux'
 import { motion, AnimatePresence  } from "framer-motion"
 import {devenir_benevole_text} from "../../public/static/text/agir/devenir_benevol"
 import { useState, useEffect } from "react";
+import { useRouter } from 'next/router'
 export const Devenir = (props) => {
+  const router = useRouter()
 
-    
     const [isMobile, setIsMobile] = useState(false);
 
     
@@ -50,7 +51,7 @@ export const Devenir = (props) => {
                    <h1>{devenir_benevole_text[0][props.langue].intro_title}</h1>
                    <p>{devenir_benevole_text[0][props.langue].intro}</p>
                    <div className='button'>
-                   <button> {devenir_benevole_text[0][props.langue].button}
+                   <button onClick={()=> router.push("/contact")}> {devenir_benevole_text[0][props.langue].button}
                   </button>
                 </div>
                 </div>

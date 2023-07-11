@@ -50,14 +50,7 @@ function Home(props)  {
          <Accueil_part2/>
          <Accueil_part3/>
          <Accueil_part4/>
-          
-
-
-          
-                  
-
-            
-                
+              
             </div>
         </div>
     </Layout>

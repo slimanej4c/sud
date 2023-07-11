@@ -2,9 +2,10 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { motion, AnimatePresence  } from "framer-motion"
 import { collect_fond_text } from '../../public/static/text/agir/collecte_fonds'
+import { useRouter } from 'next/router'
 export const Collecte_fonds = (props) => {
  
-
+  const router = useRouter()
   return (
   
      <div className='agir-item'>
@@ -30,7 +31,7 @@ export const Collecte_fonds = (props) => {
                 <h1 className='h'> {collect_fond_text[0][props.langue].title}</h1>
                  <p>{collect_fond_text[0][props.langue].intro}</p>
                  <div className='button'>
-                <button> {collect_fond_text[0][props.langue].button}
+                <button onClick={()=> router.push("/contact")}> {collect_fond_text[0][props.langue].button}
                 </button>
                 </div>
                 </div>
