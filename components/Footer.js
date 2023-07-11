@@ -12,6 +12,12 @@ import {
   faFacebook ,faTwitter,faLinkedin
   
 } from "@fortawesome/free-brands-svg-icons";
+import { Set_langue_redux } from '../Redux'
+import {Set_cookies_redux } from '../Redux'
+import {Set_link_redux } from '../Redux'
+
+
+import  { store  }  from '../Redux/store';
 
 const Footer = (props) => {
 const aprops_footer={"FR":"Soladirité est une association à but non lucratif qui travaille pour améliorer la vie des enfants en difficulté en leur fournissant de l'aide alimentaire, l'accès à l'eau potable, l'éducation et la santé,en collaboration avec des partenaires locaux.",
@@ -63,6 +69,10 @@ const link_array = [
     ]
   }
 ];
+const clicked =(to_link)=>{
+  props.Set_link_redux(to_link)
+
+}
   return (
     
     <footer className="footer">
@@ -81,7 +91,7 @@ const link_array = [
                 <ul>
                   {link_array[0][props.langue].map((item) => (
                     <li key={item.to}>
-                      <Link className="footer-nav-link" href={item.to} onClick={() => clicked()}>
+                      <Link className="footer-nav-link" href={item.to}  onClick={() => clicked(item.to)}>
                         {item.title}
                       </Link>
                     </li>
@@ -132,19 +142,24 @@ const link_array = [
 
 
 
-const mapStateToProps = (state) => ({
+  const mapStateToProps = (state) => ({
  
-  langue:state.change_langue_reducer.langue,
-
-
-})
-
-const mapDispatchToProps = dispatch =>{
-return{
-  Set_langue_redux:(lang)=>dispatch(Set_langue_redux(lang)),
-  Set_cookies_redux:(val)=>dispatch(Set_cookies_redux(val)),
-}
-
-}
+    langue:state.change_langue_reducer.langue,
+    cookies_accepted:state.change_langue_reducer.cookies_accepted,
+    cookies_visible:state.change_langue_reducer.cookies_visible,
+    to:state.change_langue_reducer.to,
+    wait_to:state.change_langue_reducer.wait_to,
+  
+  })
+  
+  const mapDispatchToProps = dispatch =>{
+  return{
+    Set_langue_redux:(lang)=>dispatch(Set_langue_redux(lang)),
+    Set_cookies_redux:(val)=>dispatch(Set_cookies_redux(val)),
+    Set_link_redux:(link)=>dispatch(Set_link_redux(link)),
+  }
+  
+  }
+  
 
 export default connect(mapStateToProps, mapDispatchToProps)( Footer)
